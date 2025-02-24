@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library</title>
+    <meta name="description" content="A simple library website with book listings and contact details.">
+    <!-- <link rel="stylesheet" href="styles.css"> External CSS (Optional) -->
+    <style>
+        table,th,td{
+            border:2px solid blue;
+            /* border-collapse: collapse; */
+        }
+        th,td{
+            padding:5px;
+        }
+        table{
+            border-spacing:10px;
+        }
+        ul{
+            list-style-type:square;
+            list-style-image: url("./nat.jpeg");
+            list-style-position: inside;
+        }
+        </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to My Library</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" class="index-link"  title="it is a index.html" target="_self">Home</a></li>
+                <li><a href="#catalog" class="index-link"  title="it is a index.html" target="_self">Catalog</a></li>
+                <li><a href="#contact" class="index-link"  title="it is a index.html" target="_self">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home">
+            <h2>About Our Library</h2>
+            <p>Explore a wide range of books across various genres. Enjoy reading in a peaceful environment.</p>
+            <img src="./library.jpg" alt="Library Image" width="400" height="400">
+            <figure>
+                <figcaption>Our Reading Section</figcaption>
+            </figure>
+          
+         <video controls autoplay muted loop>
+           <source src="./library video.mp4" type="video/mp4">
+    </video>
+    <h3>Book Genres Explained</h3>
+            <dl>
+                <dt>Fantasy</dt>
+                <dd>Books that contain magical elements, mythical creatures, and imaginative worlds.</dd>
+
+                <dt>Self-Help</dt>
+                <dd>Books that provide guidance on personal growth and improvement.</dd>
+
+                <dt>Science Fiction</dt>
+                <dd>Books that explore futuristic technology, space travel, and the unknown.</dd>
+
+                <dt>Historical Fiction</dt>
+                <dd>Books set in past historical periods with fictional elements.</dd>
+            </dl>
+        </section>
+
+        <!-- Catalog Section -->
+        <section id="catalog">
+            <h2>Book Catalog</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Genre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Harry Potter</td>
+                        <td>J.K. Rowling</td>
+                        <td>Fantasy</td>
+                    </tr>
+                    <tr>
+                        <td>Atomic Habits</td>
+                        <td>James Clear</td>
+                        <td>Self-Help</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <address>
+                <p>123 Library Street, Book Town</p>
+                <p>Email: <a href="swathimn2003@gmail.com">swathimn2003@gmail.com</a></p>
+                <p>Phone: <a href="tel:8906655544">8906655544</a></p>
+            </address>
+
+            <h3>Send Us a Message</h3>
+            <form action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="enter a  name" required><br><br>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"  placeholder="enter a  email"required><br><br>
+                <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            
+            <label for="tel">PhoneNo:</label>
+            <input type="tel" id="tel" name="tel"><br><br>
+            
+            
+        
+            
+            <label>Gender:</label>
+            <input type="radio" id="radio1" name="radio" value="Male">
+            <label for="radio1">Male</label>
+            <input type="radio" id="radio2" name="radio" value="Female">
+            <label for="radio2">Female</label><br><br>
+            
+            
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4"  placeholder="enter a  message" required></textarea><br><br>
+
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 My Library. All rights reserved.</p>
+        <small>Website created using HTML</small>
+    </footer>
+
+</body>
+</html>

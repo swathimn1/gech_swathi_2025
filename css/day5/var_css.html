@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables in css</title>
+    <style>
+        :root{
+            --aqua:rgb(55, 168, 168);
+            --green:rgb(36, 113, 36);
+        }
+        .ptag{
+            background-color: var(--aqua);
+        }
+        .divtag{
+            background-color: var(--green);
+        }
+        .ptag1{
+            background-color: var(--aqua);
+        }
+        .divtag1{
+            --green:green;
+            background-color: var(--green);
+        }
+
+        .container{
+            margin:20px solid;
+            border:2px solid red;
+            width:50vw;
+        }
+        .child{
+            border:1px solid black;
+            width:60%;
+            height:30px;
+        }
+        .first{
+            background-color: bisque;
+            z-index:10;
+            position:relative;
+        }
+        .sec{
+            background-color: azure;
+            position:absolute;
+            top:10px;
+            left:100px;
+            margin-top:10px;
+            z-index:5;
+        }
+
+    </style>
+</head>
+<body>
+    <p class="ptag">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, accusamus!</p>
+    <div class="divtag">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, odit.</div>
+    <p class="ptag1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, magni.</p>
+    <div class="divtag1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, velit?</div>
+   <br>
+
+    <div class="container">
+        <div class=" child first">1</div>
+        <div class=" child sec">2</div>
+        
+    </div>
+
+
+</body>
+</html>

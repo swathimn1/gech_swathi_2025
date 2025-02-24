@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view port</title>
+    <style>
+        .container{
+           width:100vw;
+           height:100vh;
+           background-color: aquamarine;
+        }
+        .nav{
+            background-color: gray;
+            height:10vh;
+        }
+        .main{
+            height:80vh;
+            background-color: azure;
+        }
+        .footer{
+            height:10vh;
+            background-color: bisque;
+        }
+        .parent{
+            width:200px;
+           height:100px;
+           border:1px solid black;
+        }
+        .child{
+            width:100%;
+            height:50%;
+            border:2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>4.vw 5.vh</h1>
+    <div class="container">
+        <div class="nav">navbar</div>
+            <div class="main">main</div>
+                <div class="footer">
+                    footer
+                </div>
+            
+        <div class="parent">
+            <div class="child">This is child, Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure exercitationem mollitia facilis esse reiciendis dicta? </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pseudo elements</title>
+        <style>
+        ::selection{
+            color:red;
+            background-color:yellow;
+        }
+        .atag{
+            text-decoration: none;
+            margin-left:20px;
+
+        }
+        .atag:hover{
+            color:rgb(166,255,208),;
+
+        }
+        .atag::after{
+            content:"h";
+        }
+        .atag::before{
+            content:"i";
+        }
+        .first::first-letter{
+            font-size:40px;
+        }
+        .sec::first-line{
+            color:gray;
+        }
+
+
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="nav">
+                <a href class="atag">Home</a>
+                <a href class="atag">About</a>
+                <a href class="atag">Contact</a>
+            </div>
+            <p class="first">Lorem ipsum, dolor sit amet consectetur adipisicing
+                elit. Architecto repellat quibusdam autem, quae sapiente
+                consequatur dolorem nobis exercitationem, porro, dignissimos
+                impedit vitae adipisci enim. Iure enim cumque incidunt sed
+                et!</p>
+            <p class="sec">Lorem ipsum, dolor sit amet consectetur adipisicing
+                elit. Sunt nostrum corrupti fugit soluta et vitae eos tempora
+                impedit illo. Optio dolore tempora repellat voluptates voluptas
+                exercitationem ipsam, vel debitis quis!</p>
+        </div>
+    </body>
+</html>

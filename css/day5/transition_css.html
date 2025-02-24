@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition in CSS</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        .first{
+            background-color: aqua;
+            border:2px solid red;
+            height:20vh;
+            display:flex;
+            justify-content: center;
+            height:20vh;
+            width:10vw;
+            transition:all 3s;
+            align-items: center;
+            /* transition-duration: ease-in-out; */
+            transition-timing-function: ease-in-out;
+            transition-delay:2s;
+        }
+        .first:hover{
+            background-color: blue;
+            transform:translate(300px ,400px) scale(2);
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="first">1</div>
+    <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.406034582576!2d76.12178889999998!3d13.009795599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba5485b583251b7%3A0x513d895c8cc75816!2sGovernment%20Engineering%20College%2C%20Hassan!5e0!3m2!1sen!2sin!4v1740134720516!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+</body>
+</html>

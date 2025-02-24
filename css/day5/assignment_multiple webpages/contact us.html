@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .navbar {
+            background: #002147;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .banner {
+            background: url('banner.jpg') no-repeat center center/cover;
+            padding: 100px;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .map-container {
+            width: 100%;
+            height: 400px;
+            /* box-sizing:border-box; */
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .contact-info {
+            width: 40%;
+        }
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: 400;
+        }
+        .contact-form {
+            width: 50%;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .contact-form button {
+            background: #002147;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .footer {
+            background: #002147;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 50px;
+            font-weight: 400;
+        }
+        .footer .footer-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1100px;
+            margin: auto;
+        }
+        .footer .footer-info {
+            text-align: left;
+            width: 50%;
+        }
+        .footer .contact-details {
+            text-align: right;
+            width: 50%;
+        }
+        .banner {
+        background: url('./contact\ us.png') no-repeat center center/cover;
+        padding: 100px;
+        color: blue;
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        background-color: rgba(8, 8, 173, 0.867);
+    }
+    </style>
+</head>
+<body>
+    <!-- <div class="banner">
+        
+    </div> -->
+    <div class="navbar">
+        <div class="logo"><span style="color: yellow;">📖</span> Study</div>
+        <div>
+            <a href="home .html">Home</a>
+            <a href="departments2.html">Courses</a>
+            <a href="photo gallery.html">Gallery</a>
+            <a href="contact us.html">Contact</a>
+        </div>
+    </div>
+    <div class="banner">
+         <h1> </h1>
+    </div>
+    
+    <div class="container">
+        <div class="contact-info">
+            <h3>Contact Info</h3>
+            <p>📞 +88 018 785 4589</p>
+            <p>✉ devitems@email.com</p>
+            <p>📍 House 09, Road 32, Mohammadpur, Dhaka-1200, UK</p>
+            <h4>Social Media</h4>
+            <p>📘 Facebook | 🔗 LinkedIn | 📷 Instagram</p>
+        </div>
+        <div class="contact-form">
+            <h3>Send Your Message</h3>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.406034582576!2d76.12178889999998!3d13.009795599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba5485b583251b7%3A0x513d895c8cc75816!2sGovernment%20Engineering%20College%2C%20Hassan!5e0!3m2!1sen!2sin!4v1740134720516!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3><span style="color: yellow;">📖</span> Study</h3>
+                <p>There are many variations of Lorem Ipsum available, but the majority have suffered alteration.</p>
+                <p>📘 Facebook | 🔗 LinkedIn | 📷 Instagram</p>
+            </div>
+            <div class="contact-details">
+                <h3>Get in Touch</h3>
+                <p>📞 +88 018 785 4589</p>
+                <p>✉ devitems@email.com</p>
+                <p>🌐 www.devitems.com</p>
+                <p>📍 Your address goes here, street.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

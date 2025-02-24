@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float and clear in CSS</title>
+    <style>
+        .container{
+            padding:20px;
+            border:2px solid red;
+        }
+        .child{
+            border:2px solid aqua;
+        }
+        .container img{
+            float:left;
+        }
+        .sec{
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="./nat.jpeg" alt="Image" width="100px">
+        <div class="child first">Lorem ipsum dolor sit amet.</div>
+        <div class="child sec">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non tempore quis praesentium, quidem libero veniam nam, vel aspernatur velit, in alias est nulla. Ut molestias officiis earum quia, atque non!</div>
+        <!-- <div class="child">Lorem, ipsum.</div> -->
+    </div>
+</body>
+</html>

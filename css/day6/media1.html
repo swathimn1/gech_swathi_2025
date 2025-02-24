@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media In Css</title>
+    <style>
+        .container{
+            width:80vw;
+            height:60vh;
+            border:2px solid black;
+            padding:10px;
+            display:flex;
+            gap:10px;
+            /* flex-direction:column; */
+        }
+        .child{
+         width:200px;
+         height:20px;
+         border:2px solid  gray;
+        }
+        .first{
+            background-color: red;
+        }
+        .sec{
+            background-color: green;
+        }
+        .third{
+            background-color: blueviolet;
+        }
+        .fourth{
+            background-color: yellow;
+        }
+        .fifth{
+            background-color: chartreuse;
+        }
+        @media screen  and (min-width:500px){
+            .container{
+                flex-direction:column;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="child first"></div>
+    <div class="child sec"></div>
+    <div class="child third"></div>
+    <div class="child fourth"></div>
+    <div class="child fifth"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid1 in css</title>
+    <style>
+        .child{
+            /* width:40px;
+            height:40px; */
+            border:2px solid red;
+        }
+        .container{
+            width:80vw;
+            height:50vh;
+            border:2px solid black;
+            display:grid;
+            grid-template-columns: [fircol] 175px  [seccol] 175px [thicol] 175px;
+            grid-template-rows:[firstrow] 100px [secrow] 100px [thirow] 100px;
+            column-gap:20px;
+            row-gap:20px;
+            /* grid-template-columns:auto auto  auto;
+            grid-template-rows:auto auto auto; */
+           padding:20px;
+        }
+         .five{
+            grid-column:2/span2;
+        }
+        .four{
+            grid-row:2/ span 2;
+        }
+        .six{
+            grid-column:2/span 3;
+        }
+        .fir{
+            grid-column:2/span ;
+        }
+        /* .five{
+            grid-column:seccol/span2;
+        }
+        .four{
+            grid-row:secrow/ span 2;
+        }
+        .six{
+            grid-column:seccol/span 3;
+        }
+        .fir{
+            grid-column:2/span ; 
+        }*/
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="child fir">1</div>
+        <div class="child sec">2</div>
+        <div class="child thi">3</div>
+        <div class="child four">4</div>
+        <div class="child five">5</div>
+        <div class="child six">6</div>
+        <div class="child seven">7</div>
+        <div class="child eight">8</div>
+        <div class="child nine">9</div>
+        <!-- <div class="child  ten">10</div> -->
+    </div>
+
+</body>
+</html>

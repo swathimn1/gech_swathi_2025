@@ -1,0 +1,111 @@
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f6fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container */
+.container {
+    text-align: center;
+}
+
+h2 {
+    color: #1d1d1f;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Card Styles */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Card Header (Icon + Text Layout) */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #1d1d1f;
+}
+
+/* Open Positions Text */
+.positions {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 14px;
+    color: #1d1d1f;
+}
+
+/* Highlighted Card */
+.highlighted {
+    border: 2px solid #1d1d1f;
+}
+
+.highlighted-text {
+    background-color: #1d1d1f;
+    color: white;
+    font-weight: bold;
+}
+
+/* Icons */
+.icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: white;
+}
+
+/* Different Background Colors for Each Icon */
+.design { background: linear-gradient(45deg, #d9b4fc, #7c5fea); }
+.engineering { background: linear-gradient(45deg, #ffccd5, #ff6b81); }
+.operations { background: linear-gradient(45deg, #c2e9fb, #a1c4fd); }
+.people { background: linear-gradient(45deg, #c3f0ca, #74c69d); }
+.sales { background: linear-gradient(45deg, #d9e2fc, #647acb); }
+.university { background: linear-gradient(45deg, #f8d3a3, #e77e23); }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

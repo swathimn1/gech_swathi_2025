@@ -1,0 +1,73 @@
+p{
+    color:aqua;
+    font-size:10px;;
+    background-color: blue;
+    padding:10px;
+    font-style:italic;
+    /* outline */
+    outline:2px solid black;
+    /* text */
+    text-decoration:underline;
+    text-align:center;
+    text-transform:uppercase;
+
+}
+#ptag{
+    font-size:20px;
+}
+.p1{
+   color: bisque;
+}
+*{
+    font-size:larger;
+}
+p,h1{
+    text-align:center;
+}
+p[id="ptag"]{
+    margin:auto;
+}
+input[type="text"]{
+    font-size:larger;
+    font-style:italic;
+}
+
+.container{
+    margin:20px 10px 15px 5px; /* the space outside the border ,we can also declare a  margin for top right bottom left using margin-top like that*/
+    padding:10px 5px 15px 20px;/* the space between the border and  the content in a css box model ,we can also declare a padding for top right bottom left using padding-top like that*/
+    /*margin-top:20px;margin-right:20px;margin-bottom:10px;margin-left:20px;
+    margin:20px 20px  ; for top-bottom and left-right*/
+}
+/* *{
+    margin:20px 10px 15px 5px;
+    padding:10px 5px 15px 20px;
+    border:1px solid blue;
+
+} */
+#div{
+    background-color:aqua;
+
+}
+body{
+    background-image: url(./library.jpg);
+     background-repeat:no-repeat;
+    background-size:cover;
+    /* background-position:right top;
+    background-attachment: fixed;
+    background-attachment: scroll; */
+    background-clip:border-box;
+    opacity:1;
+}
+.first{
+    border:2px solid black;
+    background-color: yellow!important;
+}
+.sec{
+   
+    background-color: green!important;
+}
+.thi{
+    
+    background-color: red!important;
+}
+

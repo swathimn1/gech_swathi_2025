@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Animations in css</title>
+        <style>
+        .container{
+            width:80vw;
+            height:80vh;
+            border:2px solid black;
+            padding:10px;
+            display:flex;
+            gap:10px;
+            /* flex-direction:column; */
+            position:relative;
+            
+        }
+        .child{
+         width:200px;
+         height:20px;
+         border:2px solid  gray;
+        }
+        .first{
+            background-color: red;
+            animation-name: change_bg;
+            animation-duration: 8s;
+            animation-timing-function: ease-out;
+            /* animation:change_bg 8s  linear 2s ease-out  right reverse infinite alternate; */
+             width:30vw;
+             height:20vh;
+             /* animation-direction:altern;
+             animation-fill-mode: both;
+             animation-delay: 3s;
+             animation-iteration-count: infinite;
+             animation-play-state: running; */
+             position:absolute;
+             /* bottom:0;
+             left:0; */
+        }
+        @keyframes change_bg {
+            /* from{
+                 background-color: brown;
+            }
+            to{
+                background-color: blueviolet;
+            } */
+             /* 0%{
+                background-color: blue;
+                top:0;
+                left:0;
+             }
+             25%{
+                background-color: chartreuse;
+                top:0;
+                right:0;
+             }
+             50%{
+                background-color:chocolate;
+                bottom:0;
+                right:0;
+             }
+             /* 75%{
+                background-color:chocolate;
+                bottom:0;
+                left:-1;
+             } */
+/* 
+             100%{
+                background-color: darkblue;
+                 bottom:0;
+                 left:-1;
+             } */ 
+             0%{
+                background-color: blue;
+                top:0;
+                left:0;
+             }
+             25%{
+                background-color: chartreuse;
+                top:0;
+                left:300px;
+             }
+             50%{
+                background-color:chocolate;
+                top:300px;
+                left:300px;
+             }
+              75%{
+                background-color:chocolate;
+                bottom:300px;
+                left:0;
+             } 
+
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="child first">1</div>
+
+        </div>
+    </body>
+</html>

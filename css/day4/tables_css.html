@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables css</title>
+    <style>
+        .table_con,th,td{
+           border:1px solid,rgb(204, 203,203);
+           border-collapse: collapse;
+        }
+        tr:nth-child(2n){
+        background-color: gray;
+        } 
+        tr:nth-child(2n+1){
+        background-color:rgb(241,207,207);
+        } 
+        tr:first-child{
+        background-color: green;
+        color:#fff;
+        } 
+        th,td{
+            padding:10px ;
+            text-align:end;
+            vertical-align: bottom;
+            font-family: 'Times New Roman', Times, serif;
+            
+        }
+        tr{
+            text-align: start;
+        }
+        body{
+            padding:20px;
+        }
+        .table_con{
+            width:80vw;
+            height:80vh;
+        }
+    </style>
+</head>
+<body>
+    <table  border="1" class="table_con">
+        <tr>
+            <th>Name</th> 
+            <th>Roll No</th>
+            <th>Age</th>
+            <th>Address</th>
+            
+        </tr>
+        <tr>
+         <td>Lorem</td>
+         <td>12</td>
+         <td>20</td>
+         <td>Karntaka</td>
+
+        </tr>
+        <tr>
+            <td>Lorem</td>
+            <td>12</td>
+            <td>20</td>
+            <td>Karntaka</td>
+   
+           </tr>
+           <tr>
+            <td>Lorem</td>
+            <td>12</td>
+            <td>20</td>
+            <td>Karntaka</td>
+   
+           </tr>
+           <tr>
+            <td>Lorem</td>
+            <td>12</td>
+            <td>20</td>
+            <td>Karntaka</td>
+   
+           </tr>
+           <tr>
+            <td>Lorem</td>
+            <td>12</td>
+            <td>20</td>
+            <td>Karntaka</td>
+   
+           </tr>
+    </table>
+</body>
+</html>
