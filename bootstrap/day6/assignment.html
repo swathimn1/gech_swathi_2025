@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap  Grid Layout</title>
+    <!-- Bootstrap CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="vh-100 d-flex flex-column bg-white">
+
+    <div class="container-fluid d-flex flex-column h-100">
+        <!-- Header -->
+        <div class="row">
+            <div class="col-12 bg-primary text-dark text-center py-3 border-bottom  d-flex align-items-center justify-content-center fs-8  gy-1 px-1">
+                Header
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <div class="row">
+            <div class="col-12 bg-danger text-dark text-center py-2 border-bottom  d-flex align-items-center justify-content-center fs-8 gy-1 px-1">
+                Navigation Menu
+            </div>
+        </div>
+
+        <!-- Content Section (Expands to Fill Remaining Space) -->
+        <div class="row flex-grow-1">
+            <div class="col-md-2 bg-primary text-dark text-center border-end d-flex align-items-center justify-content-center fs-8  gy-1 px-1">
+                Content
+            </div>
+            <div class="col-md-8 bg-light text-dark text-center d-flex align-items-center justify-content-center fs-8  gy-1 px-1">
+                Main Content
+            </div>
+            <div class="col-md-2 bg-primary text-dark text-center border-start d-flex align-items-center justify-content-center fs-8  gy-1 px-1">
+                Content
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="row">
+            <div class="col-12 bg-success text-dark text-center py-3 border-top d-flex align-items-center justify-content-center fs-8 gy-1 px-1">
+                Footer
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
