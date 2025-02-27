@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Grid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        
+        .child {
+            border: 1px solid black;
+            min-height: 150px; 
+        }
+        .first{
+            min-height: 150px; 
+        }
+        .second {
+            min-height: 100px; 
+        }
+        .third {
+            min-height: 200px; 
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container text-center align-items-center justify-content-center align-content-center h-50 fw-bold fs-5">
+       
+        <div class="row text-center align-items-center justify-content-center align-content-center">
+            
+            <div class="col-4">
+                <div class="row ">
+                    <div class="col-12 child first text-center align-items-center justify-content-center align-content-center bg-primary ">1</div>
+                </div>
+                <div class="row">
+                    <div class="col-12 child first text-center align-items-center justify-content-center align-content-center bg-secondary">2</div>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-12 child second text-center align-items-center justify-content-center align-content-center bg-danger">3</div>
+                </div>
+                <div class="row">
+                    <div class="col-6 child third text-center align-items-center justify-content-center align-content-center bg-warning">4</div>
+                    <div class="col-6 child second text-center align-items-center justify-content-center align-content-center bg-info">5</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
