@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Blog Page</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+    <bo <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="./images/ceramic.png" alt="Ceramic Icon">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="./shop.html">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./workshop.html">Workshop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+                        <div
+    class="col-md-2 d-flex justify-content-lg-end align-items-lg-center align-items-start justify-content-start">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                                    </li>
+                                </div>
+                    </ul>
+                </div>
+                
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            Blog
+        </div>
+
+        <!-- Blog Content -->
+        <div class="container mt-5">
+            <div class="row">
+                <!-- Blog Posts -->
+                <div class="col-md-8">
+                    <div class="d-flex mb-4">
+                        <img src="./images/online workshops.jpg" alt="Blog Image"
+                            class="img-fluid me-3"
+                            style="width: 180px; height: auto;">
+                        <div>
+                            <h5>What affects the quality of ceramic
+                                products?</h5>
+                            <small class="text-muted">17 August 2022</small>
+                            <p>Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit...</p>
+                            <a href="#" class="text-danger">Czytaj więcej</a>
+                        </div>
+                    </div>
+
+                    <div class="d-flex mb-4">
+                        <img src="./images/workshop for adults.jpg" alt="Blog Image"
+                            class="img-fluid me-3"
+                            style="width: 180px; height: auto;">
+                        <div>
+                            <h5>How ceramics are made</h5>
+                            <small class="text-muted">17 August 2022</small>
+                            <p>Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit...</p>
+                            <a href="#" class="text-danger">Czytaj więcej</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-md-4 sidebar">
+                    <img src="./images/sara mug.jpg" alt="Ceramic Image"
+                        class="mb-3">
+                    <h6>Our social media</h6>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                    </div>
+
+                    <h6 class="mt-4">Subscribe to our newsletter</h6>
+                    <form>
+                        <div class="mb-2">
+                            <input type="text" class="form-control"
+                                placeholder="First name">
+                        </div>
+                        <div class="mb-2">
+                            <input type="email" class="form-control"
+                                placeholder="Your e-mail">
+                        </div>
+                        <div class="mb-2">
+                            <textarea class="form-control"
+                                placeholder="Message"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="btn btn-custom w-100">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./images/moon.jpg" class="card-img-top" alt="Ceramic Soup Bowls">
+                        <div class="card-body">
+                            <h5 class="card-title">Ceramic Soup Bowls</h5>
+                            <p class="card-text">Description of the first ceramic product.</p>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./images/workshop for adults.jpg" class="card-img-top" alt="Quality of Ceramic Products">
+                        <div class="card-body">
+                            <h5 class="card-title">What Affects the Quality?</h5>
+                            <p class="card-text">Details about ceramic product quality.</p>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./images/workshop for adults1.jpg" class="card-img-top" alt="How Ceramics Are Made">
+                        <div class="card-body">
+                            <h5 class="card-title">How Ceramics Are Made</h5>
+                            <p class="card-text">Process of making ceramics explained.</p>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        
+            <!-- Pagination -->
+            <nav class="mt-4">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item active"><a class="page-link" href="./blog.html">1</a></li>
+                    <li class="page-item"><a class="page-link" href="page2.html">2</a></li>
+                </ul>
+            </nav>
+        </div>
+                    
+                       
+              
+             
+
+        <!-- Footer -->
+        <footer class="footer mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <p>02-233 Warszawa</p>
+                        <p>Al. Jerozolimskie 12</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p><a
+                                href="mailto:email@contact.com">email@contact.com</a></p>
+                        <p>+48 500 500 500</p>
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <a href="#">Store Regulations</a> |
+                        <a href="#">Privacy policy</a> |
+                        <a href="#">Returns & exchanges</a> |
+                        <a href="#">Delivery</a>
+                        <div class="social-icons mt-2">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <small>Website created in white label responsive website builder
+                    <span style="color: #4CAF50;">WebWave</span>.</small>
+            </div>
+        </footer>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

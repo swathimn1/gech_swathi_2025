@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Hero Section */
+        .hero {
+            background: url('./images/gallery1.jpg') no-repeat center center/cover;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .contact-box {
+            padding: 40px;
+            background: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
+        .btn-send {
+            background-color: #7a4b40;
+            color: white;
+            border-radius: 5px;
+            padding: 10px 20px;
+        }
+        .btn-send:hover {
+            background-color: #5a322c;
+        }
+        .social-icons a {
+            margin-right: 10px;
+            font-size: 20px;
+            color: #333;
+        }
+        .footer {
+            background: #111;
+            color: white;
+            padding: 20px 0;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            font-size: 20px;
+            color: white;
+            transition: 0.3s;
+        }
+        .social-icons a:hover {
+            color: #4CAF50;
+        }
+        .col-md-3{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="./images/ceramic.png" alt="Ceramic Icon">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="./shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./workshop.html">Workshop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+                    <div
+class="col-md-2 d-flex justify-content-lg-end align-items-lg-center align-items-start justify-content-start">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                                </li>
+                            </div>
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
+<!-- Hero Section -->
+<div class="hero">
+    <h1>Contact</h1>
+</div>
+
+<!-- Contact Section -->
+<div class="container my-5">
+    <div class="row">
+        <!-- Contact Info -->
+        <div class="col-md-6">
+            <div class="contact-box">
+                <h3>Contact Us</h3>
+                <p><strong>02-233 Warsaw</strong></p>
+                <p>Al. Jerozolimskie 12</p>
+                <p><strong>Email:</strong> email@contact.com</p>
+                <p><strong>Phone:</strong> +48 500 500 500</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <h4 class="mt-4">Collaboration</h4>
+                <p>m.kowalski@contact.com</p>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-md-6">
+            <div class="contact-box">
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">First name:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Anna">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Your e-mail:</label>
+                        <input type="email" class="form-control" id="email" placeholder="your@email.pl">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message:</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Type your message here"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-send">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Google Maps -->
+<div class="container-fluid my-5">
+    <div class="row">
+        <div class="col-12">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2413.845038392725!2d21.012228315765376!3d52.22977067975743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc6699f2674d%3A0x55c1ef6f89cdaac2!2sWarsaw!5e0!3m2!1sen!2spl!4v1620000000000!5m2!1sen!2spl" 
+                width="100%" 
+                height="400" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<footer class="footer py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <p class="mb-1">01-234 Warsaw</p>
+          <p class="mb-1">Al. Jerozolimskie 12</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <p class="mb-1">info@ceramic.com</p>
+          <p class="mb-1">+48 500 500 500</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <p class="mb-1">Store Regulations</p>
+          <p class="mb-1">Privacy policy</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <p class="mb-1">Delivery</p>
+          <p class="mb-1">Returns & exchanges</p>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <p class="mb-0">&copy; 2025 Ceramics Studio. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a href="#" class="me-3"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="me-3"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="me-3"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
