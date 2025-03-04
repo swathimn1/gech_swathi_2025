@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping  Statement</title>
+</head>
+<body>
+    <h1>Looping  Statements</h1>
+    <p>1.for loop-for(ini;con;inc/dec){}</p>
+    <p>2.while loop - <pre>
+        //ini ex: i=0;
+        while(condition){
+            //code
+            //inc /dec
+        }
+    </pre></p>
+    <p>3.do while</p>
+    <p>4.for in</p>
+    <p>5.for of</p>
+    <script>
+        let array1=["item1","item2","item3","item4"];
+        let  len=array1.length;
+        console.log(len);
+        for( let i=0; i < len ;i++){
+            console.log(array1[i]);
+        }
+        
+        let  b=12;
+        while(b>=6){
+           console.log("the value of  b:",b);
+        }
+        console.log("while loop");
+        let  j=0;
+        while(j<array1.length){
+            console.log(array1[j]);
+            j++;  //j=j+1 0+1
+        }
+
+        let num2=prompt("enter a number");
+        let i=0;
+        while(i<=num2){
+            console.log(i);
+            i++;
+        }
+
+    </script>
+    
+</body>
+</html>

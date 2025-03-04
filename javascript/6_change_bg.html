@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        height:100vh;
+        justify-content: center;
+        width:100vw;
+        align-items: center;
+        display:flex;
+        
+    }
+    .child{
+        text-align:center;
+    }
+</style>
+<body>
+    <div class="container" id="container">
+        <div class="child ">
+            <h1 id="color_code">Background Color is:<span id="color_value">rgb(255,0,0)</span></h1>
+            <button type="button" id="change_bg_btn" onclick="handleClick()" >Change the Background Color</button>
+            
+        </div>
+    </div>
+    <script>
+    //     const button=document.getElementById(change_bg_btn);
+    //     console.log(button);
+    //     button.addEventListener('click',function(){
+    //         console.log("user  clicked the  button");
+    //     }
+    // );
+    function getBgcolor(){
+       const red=Math.floor(Math.random()*256);
+       const green=Math.floor(Math.random()*256);
+       const blue=Math.floor(Math.random()*256);
+       //rgb(61 61  85)
+
+      return `rgb(${red} ${green} ${blue})`
+    }
+    function  handleClick() {
+        // console.log(1111)
+        const bg_color=getBgcolor();
+         const container = document.getElementById("container");
+        //  const colorText= document.getElementById("color_code");
+        //  console.log("container");
+         container.style.backgroundColor=bg_color;
+        const colorText= document.getElementById('color_value');
+        colorText.textContent=bg_color;
+        
+        // colorText.innerText=`Background Color is:${bgcolor}`;
+    }
+
+    
+    </script>
+</body>
+</html>

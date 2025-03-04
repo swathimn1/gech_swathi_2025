@@ -1,0 +1,136 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators</title>
+</head>
+<body>
+    <dl>
+        <dt>1.Arth Operators</dt>
+           <dd>+,-,,/,%,* </dd>
+    </dl>
+    
+    <dl>
+        <dt>2.Assign Operators</dt>
+           <dd> =,+=,-=, /=,%=.=,*=</dd> 
+    </dl>
+
+    <dl>
+        <dt>3.Comparison Operators</dt>
+           <dd> == compare the values,=== to compare datatype,!=,!==,<,>,<=,>=</dd> 
+    </dl>
+    
+    <dl>
+        <dt>4.Bitwise Operators</dt>
+           <dd> &,|,~,^</dd>
+    </dl>
+
+    <dl>
+        <dt>5.Logical Operators</dt>
+           <dd> &&,||,!</dd>
+    </dl>
+
+    <dl>
+        <dt>6.Ternary Operators</dt>
+           <dd>?:</dd>
+    </dl>
+     
+    <script>
+        // arthmetic opt
+        let a=15, b=10;
+        console.log("add:",a+b);
+        console.log("sub:",a-b);
+        console.log("mult:",a*b);
+        console.log("Div:",a/b);
+
+        //Assign Opt
+        let c = 10;
+        c += 3;
+        console.log(c);
+        c -= 5;
+        console.log(c);
+        c /=2;
+        console.log(c);
+        c %= 2;
+        console.log(c);
+        
+        let d=10;
+        console.log(d);
+        d *= 2;
+        console.log(d);
+        d **=2;
+        console.log(d);
+
+        //comparistion opt
+        let e=10, f=2
+        console.log(e == f);
+        console.log(e===10);
+        console.log(e!=10);
+        console.log(e!==2);
+        console.log(e<10);
+        console.log(e>f);
+        console.log(e<=10);
+        console.log(e>=10);
+
+        //Bitwise opt
+        console.log(5 & 1);
+        console.log(5 | 1);
+        console.log(9^1);
+        console.log(~2);
+        console.log(5<<1);
+        console.log(5>>1);
+
+        //Logical opt
+        let x=20;
+        console.log(x>18 &&x<40);
+        console.log(x>25 || x<30);
+        console.log(!false);
+
+        //Ternary opt
+        let num = 2;
+        let result = (num > 5) ? "Greater" : "Smaller";
+        console.log(result);
+
+        let var1=121;
+        let var2="121";
+        console.log("==:",var1==var2);
+        console.log("===:",var1===var2);
+        console.log("!=:",var1!=var2);
+        console.log("!==:",var1 !==var2);
+
+        console.log("--------------");
+        console.log("Bitwise");
+        let var3 =3;//011
+        let var4=2;//010
+                       2//
+        console.log("&:",var3 & var4);//010-2
+        console.log("|:",var3 |var4);//011-3
+        console.log("~:",~var4);//101-5
+        console.log("^:",var3 ^ var4);
+        console.log("^:",5 ^ 4);
+
+
+        // let var5 =3;//011
+        // let var6=2;
+        // let var7 =true;//011
+        // let var8=false;
+        // console.log("&&:",var5 && var6);
+        let var5 =3;//011
+        let var6=2;
+        let var7 =3;//011
+        let var8=6;
+        console.log("&&:",var5 && var6);
+        console.log((var5 > var6) && (var7 < var8));
+        console.log("?:", (6 >13) ? "Yes it is": "Not");
+
+    //      011
+    //      010
+    //      010
+    //     16     8      4     2   1
+    //     2^4   2^3    2^2   2^1 2^0
+
+     </script>
+</html>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Conditional statements</title>
+    </head>
+    <body>
+        <p>Conditions</p>
+        <p>1.if</p>
+        <p>2.if else</p>
+        <p>3.else if ladder</p>
+        <p>4.switch</p>
+        <script>
+        // let age=80;
+        // // if(age >18){   //condition true
+        // //     console.log("yes he is greater than 18");
+        // // }
+        // // else{//condition false
+        // //     console.log("yes he is not greater than 18");
+        // // }
+        // if(  age > 0 && age < 10){
+        //     console.log("greater  than 0 and lesser than 10");
+        // }
+        // else if(age>=10 && age<20){
+        //     console.log("greater  than 10 and lesser than 20");
+        // }
+        // else if(  age >= 20 && age<30){
+        //     console.log("greater  than 0 and lesser than 30");
+        // }
+        // else{
+        //     console.log("none of the condition satisfy");
+        // }
+         let age=80;
+        if(age>=0 && age <=12){
+            console.log("child");
+
+        }
+        else if(age>=13 && age <=19){
+            console.log("Teenager");
+            
+        }
+        else if(age>=20 && age <=59){
+            console.log("Adult");
+            
+        }
+        else if(age>=60 && age <=100){
+            console.log("Old");
+            
+        }
+        else{
+         console.log("Invalid age");
+         }
+
+
+         //4.switch statement
+         /* 
+             switch(condition){
+                   case 1:{
+
+                      //code
+                      break;
+                   }
+                   case 2:{
+
+                      //code
+                      break;
+                   }
+                    case 3:{
+
+                      //code
+                      break;
+                   }
+                default:{
+                //code
+                }
+
+
+
+             }
+
+         */
+        // console.log("switch statement");
+        let num=3;
+        switch(num){
+            case 1:{
+                console.log("the number is 1");
+                break;
+            }
+            case 2:{
+                console.log("the number is 2");
+                break;
+            }
+            case 3:{
+                console.log("the number is 3");
+                break;
+            }
+            case 4:{
+                console.log("the number is > 3 or less than 1");
+            }
+        }
+
+      let num1=7;
+      switch(num1){
+           case 1:{
+             if(num1 == 1){
+              console.log("sunday");
+              break;
+        }
+    }
+    case 2:{
+             if(num1 == 2){
+              console.log("Monday");
+              break;
+        }
+    }
+    case 3:{
+             if(num1 == 3){
+              console.log("Tuesday");
+              break;
+
+        }
+    }
+    case 4:{
+             if(num1 == 4){
+              console.log("Wednesday");
+              break;
+        }
+    }
+    case 5:{
+             if(num1 == 5){
+              console.log("Thursday");
+              break;
+        }
+    }
+    case 6:{
+             if(num1 == 6){
+              console.log("Friday");
+              break;
+        }
+    }
+    case 7:{
+             if(num1 == 7){
+              console.log("saturday");
+              break;
+        }
+    }
+    case 8:{
+           console.log("Invalid  day")
+        }
+    
+      }
+
+      let name=prompt("Enter your name");
+      console.log("hello" +''+ name);
+    </script>
+    </body>
+</html>

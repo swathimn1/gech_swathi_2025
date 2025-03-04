@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reference and primitive</title>
+</head>
+<body>
+    <script>
+        //primitive data type
+        let  x=10;
+        let y=x;
+        console.log("the value of x before is:",x)//10
+        console.log("the value of y  after is:",y)//10
+        x = x+1;
+        console.log("the value of x  before is:",x)//100
+        console.log("the value of y   after is:",y)//10
+
+        //reference  data  type
+        let array1=[1,2,3,4,5];
+        let array2=array1;
+        console.log("the value of array1 before is:",array1)
+        console.log("the value of array2  after is:",array2)
+        array1.pop(1,1);
+        console.log("the value of array1  before is:",array1)
+        console.log("the value of array2  after is:",array2)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to JS</title>
+    <script src="./first.js"></script>
+</head>
+<body>
+    <!-- Html js -->
+    <p id="demo">Hello Html</p>
+    <button type="button " onclick="document.getElementById('demo').innerText='Hello js'">Click me</button>
+    <p id ="demo1">Hello Js</p>
+    <button type="button" onclick="document.getElementById('demo1').innerText='hello js' ">Click me1</button>
+    <button type="button" onclick="handleClick()">Internal  Js</button>
+    <button type="button" onclick="handleExternalClick()">External Js</button>
+    <script>
+        
+        function handleClick(){
+            document.getElementById('demo1').innerText='hello Internal JS';
+        }
+    </script>
+</body>
+</html>
