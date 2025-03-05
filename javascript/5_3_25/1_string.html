@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>String</title>
+    </head>
+    <body>
+        <h1>Strings in JS</h1>
+        <p>Methods in strings</p>
+        <p>1.length</p>
+        <p>2.slice</p>
+        <p>3.substring</p>
+        <p>4.substr</p>
+        <p>5.replace</p>
+        <p>6.toUpperCase()</p>
+        <p>7.toLowerCase</p>
+        <p>8.trim</p>
+        <p>9.indexof()</p>
+        <p>10.startswith()</p>
+        <p>11.endswidth</p>
+        <p>12.lincludes</p>
+        <p>13.concat()</p>
+
+        <script>
+        //let str="hello world!";
+        // console.log(str);
+        // console.log(typeof str);
+
+        //1.length
+        let str1="Hello world";
+         const len = str1.length;
+        //  console.log(`The length of string ${str1} is : ${len}`);
+         console.log("The length of string  "+str1+" is:"+ len);//+ convert len from integer datatype to string.
+         console.log("The length of string  ",str1," is:", len);//it  preserve the datatype len is integer . so the output shown as n integer datatype only not in string
+
+       //2.slice
+       let str2="java script";
+       let str3=str2.slice(2,7);//2 is included and 7 is excluded.
+       console.log(`the sliced string is : ${str3}`);
+      console.log(str2[5]);
+      console.log(str2[-1]);//we cannot access a item by  negative  index value
+      console.log(str2.slice(-1));
+      console.log("the sliced string is : ", str2.slice(-8,-3));
+
+      //3.substring
+       let str4="hello javascript";
+       let str5= str4.substring(2, 7);//last index is excluded.
+       console.log(`the string is ${str5}`);
+       console.log(`the string is ${str5.substring(-13,-9)}`);
+
+       //4.substr
+        let  str6="hello world";
+        let str7=str6.substr(2,7);//starting index and the  length
+        console.log(`the string is ${str7}`);
+        console.log(`the string is ${str7.substr(-9,7)}`);
+
+        //5.replace
+        let str8="Java Script"
+        let  str9=str8.replace("Java","Python");
+        console.log(`the string is ${str9}`);
+
+        //6.toUpperCase()
+        let str10="javascript";
+        let str11= str10.toUpperCase(str10);
+        console.log(`the string is ${str11}`);
+
+        //7.toLowerCase()
+        let str12="PYTHON";
+        let str13= str12.toLowerCase(str12);
+        console.log(`the string is ${str13}`);
+
+        //8.trim()
+        let str14="     hello          ";
+        let str15=str14.trim();
+        console.log(`the  string is ${str14}`);
+        console.log(`the  string is ${str15}`);
+
+        //9.indexof()
+        let str16="hello woorld";
+        let str17=str16.indexOf("ello");
+        console.log(`the  index  is ${str17}`);
+
+        //10.startsWith()
+        let str18="hello  javascript";
+        let str19=str18.startsWith("ello");
+        console.log(`the res is ${str19}`);
+
+       //11.endsWith()
+        let str20="hello  javascript";
+        let str21=str18.endsWith("ello");
+        console.log(`the res is ${str21}`);
+
+      //12.includes()
+      let str22="Hello world";
+      let str23=str22.includes("llo");
+      console.log(`the res is ${str23}`);
+
+      //13.concat()
+      let str24="hello";
+      let str25=str24.concat(""," world!");
+      console.log(`the res is ${str25}`);
+
+    </script>
+    </body>
+</html>
