@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array</title>
 </head>
+    <!-- Table for displaying user data -->
+    <table border="1" id="userTable">
+        <tr>
+            <th>First Name</th>
+            <th>Age</th>
+            <th>Address</th>
+        </tr>
+    </table>
+
 <body>
     <h1>Array in Js</h1>
     <p>operations</p>
@@ -12,7 +21,7 @@
     <p>2.pop</p>
     <p>3.unshift</p>
     <p>4.shift</p>
-    <script>
+    <!-- <script>
         let array1=[1,2,3,4,5,6];
         console.log(array1);
         console.log(array1[3]);
@@ -29,8 +38,51 @@
         let array2=[1,2,3,4,5,6];
         array2.unshift(23);
         console.log("unshift:",array2);
+        console.log("first index of :",array2[0]);
         array2.shift();
         console.log("shift:",array2);
+    </script> -->
+
+
+        <script>
+           let array3=[12,'hi',true,null,{"Name":"Pavan"}];
+           console.log(array3);
+           console.log(typeof array3[4]);
+           for(let item  of array3){
+            console.log("the  item is:",item,  "  it's type is:", typeof item);
+            console.log(`the item is ${item} and the type is ${typeof item}`);
+            console.log("the value of item:",array3[item],);
+            //console.log("item")
+
+           }
+           let users = [
+            { firstName: "Swathi", age: 21, address: "Hassan" },
+            { firstName: "Pavan", age: 25, address: "Bangalore" },
+            { firstName: "Raj", age: 30, address: "Mysore" },
+            { firstName: "Sneha", age: 28, address: "Udupi" },
+            { firstName: "Kiran", age: 23, address: "Tumkur" },
+            { firstName: "Deepak", age: 26, address: "Davangere" },
+            { firstName: "Asha", age: 24, address: "Shimoga" },
+            { firstName: "Vikas", age: 29, address: "Chitradurga" },
+            { firstName: "Megha", age: 27, address: "Mangalore" },
+            { firstName: "Arun", age: 22, address: "Hubli" }
+        ];
+
+        // Reference the table
+        let table = document.getElementById("userTable");
+
+        // Loop through users using for...of
+        for (let user of users) {
+            let row = table.insertRow();  // Insert a new row
+            let cell1 = row.insertCell(0);  // First column (First Name)
+            let cell2 = row.insertCell(1);  // Second column (Age)
+            let cell3 = row.insertCell(2);  // Third column (Address)
+
+            // Insert data into cells
+            cell1.textContent = user.firstName;
+            cell2.textContent = user.age;
+            cell3.textContent = user.address;
+        }
     </script>
 </body>
 </html>

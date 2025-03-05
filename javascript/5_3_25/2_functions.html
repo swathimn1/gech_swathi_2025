@@ -132,10 +132,58 @@
         console.log("this  is  the display function expression");
      } 
      display1();
+
+// 1. Function accepting a parameter and not returning a value
+const paraNotReturn = function (num) {
+    console.log(`The given number is ${num}`);
+};
+paraNotReturn(10);
+
+// 2. Function accepting a parameter and returning a value
+const paraReturn = function (num) {
+    return num * 2;
+};
+console.log(`The result is ${paraReturn(5)}`);
+
+// 3. Function not accepting a parameter and not returning a value
+const notParaNotReturn = function () {
+    console.log("This function has no parameters and no return value.");
+};
+notParaNotReturn();
+
+// 4. Function not accepting a parameter but returning a value
+const notParaReturn = function () {
+    return "Hello world!";
+};
+console.log(notParaReturn());
+
+//3.arrow functions
      const  display2 = () => {
         console.log("this  is  the display  arrow function ");
      } 
      display2();
+
+     
+// 1. Function accepting a parameter and not returning a value
+const paraNotReturnArrow = (num) => {
+    console.log(`The given number is ${num}`);
+};
+paraNotReturnArrow(20);
+
+// 2. Function accepting a parameter and returning a value
+const paraReturnArrow = (num) => num * 3;
+console.log(`The result is ${paraReturnArrow(7)}`);
+
+// 3. Function not accepting a parameter and not returning a value
+const notParaNotReturnArrow = () => {
+    console.log("This arrow function has no parameters and no return value.");
+};
+notParaNotReturnArrow();
+
+// 4. Function not accepting a parameter but returning a value
+const notParaReturnArrow = () => "Hello, this is an arrow function returning a value!";
+console.log(notParaReturnArrow());
+
    </script>
 </body>
 </html>
