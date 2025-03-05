@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <h1>Array in Js</h1>
+    <p>operations</p>
+    <p>1.push.</p>
+    <p>2.pop</p>
+    <p>3.unshift</p>
+    <p>4.shift</p>
+    <script>
+        let array1=[1,2,3,4,5,6];
+        console.log(array1);
+        console.log(array1[3]);
+
+        //push  and pop
+         const res1=array1.push(23);
+         console.log("the pushed element is :",res1)
+        console.log("after pushing:",array1);
+         const res= array1.pop();
+         console.log("the popped element is:",res);
+        console.log("after popping:",array1);
+
+        //3.unshift
+        let array2=[1,2,3,4,5,6];
+        array2.unshift(23);
+        console.log("unshift:",array2);
+        array2.shift();
+        console.log("shift:",array2);
+    </script>
+</body>
+</html>
