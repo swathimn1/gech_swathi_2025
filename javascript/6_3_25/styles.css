@@ -1,0 +1,88 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Center the container */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background: linear-gradient(135deg ,#d75eff,#6687ff); */
+    background-color:lightgoldenrodyellow;
+}
+
+/* Main container */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    width:40vw;
+    height:40vh;
+
+}
+
+/* Heading */
+.container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Password display */
+.display {
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background: #e67e22;
+    color: blue;
+    font-weight: bold;
+    outline: none;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    color:white;
+}
+
+#gen_btn {
+    background: white;
+    color: blue;
+}
+
+#gen_btn:hover {
+    background: #d75eff;
+}
+
+#copy_btn {
+    background: #2ecc71;
+    color: blue;
+}
+
+#copy_btn:hover {
+    background: blue;
+    color:#d75eff;
+}

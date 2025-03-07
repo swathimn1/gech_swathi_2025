@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table using forEach Loop</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: black;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be inserted here -->
+        </tbody>
+    </table>
+
+    <script>
+        // Array of objects
+        let people = [
+            { firstName: "Swathi", age: 21, address: "Hassan" },
+            { firstName: "Pavan", age: 25, address: "Bangalore" },
+            { firstName: "Raj", age: 30, address: "Mysore" },
+            { firstName: "Sneha", age: 28, address: "Udupi" },
+            { firstName: "Kiran", age: 23, address: "Tumkur" },
+            { firstName: "Deepak", age: 26, address: "Davangere" },
+            { firstName: "Asha", age: 24, address: "Shimoga" },
+            { firstName: "Vikas", age: 29, address: "Chitradurga" },
+            { firstName: "Megha", age: 27, address: "Mangalore" },
+            { firstName: "Arun", age: 22, address: "Hubli" }
+        ];
+
+        // Get table body element
+        const tableBody = document.querySelector("#dataTable tbody");
+
+        // Loop through array and insert rows
+        people.forEach(person => {
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+                <td>${person.firstName}</td>
+                <td>${person.age}</td>
+                <td>${person.address}</td>
+            `;
+
+            tableBody.appendChild(row);
+        });
+
+    </script>
+
+</body>
+</html>

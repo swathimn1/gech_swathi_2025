@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table using forEach Loop</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>firstName</th>
+                <th>age</th>
+                <th>address</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Data will be inserted here -->
+        </tbody>
+    </table>
+
+    <script>
+        let users = [
+            { firstName: "Swathi", age: 21, address: "Hassan" },
+            { firstName: "Pavan", age: 25, address: "Bangalore" },
+            { firstName: "Raj", age: 30, address: "Mysore" },
+            { firstName: "Sneha", age: 28, address: "Udupi" },
+            { firstName: "Kiran", age: 23, address: "Tumkur" },
+            { firstName: "Deepak", age: 26, address: "Davangere" },
+            { firstName: "Asha", age: 24, address: "Shimoga" },
+            { firstName: "Vikas", age: 29, address: "Chitradurga" },
+            { firstName: "Megha", age: 27, address: "Mangalore" },
+            { firstName: "Arun", age: 22, address: "Hubli" }
+        ];
+
+        // Get table body element using getElementById
+        const tableBody = document.getElementById("tableBody");
+
+        // Loop through array and insert rows
+        users.forEach(users => {
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+                <td>${users.firstName}</td>
+                <td>${users.age}</td>
+                <td>${users.address}</td>
+            `;
+
+            tableBody.appendChild(row);
+        });
+    </script>
+
+</body>
+</html>

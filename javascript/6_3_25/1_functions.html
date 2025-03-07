@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+    <style>
+        table,thead,tr,th,tbody,td{
+            border:1px,solid,red;
+            border-collapse:collapse;
+
+        }
+    </style>
+</head>
+<body>
+
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>firstName</th>
+                <th>age</th>
+                <th>address</th>
+            </tr>
+            <tbody id="table body">
+                
+            </tbody>
+        </thead>
+    </table>
+    <h1>Arrow Functions</h1>
+    <script>
+        //1st method
+        const iseven = (num) =>{
+            return num %2 ==0;
+        }
+        const  res=iseven(4);
+        console.log(res);
+        //2nd method
+        const iseven1 = (num) =>{
+            if(num %2==0){
+                return  true;
+            }
+            else{
+
+                return false;
+            }
+        }
+        const  res1=iseven1(4);
+        console.log(res1);
+
+     //3rd method
+        const  iseven2= num =>num %2 ==0;
+        const  res2=iseven2(4);
+        console.log(res2);
+//4th method
+        const iseven3=(num) =>{
+          return num%2==0;
+        }
+        const  res3=iseven3(4);
+        console.log(res3);
+
+
+        let users = [
+            { firstName: "Swathi", age: 21, address: "Hassan" },
+            { firstName: "Pavan", age: 25, address: "Bangalore" },
+            { firstName: "Raj", age: 30, address: "Mysore" },
+            { firstName: "Sneha", age: 28, address: "Udupi" },
+            { firstName: "Kiran", age: 23, address: "Tumkur" },
+            { firstName: "Deepak", age: 26, address: "Davangere" },
+            { firstName: "Asha", age: 24, address: "Shimoga" },
+            { firstName: "Vikas", age: 29, address: "Chitradurga" },
+            { firstName: "Megha", age: 27, address: "Mangalore" },
+            { firstName: "Arun", age: 22, address: "Hubli" }
+        ];
+
+        let content="";
+        for(let item of  users){
+            // console.log(item);
+            // console.log(item.firstName);
+            // console.log(item.age);
+            // console.log(item.address);
+            content += `<tr>
+                <td>${item.firstName}</td>
+                <td>${item.age}</td>
+                <td>${item.address}</td>
+
+
+                    <tr>`
+        }
+        console.log(content);
+        document.getElementById("table body").innerHTML =content;
+
+
+    </script>
+</body>
+</html>

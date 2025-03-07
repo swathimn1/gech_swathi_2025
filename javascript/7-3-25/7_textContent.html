@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Content</title>
+</head>
+<body>
+    <h1>Text Content</h1>
+    <p class="ptag">Lorem, ipsum dolor <span style="display:none;">Debitis obcaecati </span> reiciendis.</p>
+    <script>
+        const ptag=document.querySelector(".ptag");
+        console.log(ptag.innerText);
+        console.log(ptag.textContent);
+
+        ptag.innerText="Hello";
+        ptag.textContent="Hello";
+    </script>
+</body>
+</html>

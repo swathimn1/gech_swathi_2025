@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How many ways</title>
+    <!--1. it is not recommended to  use -->
+     <!-- <script src="./first.js"></script> -->
+      
+      <!-- 3.it is not recommended to  use -->
+      <!-- <script src="./first.js" async>  </script>  -->
+       <!--it will stop the html parsing then  start the execution of the  javascript -->
+
+       <!-- 4.it is   recommended to  use -->      
+        <!--it  will simultaneously run the html  and javascript it run html first and run javascript  later-->
+      <!-- <script src="./first.js" defer></script>  -->
+
+</head>
+<body>
+    <h1>How many we can use external Js in Html</h1>
+    <p>1.inside a head</p>
+    <p>2.inside a ablove closing body</p>
+     <p>3.using  async inside head</p>
+    <p>4.using defer inside head</p>
+    <!--2.  time to load it is  recommended to  use but  it  will take some time to load -->
+     <!-- <script src="./first.js"></script>  -->
+
+     <h1 id="demo">hello world</h1>
+     <button  type="button" onclick="document.getElementById('demo').style.color='red'">click  me</button>
+
+     <script>
+       let color= document.getElementById('demo').style.color='blue';
+
+     </script>
+</body>
+</html>

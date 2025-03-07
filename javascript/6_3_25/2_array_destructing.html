@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Array destructing</h1>
+    <!-- using a spread operator  that is we are splitting array into multiple variables -->
+    <script>
+        let array1=["item1","item2","item3","item4"]
+        console.log(array1);
+        let var1=array1[0];
+        let var2=array1[1];
+        let var3=array1[2];
+        
+        let var4=array1[3];
+        console.log(var1,var2,var3,var4);
+
+        let array2=["item1","item2"];
+        const [var5,var6] = array2;
+        console.log("array:",var5,var6);
+
+        let array3=["item1","item2","item3","item4","item5","item6","item7","item8"];
+        const [var7,var8] = array2;
+        console.log("array:",var7,var8);
+
+        
+        let array4=["item1","item2","item3","item4","item5","item6","item7","item8"];
+        const [var9,var10, ...rest] = array4;
+        console.log("array:",var9,var10);
+        console.log("rest:",rest);
+
+        let array5=["item1","item2","item3"];
+        const [var11, ,var13]=array5;
+        console.log("last:",var11,var13);
+
+       
+
+        let users = [
+            { firstName: "Swathi", age: 21, address: "Hassan" },
+            { firstName: "Pavan", age: 25, address: "Bangalore" },
+            { firstName: "Raj", age: 30, address: "Mysore" },
+            
+        ];
+        //const[user1,user2,user3]=users;
+        //const[{firstName},user2,user3]=users;
+        const[{address},user2,user3]=users;
+
+        //console.log("users:",{firstName},user2,user3);
+        console.log(user2.firstName);
+        console.log(address);
+        console.log(user2);
+        console.log(user3);
+        
+
+    </script>
+</body>
+</html>

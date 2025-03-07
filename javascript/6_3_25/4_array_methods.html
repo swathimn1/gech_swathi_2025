@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+</head>
+<body>
+    <h1>Array Methods</h1>
+    <p>1.forEach</p>
+    <p>2.map</p>
+    <p>3.filter</p>
+    <p>4.reduce</p>
+    <p>5.sort</p>
+    <p>6.splice(start,delete,insert)</p>
+    <p>7.each</p>
+    <p>8.some</p>
+   
+     <script>
+        const array1=[1,2,3,4,5,6];
+        //1.for each
+        array1.forEach((curEle,index,array)=>{
+            console.log(curEle*curEle,"index is  :",index,"array is:",array);
+        });
+
+
+
+        let users = [
+            { firstName: "Swathi", age: 21, address: "Hassan" },
+            { firstName: "Pavan", age: 25, address: "Bangalore" },
+            { firstName: "Raj", age: 30, address: "Mysore" }
+            
+        ];
+         
+         users.forEach((curEle)=>{
+            console.log(curEle.firstName);
+         })
+
+         //2.map
+         const array2=[2,4,6,8,9,10];
+         const array3=array2.map((curEle,index,array2)=>{
+            return curEle*curEle;
+            })
+            console.log("array2:",array2);
+            console.log("array3:",array3);
+            let users1 = [
+            { firstName: "Swathi", age: 21, address: "Hassan" },
+            { firstName: "Pavan", age: 25, address: "Bangalore" },
+            { firstName: "Raj", age: 30, address: "Mysore" }
+            
+        ];
+        const users2=users1.map((ele)=>{
+           return ele.firstName;
+
+        })
+        console.log("users1:",users1);
+        console.log("users2:",users2);
+
+        //3.filter
+        const  array4=[1,2,3,4,5,6,7,8,9,10];
+        const array5=array4.filter((curele)=>{
+           return curele %2==0;
+        });
+        console.log("array4:",array4);
+        console.log("array5:",array5);
+
+        //4.reduce
+        // const array6=[1,2,3,4,5,6,7,8];
+        // const res=array6.reduce((previous,current,index,array6)=>{
+        //    return previous+current;
+        // })
+        // console.log("array6:",array6);
+        // console.log("res:",res);
+        const array6=[1,2,3,4,5,6,7,8];
+        const res=array6.reduce((previous,current,index,array6)=>{
+           return previous+current;
+        },10)
+        console.log("array6:",array6);
+        console.log("res:",res);
+  
+
+        //5.sort
+        //ascending  order
+        const array7=[7,5,3,1,6];
+        const res1=array7.sort((a,b)=>a - b);
+        console.log("array7:",array7);
+        console.log("res1:",res1);
+
+        //descending order
+        const array8=[7,5,3,1,6];
+        const res2=array8.sort((a,b)=>  b - a);
+        console.log("array8:",array8);
+        console.log("res2:",res2);
+
+
+     //6.splice method
+     const array9=[1,2,3,4,5,6,7,8,9,10]
+      array9.splice(1,2)
+     console.log("array 9 is :",array9)
+     
+     //inserting items to array
+     const array10=[11,12,13,14,15,16,17]
+    array10.splice(9,0,"18,19")
+     console.log("array10 is:", array10);
+
+     //each 
+   //   const array11=[1,2,3,4,5,6];
+   //   const hasOdd=array11.each(num=>num %2 !==0);
+   //   console.log(hasOdd);
+   //   const hasEven=array11.each(num=>num %2 ===0);
+   //   console.log(hasEven);
+
+
+     //some method
+     const array12=[1,2,3,4,5,6];
+     const hasEven1=array12.some(num=>num %2 ===0);
+     console.log(hasEven1);
+     </script>
+
+</body>
+</html>

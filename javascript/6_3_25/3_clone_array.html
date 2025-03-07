@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clone array</title>
+    </head>
+    <body>
+        <h1>how to clone array</h1>
+        <p>1. spread operator(...)</p>
+        <p>2.slice(start,end)</p>
+        <p>3.concat</p>
+
+        <script>
+        const array1=[12,13,14,15,16];
+        array1.push(23);
+        // array1=[24,25,26,27];//we cannot reassign the new array for const variable.
+        //const array2=array1;
+        array1.push(24);
+        //console.log( "array1:",array1);//12,13,14,15,16,24
+        //console.log( "array2:",array2);//12,13,14,15,16,24
+       
+       const array2 =[...array1];
+       array1.push(25);
+       console.log( "array1:",array1);//12,13,14,15,16,24,25
+       console.log( "array2:",array2);//12,13,14,15,16,24
+
+       const array3=["item1","item2","item3"];
+       const array4=array3.slice(0);
+       console.log("array3:",array3);
+       console.log("array4:",array4);
+       array3.push("item4");
+       console.log("array3:",array3);//item1,2,3,4
+       console.log("array4:",array4);//item1,2,3
+
+
+       //3.concat
+       const array5=["item1","item2","item3"];
+       const array6=[].concat(array5);
+       array5.push("item4");
+       console.log("array5:",array5);//item1,2,3,4
+       console.log("array6:",array6)//item1,2,3
+    </script>
+
+    </body>
+</html>

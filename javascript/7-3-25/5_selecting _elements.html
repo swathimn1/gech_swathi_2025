@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecting Elements</title>
+</head>
+<body>
+    <h1>selecting the HTML</h1>
+    <p id="first_p">1.using getElementBYID</p>
+    <p class="second_p">2.using getElementsByClassName</p>
+    <p class="second_p">2.using getElementsByClassName</p>
+    <p class="second_p">2.using getElementsByClassName</p>
+    <p id="third_p">3.using querySelector id</p>
+    <p class="third_p1">4.using querySelector class</p>
+
+
+    <script>
+        //1.using  getElementByID
+        const  fist_p=document.getElementById("first_p");
+        first_p.style.color="red";
+
+         //1.using  getElementsBYCLassName
+         const  second_p=document.getElementsByClassName("second_p");
+        second_p[0].style.color="green";
+        console.log("second_p");
+        // console.log("second_p[0]")
+
+        //3.using querySelector
+        const third_p=document.querySelector("#third_p");
+        const third_p1=document.querySelector(".third_p1");
+        third_p.style.color="blue";
+        third_p1.style.color="orange";
+
+
+    </script>
+</body>
+</html>

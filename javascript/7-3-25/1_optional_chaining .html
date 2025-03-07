@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>optional Chaining</h1>
+    <p>syntax:?</p>
+
+    <script>
+        const obj1={
+            firstName:"Swathi",
+            age:21,
+            address:{
+                country:"INDIA",
+                state:"Karnataka",
+                city:"hassan"
+            },
+        };
+
+        const adventurer={
+            name:"Alice",
+            cat:{
+                name:"Dinah",
+            },
+        };
+        console.log(adventurer);
+        console.log(adventurer.cat1);
+        console.log(adventurer?.cat1?.color);
+
+        console.log(obj1);
+         console.log(obj1.address1);
+       // console.log(obj1?.address1?.country??"country not available")
+        console.log(obj1?.address1?.country);
+    </script>
+</body>
+</html>

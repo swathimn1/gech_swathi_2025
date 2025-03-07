@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops in JAVASCRIPT</title>
+</head>
+<body>
+    <h1>Object Destructing</h1>
+    <p>spread  operator(...)</p>
+
+    <script>
+       const obj1={
+            firstName:"Swathi",
+            age:21,
+            gender:"Female",
+            address:"bengaluru"
+
+        }
+        console.log(obj1);
+        // const {firstName,age,gender,address}=obj1;
+        // console.log(firstName);
+        // console.log(age);
+        // console.log(gender);
+        // console.log(address);
+
+        const { firstName, ...rest}=obj1;
+        console.log(firstName);
+        console.log(rest);
+       
+
+
+    </script>
+</body>
+</html>

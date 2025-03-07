@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This</title>
+</head>
+<body>
+    <h1>this  keyword</h1>
+    <p>thhis  keyword will points to current object</p>
+    <script>
+    //console.log(this)
+    function hello(){
+        console.log(this);
+    }
+    //window.hello();
+    //hello();
+    //window.alert;
+     const fun1 =()=>{
+        console.log(this)
+     }
+      //fun1();
+     
+      const obj1={
+        firstName:"Swathi",
+        lastName:"M N",
+        age:23,
+        //about: function(){
+          // console.log(this);
+        //   about:()=>{
+        //     console.log(this);
+        about:function(){
+            // console.log(obj1.firstName+" "+obj1.lastName)
+            console.log(this.firstName+ " "+this.lastName); 
+            
+           
+            
+        }
+            
+
+          }
+         
+        
+        
+      
+      obj1.about();
+    </script>
+</body>
+</html>

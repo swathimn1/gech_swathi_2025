@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <h1>objects</h1>
+    <p>we can access the properties of an object using  . and []</p>
+    <!-- object is a real world  entity 
+          class is  an blueprint of an object
+          object can have both properties and methods.-->
+    <script>
+        const car_obj={
+            carName:"Tesla",
+            type:"EV",
+            wheels:4,
+            "four seat":true,
+            speed:function(){
+                console.log("Tesla is moving by 60km/h");
+            }
+         
+        }
+        console.log(car_obj);
+        console.log(car_obj.carName);
+        console.log(car_obj.wheels);
+       car_obj.speed();
+       console.log(car_obj["four seat"]);
+
+       //adding an item to an object
+       const new_obj={...car_obj};
+       car_obj.color="red";
+       console.log("Car obj:",car_obj.color);
+       console.log(car_obj);
+
+     //deleting an item from object
+     
+     delete car_obj.color;
+     console.log(" After Car obj:",car_obj);
+     console.log(new_obj);
+    </script>
+</body>
+</html>
