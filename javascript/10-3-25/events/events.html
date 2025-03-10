@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events in js</title>
+</head>
+<body>
+    <h1>events in js</h1>
+    <p>1.mouse events</p>
+    <p>2.keyboard events</p>
+    <p>3.form events</p>
+    <p>4.window events</p>
+    <p>5.document events</p>
+    <p>6.clipboard events</p>
+    <p>7.Media events</p>
+
+    <h3 id="htag">Hello Html</h3>
+    <!-- <button onclick="handleClick()">change the text</button> -->
+    <button id="btn" >change  the text</button>
+    <button id="btn1">click <meta></button>
+    <script>
+        const body=document.body;
+        // //1.mouse events
+        // const handleClick =()=>{
+        //    const htag=document.querySelector("#htag");
+        //    htag.textContent="Hello Js";
+        // }
+        // // handleClick();
+
+        //2.addEventListener
+        // const btn=document.querySelector("#btn");
+        // const  btn1=document.querySelector("#btn1");
+        // const htag=document.querySelector("#htag")
+        // btn.addEventListener("click",()=>{
+        //     console.log("hello");
+        //     htag.textContent="hello Js";
+
+        // })
+
+        // btn.addEventListener("dblclick",()=>{
+        //     console.log("hello");
+        //     htag.textContent="swathi";
+        // })
+        // btn.addEventListener("mouseover",()=>{
+        //     console.log("hello");
+        //     htag.style.backgroundColor="yellow";
+        // });
+        // btn.addEventListener("mousedown",()=>{
+        //     console.log("hello");
+        //     htag.style.backgroundColor="red";
+        // });
+        // btn.addEventListener("mouseup",()=>{
+        //     console.log("hello");
+        //     htag.style.backgroundColor="green";
+        // });
+        // btn.addEventListener("mouseout",()=>{
+        //     console.log("hello");
+        //     htag.style.backgroundColor="blue";
+        // });
+
+
+        //2.keyboard events
+        document.addEventListener("keydown",function(event){
+            if (event.key  ==="Enter"){
+              console.log("user clicked the enter")
+            }
+            else if(event.key=="Escape"){
+                console.log("user clicked  the escape");
+            }
+            document.body.style.backgroundColor="yellow";
+        })
+    
+
+        document.addEventListener("keyup",()=>{
+            // if (event.key  ==="Enter"){
+            //   console.log("user clicked the enter")
+            // }
+            // else if(event.key=="Escape"){
+            //     console.log("user clicked  the escape");
+            // }
+            document.body.style.backgroundColor="red";
+        });
+
+
+        document.addEventListener("keydown",()=>{
+            // if (event.key  ==="Enter"){
+            //   console.log("user clicked the enter")
+            // }
+            // else if(event.key=="Escape"){
+            //     console.log("user clicked  the escape");
+            // }
+            document.body.style.backgroundColor="green";
+        });
+
+        document.addEventListener("keypress",()=>{
+            // if (event.key  ==="Enter"){
+            //   console.log("user clicked the enter")
+            // }
+            // else if(event.key=="Escape"){
+            //     console.log("user clicked  the escape");
+            // }
+            document.body.style.backgroundColor="blue";
+        });
+        
+    </script>
+</body>
+</html>

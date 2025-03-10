@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form events</title>
+</head>
+<body>
+    <h1>form events</h1>
+    <p>1.input event</p>
+    <p>2.focus</p>
+    <p>3.blur</p>
+    <form>
+  <input type="text" name="username" id="username" placeholder="enter username">
+  <select name="" id="number">
+    <option value="1">1</option>
+    <option value="1">2</option>
+  </select>
+  <p id="result">h</p>
+  <button type="submit">Submit</button>
+</form>
+
+<form id ="contactform">
+    <input type="text" name="username" id=""><br>
+    <input type="email" name="email" id=""><br>
+    <textarea name="message" id=""  row="20" cols="30"></textarea>
+    <input type="submit" value="submit">
+</form>
+    <script>
+        //3.form events
+        //1.input
+        // const username=document.querySelector("#username")
+        // const result=document.querySelector("#result");
+        //     username.addEventListener("input",()=>{
+        //        result.innerText=username.value;
+        //     })
+
+        //  username.addEventListener("blur",()=>{
+        //     console.log("blurred the username");
+        //  })
+
+        //  username.addEventListener("focus",()=>{
+        //     console.log("focus the username");
+        //  })
+
+        //  document.querySelector("#number").addEventListener("change",()=>{
+        //     console.log("select input field is changed")
+        //  })
+
+        const contactform=document.querySelector("#contactform");
+        contactform.addEventListener("submit",(event)=>{
+           event.preventDefault();
+             console.log("user submit the form");
+             console.log("hello");
+        });
+        
+    </script>
+</body>
+</html>

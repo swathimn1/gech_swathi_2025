@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h1>Async JS</h1>
+    <!-- we are  using v8 js engine like  google  chrome,Node.js  that's the reason th code will execute in browser-->
+    <script>
+   console.log("hello");
+   setTimeout(()=>{
+    console.log("hello1");
+   },3000);
+    //  it will take time of 3000 to run meaning  ,first hello,hello2 will load after 3000 ms hello1 will load
+ 
+   setInterval(()=>{
+    console.log("hello121")
+   },3000)
+   console.log("hello2");//it will load after 3000ms it will load repeatedly.
+   
+
+
+    </script>
+</body>
+</html>
