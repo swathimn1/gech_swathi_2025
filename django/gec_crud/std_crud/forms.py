@@ -11,6 +11,6 @@ class StudentForm(forms.ModelForm):
             attrs={"class":"form-control","placeholder":"enter your name"}),
             "email": forms.EmailInput(
             attrs={"class":"form-control","placeholder":"enter your email"}),
-            "password" : forms.PasswordInput(
+            "password" : forms.TextInput(
                 attrs={"class":"form-control","placeholder":"enter your password"}),
          }
