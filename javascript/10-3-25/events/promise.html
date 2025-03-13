@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Promise</title>
+    </head>
+    <body>
+        <h1>promise in js</h1>
+        <p>promise is a future value where it ca be resolve to rejected.</p>
+        <p>1.pending-initial state</p>
+        <p>fulfilled-resolved</p>
+        <p>rejected-rejected</p>
+        <p>
+            <pre>
+            const var_name=new Promise((resolve,reject)=>{
+                //code
+            })
+        </pre>
+        </p>
+        <script>
+        const items=["vegetables","salt","rice","chips"];
+        const result=new Promise((resolve,reject)=>{
+        //    console.log(items);
+        // return resolve("items");
+        if(items.includes("vegetables")&&items.includes("salt")&&items.includes("rice")){
+             resolve("fried rice");
+        }
+        else{
+            reject("cannot make fried  rice");
+        }
+        })
+        //1.then and catch
+         console.log(result);
+        result.then((value)=>{
+           console.log("with then:",value);
+    // }).then
+
+        }).catch(error=>console.log("with then:",error));
+        // 2. using await 
+        const fried_rice=async()=>{
+            try{
+        const  res=await result;
+        console.log( " with await:",res);
+            }catch(error){
+                console.log("with await:",error)
+            }
+        }
+        fried_rice();
+    </script>
+    </body>
+</html>

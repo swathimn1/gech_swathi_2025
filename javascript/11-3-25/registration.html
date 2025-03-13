@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap Form</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+    </head>
+    <body>
+        <div class="container shadow-lg p-3 my-5 rounded-3">
+            <div class="row justify-content-center">
+                <h1 class="text-center">Registration Form</h1>
+                <div class="col-12 col-sm-8 col-lg-6">
+                    <form id="registrationForm" novalidate>
+                        <div class="mb-3 p-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name"
+                                placeholder="Enter your Name">
+                            <span id="nameError" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3 p-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email"
+                                placeholder="Enter your email" required>
+                            <span id="emailError" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3 p-3">
+                            <label for="password"
+                                class="form-label">Password</label>
+                            <input type="password" class="form-control"
+                                id="password" placeholder="Enter password"
+                                required>
+                            <span id="passwordError" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3 p-3">
+                            <label for="confirmPassword"
+                                class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control"
+                                id="confirmPassword"
+                                placeholder="Confirm password" required>
+                            <span id="confirmPasswordError"
+                                class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3 p-3">
+                            <label for="pincode"
+                                class="form-label">Pincode</label>
+                            <input type="text" class="form-control" id="pincode"
+                                placeholder="Enter pincode" required>
+                            <span id="pincodeError" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3 p-3">
+                            <label for="address"
+                                class="form-label">Address</label>
+                            <textarea class="form-control" id="address" rows="3"
+                                placeholder="Enter your address"
+                                required></textarea>
+                            <span id="addressError" class="text-danger"></span>
+                        </div>
+
+                        <button type="submit"
+                            class="btn btn-primary w-100">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const registrationForm = document.querySelector("#registrationForm");
+
+            registrationForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                const showError = (eleId, text) => {
+                    document.getElementById(eleId).textContent = text;
+                };
+
+                const clearError = (eleId) => {
+                    document.getElementById(eleId).textContent = "";
+                };
+
+                let isValid = true;
+
+                const name = document.querySelector("#name").value.trim();
+                const email = document.querySelector("#email").value.trim();
+                const password = document.querySelector("#password").value.trim();
+                const confirmPassword = document.querySelector("#confirmPassword").value.trim();
+                const address = document.querySelector("#address").value.trim();
+                const pincode = document.querySelector("#pincode").value.trim();
+
+                console.log(name,email,password,confirmPassword,address,pincode);
+
+                // Name Validation
+                if (name === "") {
+                    showError("nameError", "Name field is required");
+                    isValid = false;
+                } else if (name.length < 3) {
+                    showError("nameError", "Name must contain at least 3 characters");
+                    isValid = false;
+                } else {
+                    clearError("nameError");
+                }
+
+                // Email Validation
+                const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (email === "") {
+                    showError("emailError", "Email field is required");
+                    isValid = false;
+                } else if (!emailPattern.test(email)) {
+                    showError("emailError", "Invalid email format");
+                    isValid = false;
+                } else {
+                    clearError("emailError");
+                }
+
+                // Password Validation
+                const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[@$%!?&])[A-Za-z\d@#$%^&*?!]{8,}$/;
+                if (password === "") {
+                    showError("passwordError", "Password field is required");
+                    isValid = false;
+                } else if (!passwordPattern.test(password)) {
+                    showError("passwordError", "Password must be at least 8 characters and include an uppercase letter, lowercase letter, and a special character");
+                    isValid = false;
+                } else {
+                    clearError("passwordError");
+                }
+
+                // Confirm Password Validation
+                if (confirmPassword === "") {
+                    showError("confirmPasswordError", "Confirm password field is required");
+                    isValid = false;
+                } else if (confirmPassword !== password) {
+                    showError("confirmPasswordError", "Passwords do not match");
+                    isValid = false;
+                } else {
+                    clearError("confirmPasswordError");
+                }
+
+                // Pincode Validation (6-digit PIN)
+                const pincodePattern = /^\d{6}$/;
+                if (pincode === "") {
+                    showError("pincodeError", "Pincode field is required");
+                    isValid = false;
+                } else if (!pincodePattern.test(pincode)) {
+                    showError("pincodeError", "Pincode must be 6 digits");
+                    isValid = false;
+                } else {
+                    clearError("pincodeError");
+                }
+
+                // Address Validation
+                if (address === "") {
+                    showError("addressError", "Address field is required");
+                    isValid = false;
+                } else {
+                    clearError("addressError");
+                }
+
+                if (isValid) {
+                    alert("Form submitted successfully!");
+                    registrationForm.reset();
+                }
+            });
+        });
+    </script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
