@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+</head>
+<style>
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 20px;
+        }
+
+        /* Centering content */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid blue;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: blue;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #d1e7fd;
+        }
+
+        /* Button Styling */
+        .btn {
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-success {
+            background-color: green;
+            color: white;
+        }
+        
+
+        .btn-danger {
+            background-color: red;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        /* Add Student Button */
+        .add-student {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .add-student:hover {
+            background-color: darkblue;
+        }
+    </style>
+
+<body>
+	 <a th:href="@{/add-student}">Add Student</a>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Actions</th>
+        </tr>
+        <tbody>
+            <tr th:each="student:${students}">
+                <td th:text="${student.id}"></td>
+                <td th:text="${student.fName}"></td>
+                <td th:text="${student.lName}"></td>
+                <td th:text="${student.email}"></td>
+                <td th:text="${student.phone}"></td>
+                <td th:text="${student.address}"></td>
+                 <td>
+                    <a class="btn btn-success" th:href="@{/edit-student(id=${student.id})}"
+                    
+                        style="text-decoration: underline; ">Edit</a>
+                    <a class="btn btn-danger" th:href="@{/delete-student(id=${student.id})}" 
+                     style="text-decoration: underline;">Delete</a>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

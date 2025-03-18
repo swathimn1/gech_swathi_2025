@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="alert alert-secondary text-center">Delete page</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ employee_form.as_p }}
+    <input type="submit" value="Delete" class="btn btn-success">
+</form>
+{% endblock content %}
