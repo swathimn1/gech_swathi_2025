@@ -6,66 +6,73 @@
     <title>Data Types</title>
 </head>
 <body>
-    <!--data types-->
-    <h3>1.Number</h3>
-    <h3>2.String</h3>
-    <h3>3.boolean</h3>
-    <h3>4.undefined</h3>
-    <h3>5.null</h3>
-    <h3>6.Bigint</h3>
-    <h3>7.Object</h3>   
-     <!-- {}.[] -->
-    <h3>8.Symbol</h3>
+    <h3>1. Number</h3>
+    <h3>2. String</h3>
+    <h3>3. Boolean</h3>
+    <h3>4. Undefined</h3>
+    <h3>5. Null</h3>
+    <h3>6. BigInt</h3>
+    <h3>7. Object</h3>   
+    <h3>8. Symbol</h3>
+
     <script>
-        // 1.Number
-        // var,let,const
-        let a=12;
-        console.log(" value of a :",a);
-        console.log("type of a:",typeof a)
+        // 1. Number
+        let a = 12;
+        console.log("Value of a:", a);
+        console.log("Type of a:", typeof a);
 
-        // 2.String
-        let  b="Hello";
-        console.log("Value of b:",b)
-        console.log("Type of b:",typeof b)
-        // 3.boolean
-        let  c="5";
-        let d="7";
-        // console.log("Value of c :",c);
-        // console.log("Type of c :",typeof c);
-        // (c == d)
-        console.log(Boolean(10>9));
+        // 2. String
+        let b = "Hello";
+        console.log("Value of b:", b);
+        console.log("Type of b:", typeof b);
 
-        // 4.undefined
+        // 3. Boolean
+        let c = "5";
+        let d = "7";
+        console.log("c == d:", c == d); // false
+        console.log("c < d:", c < d);   // true
+        console.log("Boolean(10 > 9):", Boolean(10 > 9)); // true
+
+        // 4. Undefined
         let m;
-       console.log("Value of m :",m);
-       console.log("Type of m :",typeof m);
-        let e="30";
-        console.log("Value of e :",e);
-       console.log("Type of e :",typeof e);
-        // 5.null
+        console.log("Value of m:", m);
+        console.log("Type of m:", typeof m);
+
+        let e = "30";
+        console.log("Value of e:", e);
+        console.log("Type of e:", typeof e);
+
+        // 5. Null
         let f = null;
-        console.log("Value of f :",f);
-       console.log("Type of f :",typeof f);
-       //6.Bigint
-    //    let  g = Bigint("121");
-    //    console.log("Value of g :",g);
-    //    console.log("Type of g :",typeof g);
-       let h=121n;
-       console.log("Value of h :",h);
-       console.log("Type of h :",typeof h);
+        console.log("Value of f:", f);
+        console.log("Type of f:", typeof f); // Note: typeof null is "object" (JavaScript bug)
 
-    //    7.object
-    let obj=[1,2,3,4,5,6];
-    console.log("the  value of  obj:",obj);
-    console.log("the type of obj :",typeof obj);
+        // 6. BigInt
+        let g = BigInt("121");
+        console.log("Value of g:", g);
+        console.log("Type of g:", typeof g);
 
-    let obj1={
-        firstName :"Swathi",
-        lastName:"M N"
-    }
-    console.log("the  value of  obj1:",obj1);
-    console.log("the type of obj1 :",typeof obj1);
+        let h = 121n;
+        console.log("Value of h:", h);
+        console.log("Type of h:", typeof h);
 
+        // 7. Object (Arrays and Objects)
+        let obj = [1, 2, 3, 4, 5, 6];
+        console.log("The value of obj:", obj);
+        console.log("The type of obj:", typeof obj);
+        console.log("Is obj an array?", Array.isArray(obj));
+
+        let obj1 = {
+            firstName: "Swathi",
+            lastName: "M N"
+        };
+        console.log("The value of obj1:", obj1);
+        console.log("The type of obj1:", typeof obj1);
+
+        // 8. Symbol
+        let sym = Symbol("unique");
+        console.log("Value of sym:", sym);
+        console.log("Type of sym:", typeof sym);
 
     </script>
 </body>
