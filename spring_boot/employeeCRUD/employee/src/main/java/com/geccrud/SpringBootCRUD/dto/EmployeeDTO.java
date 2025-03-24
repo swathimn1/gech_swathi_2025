@@ -42,5 +42,9 @@ public class EmployeeDTO {
     public void setDepartment(String department) {
         this.department = department;
     }
+	public void setAddress(Object address) {
+		// TODO Auto-generated method stub
+		
+	}
 }
 
