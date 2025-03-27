@@ -26,5 +26,6 @@ public class ArrayListDemo2 {
 		Collections.reverse(list);
 		System.out.println("reverse order of list:" + list);
 	}
+	
 
 }

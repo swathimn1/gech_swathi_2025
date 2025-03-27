@@ -12,6 +12,7 @@ public class ArrayListDemo1 {
 		list.add(10);
 		list.add(30);
 		list.add(40);
+		//to iterate/traverse through each element we use 4 loops like:-for loop,for each, forEach,iterator
 		// for loop
 		for (int i = 0; i < list.size(); i++) {
 			System.out.print(list.get(i) + " ");
@@ -31,11 +32,12 @@ public class ArrayListDemo1 {
 		
 		// 4.iterator
 		Iterator<Integer> itr = list.iterator();
-		while (itr.hasNext()) {
-//        	int i=itr.next();
+		while (itr.hasNext()) {  //to check if next element is present or not.
+//        	int i=itr.next();//to return the next element.
 			System.out.print(itr.next() + " ");
 //			System.out.print(i + " ");
 		}
 
 	}
 }
+

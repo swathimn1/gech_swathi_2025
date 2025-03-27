@@ -4,7 +4,7 @@ public class Collectioninjava {
 
 	public static void main(String[] args) {
 		/*
-		 * why we need colletion
+		 * why we need collection
 		 * =========================
 		 * to over come the drawback of array we go for collection
 		 * 
@@ -28,5 +28,6 @@ public class Collectioninjava {
 		
 		System.out.println(arr[1]);
 	}
+	
 
 }

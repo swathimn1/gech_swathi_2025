@@ -58,5 +58,6 @@ public class SetInterfaceDemo {
 
 		System.out.println("Set1:" + set1);
 	}
+	
 
 }

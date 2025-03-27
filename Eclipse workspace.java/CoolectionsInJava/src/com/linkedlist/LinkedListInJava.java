@@ -45,5 +45,6 @@ public class LinkedListInJava {
 		 * integer takes a 4 bytes of memory for each block
 		 * */
 	}
+	
 
 }

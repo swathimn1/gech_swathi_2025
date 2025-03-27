@@ -24,5 +24,6 @@ public class MapInJava {
 		System.out.println(map.containsKey(3));
 		System.out.println(map.containsValue("ten"));
 	
+		
 	}
 }

@@ -15,7 +15,17 @@ public class TreeMapExample {
         treemap.remove(4);
         System.out.println(treemap);
         System.out.println(treemap.firstKey());
+        System.out.println(treemap.containsKey(3));
         System.out.println(treemap.containsValue("kivi"));
+        System.out.println(treemap.replace(1, "cherry"));
+        System.out.println(treemap);
+        System.out.println(treemap.size());
+        System.out.println(treemap.higherKey(1));
+        System.out.println(treemap);
+        System.out.println(treemap.reversed());
+        System.out.println(treemap.values());
+        System.out.println(treemap.keySet());
 	}
+	
 
 }
