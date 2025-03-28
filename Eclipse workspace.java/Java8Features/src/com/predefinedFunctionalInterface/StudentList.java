@@ -48,5 +48,6 @@ public class StudentList {
         // Display details of passed students
         System.out.println("\nDetails of Passed Students:");
         Students.forEach(Student::display);
+      
     }
 }

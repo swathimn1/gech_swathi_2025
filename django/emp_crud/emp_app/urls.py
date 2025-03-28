@@ -6,4 +6,4 @@ urlpatterns = [
     path('home/', views.home, name='home'),
     path('edit/<int:id>/', views.edit_employee, name='edit'),
     path('delete/<int:id>/', views.delete_employee, name='delete'),
-]
+gi]
