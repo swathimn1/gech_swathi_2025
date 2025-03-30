@@ -27,7 +27,7 @@ class Student {
     }
 }
 
-// ✅ StudentList is now a separate class (not inside Student)
+//  StudentList is now a separate class (not inside Student)
 public class StudentList {
     public static void main(String[] args) {
         // List of students
@@ -45,9 +45,9 @@ public class StudentList {
         System.out.println("All Students: " + students);
         System.out.println("Students with Marks > 60: " + Students);
 
-        // Display details of passed students
-        System.out.println("\nDetails of Passed Students:");
-        Students.forEach(Student::display);
+//        // Display details of passed students
+//        System.out.println("\nDetails of Passed Students:");
+//        Students.forEach(Student::display);
       
     }
 }
