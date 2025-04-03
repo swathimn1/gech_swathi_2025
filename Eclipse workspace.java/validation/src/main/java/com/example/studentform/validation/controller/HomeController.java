@@ -1,5 +1,7 @@
 package com.example.studentform.validation.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.studentform.validation.dto.StudentDTO;
+import com.example.studentform.validation.models.Student;
 import com.example.studentform.validation.service.StudentService;
 
 import jakarta.validation.Valid;
@@ -30,6 +33,13 @@ public class HomeController {
 	public String addStudent(Model model) {
 		model.addAttribute("studentDTO", new StudentDTO());
 		return "add_student";
+	}
+	@GetMapping("/student-list")
+	public String listStudents(Model  model) {
+		List<Student> students=studentService.getAllStudents();
+		model.addAttribute("students",students);
+		return "student-list";
+		
 	}
 
 	@PostMapping("/add-student")
