@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body style="margin:100px;">
+    <h1>Add Student</h1>
+    
+    <form action="#" method="post" th:object="${studentDTO}" novalidate>
+         
+           <label for="name">Name:</label>
+           <input type="text" th:field="*{name}" name="name" id="name" placeholder="Enter your name" required><br>
+           <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+           
+           <label for="age">age:</label>
+           <input type="number" th:field="*{age}" name="age" id="age" placeholder="Enter your age"   required><br>
+           <p th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></p>
+           
+           <label for="email">Email:</label>
+           <input type="text" th:field="*{email}" name="email" id="email" placeholder="Enter ur Email" value="abc@gmail.com" required><br>
+           <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+           
+           <label for="password">Password:</label>
+           <input type="password" th:field="*{password}"  id="password" name="password" placeholder="Enter your Password" required><br>
+           <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+          
+           <input type="submit" value="submit">
+        </form>
+</body>
+</html>
