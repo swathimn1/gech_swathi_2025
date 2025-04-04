@@ -1,5 +1,7 @@
 package com.example.studentform.validation.dto;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -18,6 +20,9 @@ public class StudentDTO {
 	private String email;
 	@NotBlank(message="Student password  is required")
 	private String password;
+	private MultipartFile image;
+	
+	
 	public String getName() {
 		return name;
 	}
@@ -41,6 +46,14 @@ public class StudentDTO {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+		public MultipartFile getImage() {
+			return image;
+		}
+		public void setImage(MultipartFile image) {
+			this.image = image;
+		
+		
 	}
 	
 

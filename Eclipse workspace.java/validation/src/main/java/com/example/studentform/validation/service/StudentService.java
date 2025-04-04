@@ -19,7 +19,8 @@ public class StudentService {
 	}
 		
 		public List<Student> getAllStudents(){
-			return studentRepository.findAll();
+			List<Student> students=studentRepository.findAll();
+			return students;
 			
 		}
 	
@@ -32,6 +33,33 @@ public class StudentService {
 		student.setPassword(studentDTO.getPassword());
 		studentRepository.save(student);
 
+	}
+
+	public void deleteStudent(int id) {
+		Student student=studentRepository.findById(id).get();
+		studentRepository.delete(student);
+	}
+
+	public StudentDTO editStudent(int id) {
+		Student student=studentRepository.findById(id).get();
+		StudentDTO studentDTO=new StudentDTO();
+		studentDTO.setName(student.getName());
+		studentDTO.setAge(student.getAge());
+		studentDTO.setEmail(student.getEmail());
+		studentDTO.setPassword(student.getPassword());
+		return studentDTO;
+		
+		
+	}
+	
+
+	public void updateStudent(StudentDTO studentDTO, int id) {
+		Student student=studentRepository.findById(id).get();
+		student.setName(studentDTO.getName());
+		student.setAge(studentDTO.getAge());
+		student.setEmail(studentDTO.getEmail());
+		student.setPassword(studentDTO.getPassword());
+		studentRepository.save(student);
 	}
 
 }
