@@ -19,18 +19,20 @@ public class Student {
 	@Column(name = "student_age")
 	private int age;
 
-	@Column(name = "student_email")
+	
+	@Column(unique=true)
 	private String email;
 	@Column(name = "student_password")
 	private String password;
 
 	private String imagePath;
+	private String documentPath;
 
 	public Student() {
 		super();
 	}
 
-	public Student(int id, String name, int age, String email, String password, String imagePath) {
+	public Student(int id, String name, int age, String email, String password, String imagePath,String documentPath) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -38,7 +40,10 @@ public class Student {
 		this.email = email;
 		this.password = password;
 		this.imagePath = imagePath;
+		this.documentPath=documentPath;
 	}
+
+	
 
 	public int getId() {
 		return id;
@@ -86,6 +91,13 @@ public class Student {
 
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
+	}
+	public String getDocumentPath() {
+		return documentPath;
+	}
+
+	public void setDocumentPath(String documentPath) {
+		this.documentPath = documentPath;
 	}
 
 }

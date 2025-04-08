@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Edit User</title>
+<link rel="stylesheet" th:href="@{/css/style2.css}">
+</head>
+<body>
+
+	<h2>Edit User</h2>
+
+	<div th:if="${edit}" style="color: green;">
+		<p th:text="${edit}"></p>
+	</div>
+
+	<form th:action="@{/registration/update/{id}(id=${registration.id})}"
+		th:object="${registration}" method="post">
+		<label>Name:</label> <input type="text" th:field="*{name}" required><br>
+		<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+			class="error"></div>
+		<br> <label>Email:</label> <input type="email"
+			th:field="*{email}" required><br>
+		<div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+			class="error"></div>
+		<br> <label>Phone:</label> <input type="text" th:field="*{phone}"
+			required><br>
+		<div th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"
+			class="error"></div>
+		<br> <label>City:</label> <select th:field="*{city}">
+			<option value="">-- Select --</option>
+			<option value="Bangalore">BANGALORE</option>
+			<option value="Mysore">MYSORE</option>
+			<option value="Delhi">DELHI</option>
+		</select><br>
+		<div th:if="${#fields.hasErrors('city')}" th:errors="*{city}"
+			class="error"></div>
+		<br> <label>Gender:</label> <input type="radio"
+			th:field="*{gender}" value="Male"> MALE <input type="radio"
+			th:field="*{gender}" value="Female"> FEMALE <br>
+		<div th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"
+			class="error"></div>
+		<br> <label>Skills:</label> <input type="checkbox"
+			th:field="*{skill}" value="Java"> JAVA <input type="checkbox"
+			th:field="*{skill}" value="Python"> PYTHON <input
+			type="checkbox" th:field="*{skill}" value="JavaScript">
+		JAVASCRIPT <br>
+		<div th:if="${#fields.hasErrors('skill')}" th:errors="*{skill}"
+			class="error"></div>
+		<br> <label>Address:</label>
+		<textarea th:field="*{address}" required></textarea>
+		<br>
+		<div th:if="${#fields.hasErrors('address')}" th:errors="*{address}"
+			class="error"></div>
+		<br>
+
+		<button type="submit">Update</button>
+	</form>
+
+</body>
+</html>

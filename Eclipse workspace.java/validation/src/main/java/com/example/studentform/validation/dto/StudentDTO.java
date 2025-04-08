@@ -21,6 +21,9 @@ public class StudentDTO {
 	@NotBlank(message="Student password  is required")
 	private String password;
 	private MultipartFile image;
+	private MultipartFile document;
+	
+	
 	
 	
 	public String getName() {
@@ -55,6 +58,12 @@ public class StudentDTO {
 		
 		
 	}
+		public MultipartFile getDocument() {
+			return document;
+		}
+		public void setDocument(MultipartFile document) {
+			this.document = document;
+		}
 	
 
 }

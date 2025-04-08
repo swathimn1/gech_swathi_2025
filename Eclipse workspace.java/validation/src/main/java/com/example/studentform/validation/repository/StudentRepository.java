@@ -17,4 +17,10 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
     *  4.to save student-save()
     *  */
 	/* difference between crud(only crud operation)and  jpa repository(crud&pagination and sorting)- */
+	
+/*
+ * findById->an object like Student
+ * existsBy->Boolean
+ * */
+	public Student findByEmail(String email);
 }

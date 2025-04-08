@@ -2,43 +2,66 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Registration Form</title>
+    <style>
+        label { display: inline-block; width: 120px; margin-top: 10px; }
+        input, select, textarea { margin-top: 10px; }
+        .error { color: red; font-size: 0.9em; }
+        .success { color: green; font-weight: bold; }
+    </style>
 </head>
 <body>
     <h2>User Registration</h2>
-    <form th:action="@{/registration/register}" th:object="${registration}" method="post">
+
+    <!-- Success message -->
+    <div th:if="${success}" class="success">
+        <p th:text="${success}"></p>
+    </div>
+
+    <!-- Registration form -->
+    <form th:action="@{/registration/register}" th:object="${dto}" method="post">
         <label>Name:</label>
-        <input type="text" th:field="*{name}" required><br>
+        <input type="text" th:field="*{name}" required />
+        <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error"></div><br>
 
         <label>Age:</label>
-        <input type="number" th:field="*{age}" required><br>
+        <input type="number" th:field="*{age}" required />
+        <div th:if="${#fields.hasErrors('age')}" th:errors="*{age}" class="error"></div><br>
 
         <label>Email:</label>
-        <input type="email" th:field="*{email}" required><br>
+        <input type="email" th:field="*{email}" required />
+        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error"></div><br>
 
         <label>Phone:</label>
-        <input type="text" th:field="*{phone}" required><br>
+        <input type="text" th:field="*{phone}" required />
+        <div th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}" class="error"></div><br>
 
         <label>Date of Birth:</label>
-        <input type="date" th:field="*{dob}" required><br>
+        <input type="date" th:field="*{dob}" required />
+        <div th:if="${#fields.hasErrors('dob')}" th:errors="*{dob}" class="error"></div><br>
 
         <label>City:</label>
         <select th:field="*{city}">
+            <option value="">--Select--</option>
             <option value="Bangalore">Bangalore</option>
             <option value="Mysore">Mysore</option>
             <option value="Delhi">Delhi</option>
-        </select><br>
+        </select>
+        <div th:if="${#fields.hasErrors('city')}" th:errors="*{city}" class="error"></div><br>
 
         <label>Gender:</label>
-        <input type="radio" th:field="*{gender}" value="Male"> Male
-        <input type="radio" th:field="*{gender}" value="Female"> Female <br>
+        <input type="radio" th:field="*{gender}" value="Male" /> Male
+        <input type="radio" th:field="*{gender}" value="Female" /> Female
+        <div th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}" class="error"></div><br>
 
         <label>Skills:</label>
-        <input type="checkbox" th:field="*{skill}" value="Java"> Java
-        <input type="checkbox" th:field="*{skill}" value="Python"> Python
-        <input type="checkbox" th:field="*{skill}" value="JavaScript"> JavaScript <br>
+        <input type="checkbox" th:field="*{skill}" value="Java" /> Java
+        <input type="checkbox" th:field="*{skill}" value="Python" /> Python
+        <input type="checkbox" th:field="*{skill}" value="JavaScript" /> JavaScript
+        <div th:if="${#fields.hasErrors('skill')}" th:errors="*{skill}" class="error"></div><br>
 
         <label>Address:</label>
-        <textarea th:field="*{address}" required></textarea><br>
+        <textarea th:field="*{address}" required></textarea>
+        <div th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="error"></div><br>
 
         <button type="submit">Register</button>
     </form>

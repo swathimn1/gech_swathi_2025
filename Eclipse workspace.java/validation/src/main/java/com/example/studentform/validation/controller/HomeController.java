@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -46,6 +47,16 @@ public class HomeController {
 
 	@PostMapping("/add-student")
 	public String addStudent(@Valid @ModelAttribute StudentDTO studentDTO, BindingResult result, Model model,RedirectAttributes attributes) {
+		Student student=studentRepository.findByEmail(studentDTO.getEmail());
+		if(student!=null) {
+			result.addError(new FieldError("studentDTO","email","email is already exists"));
+		}
+		if(studentDTO.getImage().isEmpty()) {
+			result.addError(new FieldError("studentDTO","image","image is required"));
+		}
+		if(studentDTO.getDocument().isEmpty()) {
+			result.addError(new FieldError("studentDTO","document","document is required"));
+		}
 		if (result.hasErrors()) {
 			return "add_student";
 		}
@@ -58,7 +69,7 @@ public class HomeController {
 	@GetMapping("/std-delete")
 	public String deleteStudent(@RequestParam int id,RedirectAttributes attributes) {
 		studentService.deleteStudent(id);
-		attributes.addFlashAttribute("delete","student deleted successfully");
+		attributes.addFlashAttribute("success","student deleted successfully");
 		return "redirect:/";
 
 	}
@@ -73,13 +84,18 @@ public class HomeController {
 	}
 		@PostMapping("/edit-student")
 		public String updateStudent(@Valid @ModelAttribute StudentDTO studentDTO,BindingResult result,@RequestParam int id,Model model ,RedirectAttributes attributes) {
+			Student student1=studentRepository.findByEmail(studentDTO.getEmail());
+			if(student1!=null && student1.getId()!=id) {  /*it will check whether the email already exists except this  one .the one which we are editing*/
+				result.addError(new FieldError("studentDTO","email","email is already exists"));
+			}
+		
 			if(result.hasErrors()) {
 				Student student=studentRepository.findById(id).get();
 				 model.addAttribute("student",student);
 				return "edit-student";
 			}
 			studentService.updateStudent(studentDTO,id);
-			attributes.addFlashAttribute("edit","student edited successfully");
+			attributes.addFlashAttribute("success","student edited successfully");
 		return "redirect:/";
 	}
 }

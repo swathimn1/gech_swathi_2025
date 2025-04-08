@@ -7,7 +7,7 @@
 <body style="margin:100px;">
     <h1>Edit Student</h1>
     
-    <form th:action="@{/edit-student(id=${student.id})}" method="post" th:object="${studentDTO}" novalidate>
+    <form th:action="@{/edit-student(id=${student.id})}"  enctype="multipart/form-data"  method="post" th:object="${studentDTO}" novalidate>
          
            <label for="name">Name:</label>
            <input type="text" th:field="*{name}" name="name" id="name" placeholder="Enter your name" required><br>
@@ -24,6 +24,14 @@
            <label for="password">Password:</label>
            <input type="password" th:field="*{password}"  id="password" name="password" placeholder="Enter your Password" required><br>
            <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+          
+          <label for="image">Image</label>
+          <input type="file" id="image" th:field="*{image}" ><br>
+          <p th:if="${#fields.hasErrors('image')}" th:errors="*{image}"></p>
+          
+           <label for="document">Document</label>
+          <input type="file" id="document" th:field="*{document}" ><br>
+          <p th:if="${#fields.hasErrors('document')}" th:errors="*{document}"></p>
           
            <input type="submit" value="Edit Student">
         </form>
