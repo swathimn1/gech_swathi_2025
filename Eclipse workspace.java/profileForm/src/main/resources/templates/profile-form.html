@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Profile Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        nav {
+            background-color: #111;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav a {
+            color: white;
+            margin-right: 20px;
+            text-decoration: none;
+        }
+
+        h2 {
+            margin-top: 30px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .form-card {
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 14px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-card label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .form-card input[type="text"],
+        .form-card input[type="color"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .form-card input[type="radio"] {
+            margin-left: 10px;
+        }
+
+        .form-card input[type="range"] {
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .form-card output {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 14px;
+        }
+
+        .form-card button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            background: linear-gradient(to right, #007bff, #33aaff);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .form-card button:hover {
+            background: linear-gradient(to right, #0056b3, #007bff);
+        }
+
+       .profile-cards-container {
+		    display: grid;
+		    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+		    gap: 20px;
+		    justify-items: center;
+		    margin: 40px 20px;
+		}
+
+
+        .profile-card {
+            width: 160px;
+            height: 180px;
+            border-radius: 12px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding: 15px 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            position: relative;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .profile-card img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 2px solid white;
+            object-fit: cover;
+        }
+
+        .profile-card div {
+            margin-top: 5px;
+        }
+
+        .delete-btn {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .delete-btn:hover {
+            color: #f8d7da;
+        }
+    </style>
+</head>
+<body>
+<h2>Profile Form</h2>
+
+<div class="form-card">
+    <form th:action="@{/profile}" th:object="${profileDto}" method="post">
+        <div>
+            <label>Name:</label>
+            <input type="text" th:field="*{name}" required />
+        </div>
+        <div>
+            <label>Gender:</label>
+            <input type="radio" th:field="*{gender}" value="Male" /> Male
+            <input type="radio" th:field="*{gender}" value="Female" /> Female
+        </div>
+        <div>
+            <label>Favorite Color:</label>
+            <input type="color" th:field="*{color}" />
+        </div>
+        <div>
+            <label>Font Size:</label>
+            <input type="range" th:field="*{fontSize}" min="10" max="40"
+                   oninput="this.nextElementSibling.value=this.value" />
+            <output th:text="*{fontSize}">16</output>px
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<div class="profile-cards-container">
+    <div th:each="profile : ${profiles}"
+         class="profile-card"
+         th:style="'background-color:' + ${profile.color}">
+
+        <!-- Avatar Image based on gender -->
+        <img th:if="${profile.gender == 'Male'}" th:src="@{/images/male.png}" alt="Male Avatar" />
+        <img th:if="${profile.gender == 'Female'}" th:src="@{/images/female.png}" alt="Female Avatar" />
+
+        <!-- Name with dynamic font size -->
+        <div th:text="${profile.name}" th:style="'font-size:' + ${profile.fontSize} + 'px'">Name</div>
+
+        <!-- Delete Button -->
+        <a th:href="@{'/profile/delete/' + ${profile.id}}" class="delete-btn">🗑️</a>
+    </div>
+</div>
+
+</body>
+</html>
