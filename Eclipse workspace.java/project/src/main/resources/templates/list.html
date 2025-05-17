@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Teachers List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Teachers List</h2>
+        <a href="/admin/faculties/new" class="btn btn-primary mb-3">Add New Teacher</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="faculty : ${faculties}">
+                    <td th:text="${faculty.name}"></td>
+                    <td th:text="${faculty.subject}"></td>
+                    <td th:text="${faculty.email}"></td>
+                    <td>
+                        <a th:href="@{/admin/faculties/edit/{id}(id=${faculty.id})}" class="btn btn-warning btn-sm">Edit</a>
+                        <a th:href="@{/admin/faculties/delete/{id}(id=${faculty.id})}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

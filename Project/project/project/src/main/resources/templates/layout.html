@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="layout(title, content)>
+<head>
+    <meta charset="UTF-8">
+    <title th:replace="${title}">School ERP</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div th:replace="~{fragments/header :: navbar"}></div>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+        <!-- Main Content Area -->
+        <div class="main-content" th:fragment="layoutContent">
+    <div th:replace="${content}"></div>  <!-- inserts child content here -->
+</div>
+    </div>
+
+    <!-- Footer -->
+    <div th:replace="~{fragments/footer :: footer}"></div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Faculty Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 th:if="${faculty.id} == null">Add New Faculty</h2>
+        <h2 th:if="${faculty.id} != null">Edit Faculty</h2>
+        <div th:if="${error}" class="alert alert-danger">
+            <span th:text="${error}"></span>
+        </div>
+        <form th:action="@{/admin/faculties}" th:object="${faculty}" method="post">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" th:field="*{username}" class="form-control" placeholder="Faculty username" required>
+                <div th:if="${#fields.hasErrors('name')}" class="text-danger">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" th:field="*{password}" class="form-control" placeholder="Faculty password" required>
+                <div th:if="${#fields.hasErrors('password')}" class="text-danger">
+            </div>
+            <div class="form-group">
+                <label for="role">Role</label>
+                <select id="role" th:field="*{role}" class="form-control" required>
+                    <option value="" disabled selected>Select Role</option>
+                    <option value="ADMIN">Admin</option>
+                    <option value="FACULTY">Teacher</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Save Faculty</button>
+            <div th:if="${#fields.hasErrors('role')}" class="text-danger">
+        </form>
+    </div>
+</body>
+</html>
