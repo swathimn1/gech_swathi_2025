@@ -16,22 +16,26 @@ public class SchoolClassService {
     @Autowired
     private ClassRepository classRepository;
 
+    // DTO to Entity
+    private SchoolClass convertToEntity(SchoolClassDTO dto) {
+        SchoolClass sc = new SchoolClass();
+        sc.setId(dto.getId());
+        sc.setName(dto.getName()); // ✅ Corrected
+        sc.setSection(dto.getSection());
+        sc.setClassTeacher(dto.getClassTeacher());
+        sc.setTotalStudents(dto.getTotalStudents());
+        return sc;
+    }
+
+    // Entity to DTO
     private SchoolClassDTO convertToDto(SchoolClass sc) {
-    	SchoolClassDTO dto = new SchoolClassDTO();
+        SchoolClassDTO dto = new SchoolClassDTO();
         dto.setId(sc.getId());
         dto.setName(sc.getName());
         dto.setSection(sc.getSection());
         dto.setClassTeacher(sc.getClassTeacher());
+        dto.setTotalStudents(sc.getTotalStudents());
         return dto;
-    }
-
-    private SchoolClass convertToEntity(SchoolClassDTO dto) {
-        SchoolClass sc = new SchoolClass();
-        sc.setId(dto.getId());
-        sc.setName(dto.getName());
-        sc.setSection(dto.getSection());
-        sc.setClassTeacher(dto.getClassTeacher());
-        return sc;
     }
 
     public List<SchoolClassDTO> getAllClasses() {
@@ -53,10 +57,11 @@ public class SchoolClassService {
             sc.setName(dto.getName());
             sc.setSection(dto.getSection());
             sc.setClassTeacher(dto.getClassTeacher());
+            sc.setTotalStudents(dto.getTotalStudents());
             SchoolClass updated = classRepository.save(sc);
             return convertToDto(updated);
         }
-        return null; // or throw exception
+        return null;
     }
 
     public boolean deleteClass(Long id) {
@@ -65,11 +70,11 @@ public class SchoolClassService {
             classRepository.delete(optionalClass.get());
             return true;
         }
-        return false; // or throw exception
+        return false;
     }
 
     public SchoolClassDTO getClassById(Long id) {
         Optional<SchoolClass> schoolClass = classRepository.findById(id);
-        return schoolClass.map(this::convertToDto).orElse(null); // or throw exception
+        return schoolClass.map(this::convertToDto).orElse(null);
     }
 }

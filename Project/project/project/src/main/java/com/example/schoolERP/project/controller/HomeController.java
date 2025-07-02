@@ -25,21 +25,6 @@ public class HomeController {
 		return "home";
 	}
 
-	@GetMapping("/manage_classes")
-	public String manageClasses() {
-		return "admin/manage_classes";
-	}
-	
-	@GetMapping("/manage_faculty")
-	public String manageFaculty() {
-		return "admin/manage_faculty";
-	}
-	
-	@GetMapping("/manage_students")
-	public String manageStudents() {
-		return "manage_students";
-	}
-	
 	@GetMapping("/login")
 	public String Login() {
 		return "login";

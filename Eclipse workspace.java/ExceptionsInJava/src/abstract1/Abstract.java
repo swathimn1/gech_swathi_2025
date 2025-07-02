@@ -12,6 +12,7 @@ class Dog implements Animal {
  public void eat() {
      System.out.println("Dog is eating bones.");
  }
+ 
 
  @Override
  public void makeSound() {

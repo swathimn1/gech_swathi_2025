@@ -36,6 +36,15 @@ public class Collectioninjava1 {
 			System.out.println(collection1);
 			System.out.println(collection1.isEmpty());
 			System.out.println(collection1.size());
+
+			Collection collection3=new ArrayList();
+			collection3.add(6);
+			collection3.add("varshinii");
+			collection3.add(60.78);
+			System.out.println(collection3);
+			System.out.println(collection3.isEmpty());
+			System.out.println(collection3.size());
+
 			
 	}
 	

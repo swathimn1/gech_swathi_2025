@@ -43,6 +43,11 @@ public class ArrayListDemo {
 		list.remove(i);
 //		list.clear();
 		System.out.println(list);
+		ArrayList<Integer> list1=new ArrayList<Integer>();
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		System.out.println(list1);
 
 	}
 	

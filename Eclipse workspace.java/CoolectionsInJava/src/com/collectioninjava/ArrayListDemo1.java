@@ -14,20 +14,30 @@ public class ArrayListDemo1 {
 		list.add(40);
 		//to iterate/traverse through each element we use 4 loops like:-for loop,for each, forEach,iterator
 		// for loop
-		for (int i = 0; i < list.size(); i++) {
-			System.out.print(list.get(i) + " ");
+		// for (int i = 0; i < list.size(); i++) {
+		// 	System.out.print(list.get(i) + " ");
+		// }
+		// System.out.println();
+		for(int i=0;i<list.size();i++){
+			System.out.println(list.get(i)+"");
 		}
 		System.out.println();
 
 		// 2. for each loop
-		for (int i : list) {
+		// for (int i : list) {
 
-			System.out.print(i + " ");
+		// 	System.out.print(i + " ");
+		// }
+		// System.out.println();
+		for(int i:list){
+			System.out.println(i+"");
 		}
 		System.out.println();
 		
 		// 3.forEach
 		list.forEach(i-> System.out.print(i + " "));
+		System.out.println();
+		list.forEach(i->System.out.println(i+""));
 		System.out.println();
 		
 		// 4.iterator
@@ -36,6 +46,10 @@ public class ArrayListDemo1 {
 //        	int i=itr.next();//to return the next element.
 			System.out.print(itr.next() + " ");
 //			System.out.print(i + " ");
+		}
+		Iterator<Integer>itr1=list.iterator();
+		while(itr.hasNext()){
+			System.out.println(itr1.next()+"");
 		}
 
 	}

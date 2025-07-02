@@ -57,7 +57,7 @@ public class FunctionsInJava {
 		obj1.add2();
 		obj1.add3();
 		
-		FunctionsInJava obj2=new FunctionsInJava();
+		//FunctionsInJava obj2=new FunctionsInJava();
 		//obj2.privateFunction();
 		
 

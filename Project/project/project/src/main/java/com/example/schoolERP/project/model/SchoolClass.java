@@ -1,16 +1,22 @@
 package com.example.schoolERP.project.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "school_class")
 public class SchoolClass {
-    @Id @GeneratedValue
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
     private String section;
     private String classTeacher;
+    private int totalStudents;
 	public Long getId() {
 		return id;
 	}
@@ -35,6 +41,11 @@ public class SchoolClass {
 	public void setClassTeacher(String classTeacher) {
 		this.classTeacher = classTeacher;
 	}
+	public int getTotalStudents() {
+		return totalStudents;
+	}
+	public void setTotalStudents(int totalStudents) {
+		this.totalStudents = totalStudents;
+	}
 
-    
 }

@@ -38,6 +38,15 @@ public class Listinjava {
 		System.out.println(str1);
 		Double value1=(double)list1.get(2);
 		System.out.println(value1);
+
+		List list2=new ArrayList();
+		list2.add(5);
+		list2.add("swathi");
+		list2.add(60.78);
+		System.out.println(list);
+		System.out.println(list.get(1));
+		int value3=list2.get(3);
+		System.out.println(value3);
 	
 		
 		
