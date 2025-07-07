@@ -1,11 +1,14 @@
 package com.example.schoolERP.project.dto;
 
+import jakarta.persistence.Column;
+
 public class SchoolClassDTO {
+
     private Long id;
     private String name;
     private String section;
-    private String classTeacher;
-    private int totalStudents;
+    @Column(name = "total_students")
+    private Integer totalStudents;
 	public Long getId() {
 		return id;
 	}
@@ -24,18 +27,12 @@ public class SchoolClassDTO {
 	public void setSection(String section) {
 		this.section = section;
 	}
-	public String getClassTeacher() {
-		return classTeacher;
-	}
-	public void setClassTeacher(String classTeacher) {
-		this.classTeacher = classTeacher;
-	}
-	public int getTotalStudents() {
+	public Integer getTotalStudents() {
 		return totalStudents;
 	}
-	public void setTotalStudents(int totalStudents) {
+	public void setTotalStudents(Integer totalStudents2) {
 		this.totalStudents = totalStudents;
 	}
 
-    // Getters and Setters
+
 }

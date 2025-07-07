@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Faculty - Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Edit Faculty Details</h2>
+    <form th:action="@{/faculty/update}" method="post" th:object="${faculty}" class="mt-4">
+        
+        <!-- Hidden ID -->
+        <input type="hidden" th:field="*{id}" />
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="Enter faculty name">
+        </div>
+
+        <div class="mb-3">
+            <label for="subject" class="form-label">Subject</label>
+            <input type="text" th:field="*{subject}" class="form-control" id="subject" placeholder="Enter subject">
+        </div>
+
+        <div class="mb-3">
+            <label for="department" class="form-label">Department</label>
+            <input type="text" th:field="*{department}" class="form-control" id="department" placeholder="Enter department">
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" th:field="*{email}" class="form-control" id="email" placeholder="Enter email">
+        </div>
+
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" th:field="*{username}" class="form-control" id="username" placeholder="Enter username">
+        </div>
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" th:field="*{password}" class="form-control" id="password" placeholder="Enter password">
+        </div>
+
+        <div class="mb-3">
+            <label for="role" class="form-label">Role</label>
+            <input type="text" th:field="*{role}" class="form-control" id="role" placeholder="Enter role (e.g., ROLE_ADMIN)">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Faculty</button>
+        <a th:href="@{/faculty}" class="btn btn-secondary ms-2">Cancel</a>
+    </form>
+</div>
+</body>
+</html>

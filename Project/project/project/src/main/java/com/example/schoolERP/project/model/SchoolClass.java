@@ -3,20 +3,16 @@ package com.example.schoolERP.project.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "school_class")
 public class SchoolClass {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) 
-    
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
     private String name;
-
     private String section;
-    private String classTeacher;
-    private int totalStudents;
+    @Column(name = "total_students")
+    private Integer totalStudents;
 	public Long getId() {
 		return id;
 	}
@@ -35,17 +31,13 @@ public class SchoolClass {
 	public void setSection(String section) {
 		this.section = section;
 	}
-	public String getClassTeacher() {
-		return classTeacher;
+	public Integer getTotalStudents() {
+	    return totalStudents;
 	}
-	public void setClassTeacher(String classTeacher) {
-		this.classTeacher = classTeacher;
+
+	public void setTotalStudents(Integer totalStudents) {
+	    this.totalStudents = totalStudents;
 	}
-	public int getTotalStudents() {
-		return totalStudents;
-	}
-	public void setTotalStudents(int totalStudents) {
-		this.totalStudents = totalStudents;
-	}
+
 
 }

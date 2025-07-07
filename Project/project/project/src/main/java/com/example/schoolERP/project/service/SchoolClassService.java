@@ -2,8 +2,7 @@ package com.example.schoolERP.project.service;
 
 import com.example.schoolERP.project.dto.SchoolClassDTO;
 import com.example.schoolERP.project.model.SchoolClass;
-import com.example.schoolERP.project.repository.ClassRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.schoolERP.project.repository.SchoolClassRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,68 +12,69 @@ import java.util.stream.Collectors;
 @Service
 public class SchoolClassService {
 
-    @Autowired
-    private ClassRepository classRepository;
+    private final SchoolClassRepository classRepository;
 
-    // DTO to Entity
-    private SchoolClass convertToEntity(SchoolClassDTO dto) {
-        SchoolClass sc = new SchoolClass();
-        sc.setId(dto.getId());
-        sc.setName(dto.getName()); // ✅ Corrected
-        sc.setSection(dto.getSection());
-        sc.setClassTeacher(dto.getClassTeacher());
-        sc.setTotalStudents(dto.getTotalStudents());
-        return sc;
-    }
-
-    // Entity to DTO
-    private SchoolClassDTO convertToDto(SchoolClass sc) {
-        SchoolClassDTO dto = new SchoolClassDTO();
-        dto.setId(sc.getId());
-        dto.setName(sc.getName());
-        dto.setSection(sc.getSection());
-        dto.setClassTeacher(sc.getClassTeacher());
-        dto.setTotalStudents(sc.getTotalStudents());
-        return dto;
+    public SchoolClassService(SchoolClassRepository classRepository) {
+        this.classRepository = classRepository;
     }
 
     public List<SchoolClassDTO> getAllClasses() {
-        return classRepository.findAll().stream()
-                .map(this::convertToDto)
+        return classRepository.findAll()
+                .stream()
+                .map(this::toDto)
                 .collect(Collectors.toList());
     }
 
-    public SchoolClassDTO saveClass(SchoolClassDTO dto) {
-        SchoolClass sc = convertToEntity(dto);
-        SchoolClass saved = classRepository.save(sc);
-        return convertToDto(saved);
-    }
-
-    public SchoolClassDTO updateClass(Long id, SchoolClassDTO dto) {
-        Optional<SchoolClass> optionalClass = classRepository.findById(id);
-        if (optionalClass.isPresent()) {
-            SchoolClass sc = optionalClass.get();
-            sc.setName(dto.getName());
-            sc.setSection(dto.getSection());
-            sc.setClassTeacher(dto.getClassTeacher());
-            sc.setTotalStudents(dto.getTotalStudents());
-            SchoolClass updated = classRepository.save(sc);
-            return convertToDto(updated);
-        }
-        return null;
-    }
-
-    public boolean deleteClass(Long id) {
-        Optional<SchoolClass> optionalClass = classRepository.findById(id);
-        if (optionalClass.isPresent()) {
-            classRepository.delete(optionalClass.get());
-            return true;
-        }
-        return false;
-    }
-
     public SchoolClassDTO getClassById(Long id) {
-        Optional<SchoolClass> schoolClass = classRepository.findById(id);
-        return schoolClass.map(this::convertToDto).orElse(null);
+        return classRepository.findById(id)
+                .map(this::toDto)
+                .orElse(null);
     }
+
+    public SchoolClassDTO saveClass(SchoolClassDTO dto) {
+        SchoolClass saved = classRepository.save(toEntity(dto));
+        return toDto(saved);
+    }
+
+    public void deleteClass(Long id) {
+        classRepository.deleteById(id);
+    }
+
+    // Convert entity to DTO
+    private SchoolClassDTO toDto(SchoolClass c) {
+        SchoolClassDTO dto = new SchoolClassDTO();
+        dto.setId(c.getId());
+        dto.setName(c.getName());
+        dto.setSection(c.getSection());
+        dto.setTotalStudents(c.getTotalStudents());
+        return dto;
+    }
+
+    // Convert DTO to entity
+    private SchoolClass toEntity(SchoolClassDTO dto) {
+        SchoolClass c = new SchoolClass();
+        c.setId(dto.getId());
+        c.setName(dto.getName());
+        c.setSection(dto.getSection());
+        c.setTotalStudents(dto.getTotalStudents());
+        return c;
+    }
+    public SchoolClassDTO updateClass(Long id, SchoolClassDTO dto) {
+        Optional<SchoolClass> optionalClass = classRepository.findById(id); 
+
+        if (optionalClass.isPresent()) {
+            SchoolClass existingClass = optionalClass.get();
+            existingClass.setName(dto.getName());
+            existingClass.setSection(dto.getSection());
+            existingClass.setTotalStudents(dto.getTotalStudents());
+
+            SchoolClass updated = classRepository.save(existingClass); 
+            return toDto(updated); 
+        }
+
+        return null; 
+    }
+
+
+
 }

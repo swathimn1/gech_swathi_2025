@@ -26,10 +26,9 @@ public class StudentService {
         dto.setEmail(student.getEmail());
         return dto;
     }
-
     private Student convertToEntity(StudentDTO dto) {
         Student student = new Student();
-        student.setId(dto.getId());
+        if (dto.getId() != null) student.setId(dto.getId());
         student.setName(dto.getName());
         student.setStudentClass(dto.getStudentClass());
         student.setSection(dto.getSection());
@@ -60,7 +59,7 @@ public class StudentService {
             Student updated = studentRepository.save(student);
             return convertToDto(updated);
         }
-        return null; // or throw exception
+        return null; 
     }
 
     public boolean deleteStudent(Long id) {
@@ -69,7 +68,7 @@ public class StudentService {
             studentRepository.delete(optionalStudent.get());
             return true;
         }
-        return false; // or throw exception
+        return false; 
     }
 
     public StudentDTO getStudentById(Long id) {

@@ -1,40 +1,47 @@
 package com.example.schoolERP.project.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Report {
-    @Id @GeneratedValue
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String studentName;
-    private String grade;
-    private String remarks;
+
+    private String title;
+    private String description;
+    private String type; 
+    private String createdBy;
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getStudentName() {
-		return studentName;
+	public String getTitle() {
+		return title;
 	}
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	public String getGrade() {
-		return grade;
+	public String getDescription() {
+		return description;
 	}
-	public void setGrade(String grade) {
-		this.grade = grade;
+	public void setDescription(String description) {
+		this.description = description;
 	}
-	public String getRemarks() {
-		return remarks;
+	public String getType() {
+		return type;
 	}
-	public void setRemarks(String remarks) {
-		this.remarks = remarks;
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getCreatedBy() {
+		return createdBy;
+	}
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
 	}
 
-    // Getters and Setters
 }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout/faculty_layout :: content">
+
+<body>
+  <h2>Student Attendance</h2>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Student</th>
+        <th>Date</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="record : ${attendanceRecords}">
+        <td th:text="${record.studentName}">John Doe</td>
+        <td th:text="${record.date}">2025-07-04</td>
+        <td th:text="${record.status}">Present</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

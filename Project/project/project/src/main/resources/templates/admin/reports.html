@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:replace="admin_layout :: adminLayout('Manage Reports', ~{::section})">
+  <section>
+    <h2 class="mb-4">Manage Reports</h2>
+
+    <!-- Add Report Form -->
+    <form th:action="@{/reports/save}" th:object="${report}" method="POST">
+      <input type="hidden" th:field="*{id}" />
+      <div class="row mb-3">
+        <div class="col-md-3"><input type="text" class="form-control" th:field="*{title}" placeholder="Title" required></div>
+        <div class="col-md-3"><input type="text" class="form-control" th:field="*{type}" placeholder="Type" required></div>
+        <div class="col-md-3"><input type="text" class="form-control" th:field="*{createdBy}" placeholder="Created By" required></div>
+      </div>
+      <div class="mb-3">
+        <textarea class="form-control" th:field="*{description}" rows="3" placeholder="Description"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Save Report</button>
+    </form>
+
+    <!-- Report Table -->
+    <table class="table table-bordered mt-4">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Created By</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="r : ${reportList}">
+          <td th:text="${r.id}"></td>
+          <td th:text="${r.title}"></td>
+          <td th:text="${r.type}"></td>
+          <td th:text="${r.description}"></td>
+          <td th:text="${r.createdBy}"></td>
+          <td>
+            <a th:href="@{'/reports/edit/' + ${r.id}}" class="btn btn-sm btn-warning">Edit</a>
+            <a th:href="@{'/reports/delete/' + ${r.id}}" class="btn btn-sm btn-danger" onclick="return confirm('Delete this report?')">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+
+</body>
+</html>

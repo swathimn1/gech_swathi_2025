@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Class - Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Edit Class Details</h2>
+    <form th:action="@{/classes/update}" method="post" th:object="${classDTO}" class="mt-4">
+
+        <!-- Hidden ID -->
+        <input type="hidden" th:field="*{id}" />
+
+        <div class="mb-3">
+            <label for="className" class="form-label">Class Name</label>
+            <input type="text" th:field="*{className}" class="form-control" id="className" placeholder="Enter class name">
+        </div>
+
+        <div class="mb-3">
+            <label for="section" class="form-label">Section</label>
+            <input type="text" th:field="*{section}" class="form-control" id="section" placeholder="Enter section">
+        </div>
+
+        <div class="mb-3">
+            <label for="totalStudents" class="form-label">Total Students</label>
+            <input type="number" th:field="*{totalStudents}" class="form-control" id="totalStudents" placeholder="Enter total students">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Class</button>
+        <a th:href="@{/classes}" class="btn btn-secondary ms-2">Cancel</a>
+    </form>
+</div>
+</body>
+</html>

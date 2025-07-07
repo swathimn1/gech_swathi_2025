@@ -1,6 +1,7 @@
 package com.example.schoolERP.project.dto;
 public class StudentDTO {
     private Long id;
+   
     private String name;
     private String studentClass;
     private String section;
