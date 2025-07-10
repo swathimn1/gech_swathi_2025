@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      th:replace="layout/faculty_layout :: content">
-
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Faculty Dashboard</title>
+</head>
 <body>
-  <h2>Welcome, <span th:text="${facultyName}">Faculty</span>!</h2>
-  <p>Select an action from the sidebar to proceed.</p>
+  <div th:replace="layout/faculty_layout :: facultyLayout('Faculty Dashboard', ~{::section})">
+    <section>
+      <h2>Welcome to Faculty Dashboard!</h2>
+      <p>Select an action from the sidebar to proceed.</p>
+    </section>
+  </div>
 </body>
 </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body th:replace="layout/faculty_layout :: facultyLayout('Add Assignment', ~{::section})">
+
+  <section>
+    <h2 class="mb-4">Add New Assignment</h2>
+
+    <form th:action="@{/assignments/save}" th:object="${assignment}" method="post" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" th:field="*{title}" class="form-control" id="title" placeholder="Enter assignment title" required>
+        <div class="invalid-feedback">Title is required.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea th:field="*{description}" class="form-control" id="description" rows="4" placeholder="Enter description" required></textarea>
+        <div class="invalid-feedback">Description is required.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="dueDate" class="form-label">Due Date</label>
+        <input type="date" th:field="*{dueDate}" class="form-control" id="dueDate" required>
+        <div class="invalid-feedback">Due date is required.</div>
+      </div>
+
+      <button type="submit" class="btn btn-success">Save Assignment</button>
+      <a th:href="@{/assignments}" class="btn btn-secondary ms-2">Cancel</a>
+    </form>
+  </section>
+
+  <script>
+    // Bootstrap form validation
+    (() => {
+      'use strict'
+      const forms = document.querySelectorAll('.needs-validation')
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+  </script>
+
+</body>
+</html>

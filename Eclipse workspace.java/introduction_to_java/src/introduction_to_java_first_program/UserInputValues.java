@@ -14,6 +14,7 @@ public class UserInputValues {
 
 	public static void main(String[] args) {
 		// Create a Scanner object
+		//Class_name var_name=new Class_name();
 		Scanner sc = new Scanner(System.in);
 
 		// Read student's age
@@ -33,8 +34,18 @@ public class UserInputValues {
 		System.out.println("Enter your gender (M/F):");
 		char gender = sc.nextLine().charAt(0); // Reads first character of input
 		System.out.println("Gender is: " + gender);
-
+       
+		System.out.println("Enter your gender:");
+		char gender1=sc.nextLine().charAt(0);
+		System.out.println("Gender is :"+gender1);
+		
+		float marks;
+		System.out.println("Enter marks:");
+		marks=sc.nextFloat();
+		System.out.println("Enter marks:"+marks);
 		// Closing the Scanner object
 		sc.close();
 	}
+	
+	
 }

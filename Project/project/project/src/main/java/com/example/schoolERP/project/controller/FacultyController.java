@@ -7,17 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class FacultyController {
 
-	@GetMapping("/faculty/dashboard")
+	@GetMapping("/faculty_dashboard")
 	public String facultyDashboard(Model model) {
 		model.addAttribute("facultyName", "Dr. Swathi");
 		return "faculty/faculty_dashboard";
 	}
 
-	@GetMapping("/viewAssignments")
-	public String viewAssignments(Model model) {
-		// model.addAttribute("assignments", assignmentService.getAll());
-		return "faculty/view_assignments";
-	}
+	
 
 	@GetMapping("/uploadResults")
 	public String uploadResults(Model model) {
