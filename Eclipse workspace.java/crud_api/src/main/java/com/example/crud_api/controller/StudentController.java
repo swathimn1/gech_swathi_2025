@@ -3,41 +3,56 @@ package com.example.crud_api.controller;
 import com.example.crud_api.dto.StudentDTO;
 import com.example.crud_api.model.Student;
 import com.example.crud_api.service.StudentService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/students")
+@RequestMapping("/students") // Base URL: http://localhost:8080/students
 public class StudentController {
 
-    private final StudentService studentService;
+	private final StudentService studentService;
 
-    @Autowired
-    public StudentController(StudentService studentService) {
-        this.studentService = studentService;
-    }
+	@Autowired
+	public StudentController(StudentService studentService) {
+		this.studentService = studentService;
+	}
 
-    @GetMapping
-    public List<Student> getAllStudents() {
-        return studentService.getAllStudents();
-    }
+	// 🔹 GET all students
+	@GetMapping
+	public List<Student> getAllStudents() {
+		return studentService.getAllStudents();
+	}
 
-    // 🔹 Get student by ID
-    @GetMapping("/{id}")
-    public StudentDTO getStudentById(@PathVariable Long id) {
-        return studentService.getStudentById(id);
-    }
+	// 🔹 GET student by ID
+	@GetMapping("/{id}")
+	public StudentDTO getStudentById(@PathVariable Long id) {
+		return studentService.getStudentById(id);
+	}
 
-    @PostMapping
-    public void saveStudent(@RequestBody StudentDTO studentDTO) {
-        studentService.saveStudent(studentDTO);
-    }
+	// 🔹 POST: Add a new student
+	@PostMapping
+	public void saveStudent(@RequestBody StudentDTO studentDTO) {
+		studentService.saveStudent(studentDTO);
+	}
 
-    @DeleteMapping("/{id}")
-    public void deleteStudent(@PathVariable Long id) {
-        studentService.deleteStudent(id);
-    }
+	// 🔹 PUT: Update an existing student by ID
+	@PutMapping("/{id}")
+	public void updateStudent(@PathVariable Long id, @RequestBody StudentDTO studentDTO) {
+		studentDTO.setId(id);
+		studentService.saveStudent(studentDTO); // Same method used for update
+	}
+
+	// 🔹 DELETE: Delete a student by ID
+	@DeleteMapping("/{id}")
+	public void deleteStudent(@PathVariable Long id) {
+		studentService.deleteStudent(id);
+	}
+
+	// 🔹 Test Endpoint to verify the controller is loading
+	@GetMapping("/test")
+	public String testApi() {
+		return "✅ API is working!";
+	}
 }

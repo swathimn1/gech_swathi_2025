@@ -6,8 +6,9 @@ import jakarta.validation.constraints.NotBlank;
 
 public class UserDTO {
 	@Email(message="Enter a valid email")
-	@NotBlank(message="Student email is required")
+	@NotBlank(message="email is required")
     private String username;
+	@NotBlank(message="password is required")
     private String password;
 
     public String getUsername() {

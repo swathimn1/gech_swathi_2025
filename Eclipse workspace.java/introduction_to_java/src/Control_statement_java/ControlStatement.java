@@ -38,38 +38,38 @@ public class ControlStatement {
 		//if else condition
 		int num1=6;
 		if(num1>0) {
-			System.out.println("the number is positive"+ ""+ num1);
+			System.out.println("the number is positive");
 		}
 		else {
 			
-			System.out.println("the number is negative:"+num1);
+			System.out.println("the number is negative");
 		}
 		
 		//else if ladder
 		
 		int num2=6;
 		if(num2==1) {
-			System.out.println("the number is 1"+num2);
+			System.out.println("the number is :"+num2);
 		}
 		else  if(num2==2){
 			
-			System.out.println("the number is 2:"+num2);
+			System.out.println("the number is :"+num2);
 		}
        else  if(num2==3){
 			
-			System.out.println("the number is 3:"+num2);
+			System.out.println("the number is :"+num2);
 		}
        else  if(num2==4){
 			
-			System.out.println("the number is 4:"+num2);
+			System.out.println("the number is :"+num2);
 		}
        else  if(num2==5){
 			
-			System.out.println("the number is 5:"+num2);
+			System.out.println("the number is :"+num2);
 		}
        else  {
 			
-			System.out.println("the number is 6:"+num2);
+			System.out.println("the number is :"+num2);
 		}
 		
 		//switch statement
@@ -77,28 +77,28 @@ public class ControlStatement {
 		switch(num3) {
 		case 1 :{
 		if(num2==1) {
-			System.out.println("the number is 1"+num2);
+			System.out.println("the number is "+num2);
 			break;
 		}
 		}
 		case 2:{
 		  if(num3==2){
 			
-			System.out.println("the number is 2:"+num2);
+			System.out.println("the number is :"+num2);
 			break;
 		}
 		}
 		case 3:{
         if(num3==3){
 			
-			System.out.println("the number is 3:"+num2);
+			System.out.println("the number is :"+num2);
 			break;
 		}
 	}
 		case 4:{
         if(num3==4){
 			
-			System.out.println("the number is 4:"+num2);
+			System.out.println("the number is :"+num2);
 			break;
 		}
 		
