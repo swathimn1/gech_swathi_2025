@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	th:replace="~{layout :: layout(~{::title}, ~{::section})}">
+
+<head>
+<meta charset="UTF-8">
+<title>Add Task</title>
+</head>
+
+<body>
+	<section>
+		<div class="container my-5">
+			<h2 class="mb-4">
+				<i class="fas fa-tasks me-2"></i>Add New Task
+			</h2>
+
+			<!-- Form Card -->
+			<div class="card shadow-sm">
+				<div class="card-body">
+					<form th:action="@{/tasks/add-task}" th:object="${taskDTO}"
+						method="post" novalidate>
+						<!-- Hidden field for employeeId -->
+						<input type="hidden" th:field="*{employeeId}" />
+
+						<!-- Title -->
+						<div class="mb-3">
+							<label class="form-label">Title</label> <input type="text"
+								class="form-control" th:field="*{title}"
+								placeholder="Task title">
+							<div class="text-danger" th:if="${#fields.hasErrors('title')}"
+								th:errors="*{title}"></div>
+						</div>
+
+						<!-- Description -->
+						<div class="mb-3">
+							<label class="form-label">Description</label>
+							<textarea class="form-control" th:field="*{description}"
+								placeholder="Task description"></textarea>
+							<div class="text-danger"
+								th:if="${#fields.hasErrors('description')}"
+								th:errors="*{description}"></div>
+						</div>
+
+						<!-- Submit -->
+						<button type="submit" class="btn btn-success">
+							<i class="fas fa-plus me-1"></i> Save Task
+						</button>
+						<a th:href="@{/tasks}" class="btn btn-secondary ms-2">Cancel</a>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

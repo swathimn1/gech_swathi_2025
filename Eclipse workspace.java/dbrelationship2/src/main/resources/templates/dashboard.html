@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+     th:replace="~{layout :: layout(~{::title}, ~{::section})}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+<section>
+    <div class="container mt-5">
+        <!-- Alert Message -->
+        <div th:if="${success}" class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="fas fa-check-circle me-1"></i> <span th:text="${success}"></span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <!-- Dashboard Header -->
+        <div class="mb-4 text-center">
+            <h2><i class="fas fa-tachometer-alt me-2"></i>Admin Dashboard</h2>
+            <p class="text-muted">Quick access to Employee Management</p>
+        </div>
+
+        <!-- Dashboard Cards -->
+        <div class="row text-center justify-content-center">
+            <!-- Employees -->
+            <div class="col-md-4 mb-4" sec:authorize="hasRole('ADMIN')">
+                <div class="card border-primary shadow h-100">
+                    <div class="card-body">
+                        <i class="fas fa-user fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title">Employees</h5>
+                        <p class="card-text">Create, update, and manage employee records.</p>
+                        <a th:href="@{/employees}" class="btn btn-primary">
+                            <i class="fas fa-arrow-right me-1"></i>Go to Employees
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Roles -->
+            <div class="col-md-4 mb-4" sec:authorize="hasRole('ADMIN')">
+                <div class="card border-success shadow h-100">
+                    <div class="card-body">
+                        <i class="fas fa-user-shield fa-3x text-success mb-3"></i>
+                        <h5 class="card-title">Roles</h5>
+                        <p class="card-text">Manage roles assigned to employees.</p>
+                        <a th:href="@{/roles}" class="btn btn-success">
+                            <i class="fas fa-arrow-right me-1"></i>Go to Roles
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Departments -->
+             <div class="col-md-4 mb-4" sec:authorize="hasRole('ADMIN')">
+                <div class="card border-info shadow h-100">
+                    <div class="card-body">
+                        <i class="fas fa-building fa-3x text-info mb-3"></i>
+                        <h5 class="card-title">Departments</h5>
+                        <p class="card-text">Manage departments and assign employees.</p>
+                        <a th:href="@{/departments}" class="btn btn-info text-white">
+                            <i class="fas fa-arrow-right me-1"></i>Go to Departments
+                        </a>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-4 mb-4">
+                <div class="card border-info shadow h-100">
+                    <div class="card-body">
+                        <i class="fas fa-sticky-note fa-3x text-info mb-3"></i>
+                        <h5 class="card-title">Tasks</h5>
+                        <p class="card-text">Add or view tasks for employees.</p>
+                        <a th:href="@{/tasks}" class="btn btn-info text-white">
+                            <i class="fas fa-arrow-right me-1"></i>Go to Tasks
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

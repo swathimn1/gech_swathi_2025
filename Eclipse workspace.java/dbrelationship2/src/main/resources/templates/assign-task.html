@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      th:replace="~{layout :: layout(~{::title}, ~{::section})}">
+
+<head>
+    <title th:fragment="title">Assign Task</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+<section th:fragment="section">
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">
+            Assign Task to <span th:text="${employee.name}">Employee Name</span>
+        </h2>
+
+        <form th:action="@{'/employees/' + ${employee.id} + '/assign-task'}"
+              th:object="${task}" method="post">
+
+            <div class="mb-3">
+                <label for="title" class="form-label">Task Title</label>
+                <input type="text" th:field="*{title}" class="form-control"
+                       placeholder="Enter task title" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Task Description</label>
+                <textarea th:field="*{description}" class="form-control"
+                          placeholder="Enter task description"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Assign Task</button>
+            <a th:href="@{/employees}" class="btn btn-secondary ms-2">Back</a>
+
+        </form>
+    </div>
+
+</section>
+</body>
+</html>

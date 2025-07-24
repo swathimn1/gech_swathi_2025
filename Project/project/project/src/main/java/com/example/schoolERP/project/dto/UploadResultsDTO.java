@@ -1,6 +1,6 @@
 package com.example.schoolERP.project.dto;
 
-public class UploadResults {
+public class UploadResultsDTO {
    private long id;
    private String name;
    private int Marks;

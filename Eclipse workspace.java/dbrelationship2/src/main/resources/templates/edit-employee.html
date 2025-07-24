@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	th:replace="~{layout :: layout(~{::title}, ~{::section})}">
+
+<head>
+<meta charset="UTF-8">
+<title>Edit Employee</title>
+</head>
+
+<body>
+	<!-- Main Content -->
+	<section>
+		<div class="container my-5">
+			<h2 class="mb-4">
+				<i class="fas fa-user-plus me-2"></i>Edit Employee
+			</h2>
+
+			<!-- Form Card -->
+			<div class="card shadow-sm">
+				<div class="card-body">
+					<form th:action="@{/employees/edit/{id}(id=${employeeId})}"
+						th:object="${employeeDTO}" method="post" novalidate>
+
+						<!-- Name -->
+						<div class="mb-3">
+							<label for="name" class="form-label">Name</label> <input
+								type="text" th:field="*{name}" class="form-control"
+								placeholder="Enter full name">
+							<div class="text-danger" th:if="${#fields.hasErrors('name')}"
+								th:errors="*{name}"></div>
+						</div>
+
+						<!-- Email -->
+						<div class="mb-3">
+							<label for="email" class="form-label">Email</label> <input
+								type="email" th:field="*{email}" class="form-control"
+								placeholder="Enter email address">
+							<div class="text-danger" th:if="${#fields.hasErrors('email')}"
+								th:errors="*{email}"></div>
+						</div>
+
+						<!-- Password -->
+						<div class="mb-3">
+							<label for="password" class="form-label">Password</label> <input
+								type="password" th:field="*{password}" class="form-control"
+								placeholder="Enter password">
+							<div class="text-danger" th:if="${#fields.hasErrors('password')}"
+								th:errors="*{password}"></div>
+						</div>
+
+						<div class="mb-3">
+							<label for="street" class="form-label">Street</label> <input
+								type="text" class="form-control" th:field="*{address.street}"
+								placeholder="Enter street">
+							<div class="text-danger"
+								th:if="${#fields.hasErrors('address.street')}"
+								th:errors="*{address.street}"></div>
+						</div>
+
+						<div class="mb-3">
+							<label for="city" class="form-label">City</label> <input
+								type="text" class="form-control" th:field="*{address.city}"
+								placeholder="Enter city">
+							<div class="text-danger"
+								th:if="${#fields.hasErrors('address.city')}"
+								th:errors="*{address.city}"></div>
+						</div>
+
+						<div class="mb-3">
+							<label for="state" class="form-label">State</label> <input
+								type="text" class="form-control" th:field="*{address.state}"
+								placeholder="Enter state">
+							<div class="text-danger"
+								th:if="${#fields.hasErrors('address.state')}"
+								th:errors="*{address.state}"></div>
+						</div>
+
+						<!-- Roles -->
+						<div class="mb-3">
+							<label for="roles" class="form-label">Assign Roles</label> <select
+								th:field="*{roles}" class="form-select" multiple>
+								<option th:each="role : ${roles}" th:value="${role.id}"
+									th:text="${role.name}"></option>
+							</select>
+							<div class="form-text">Hold Ctrl (Windows) or Command (Mac)
+								to select multiple roles</div>
+							<div class="text-danger" th:if="${#fields.hasErrors('roles')}"
+								th:errors="*{roles}"></div>
+						</div>
+
+						<!-- Department -->
+						<div class="mb-3">
+							<label for="departmentId" class="form-label">Select
+								Department</label> <select th:field="*{departmentId}"
+								class="form-select">
+								<option value="" disabled selected>Select a department</option>
+								<option th:each="dept : ${departments}" th:value="${dept.id}"
+									th:text="${dept.name}"></option>
+							</select>
+							<div class="text-danger"
+								th:if="${#fields.hasErrors('departmentId')}"
+								th:errors="*{departmentId}"></div>
+						</div>
+						<hr>
+						<!-- <h5 class="mt-4">Edit Tasks</h5>
+						<div id="task-container">
+							<div class="task-row mb-3">
+
+								<input type="text" name="taskTitles[]" placeholder="Task Title"
+									class="form-control mb-2" required /> <input type="text"
+									name="taskDescriptions[]" placeholder="Task Description"
+									class="form-control" />
+
+							</div>
+						</div>
+						<button type="button" class="btn btn-outline-secondary mb-3"
+							onclick="addTask()">
+							<i class="fas fa-plus me-1"></i> Add Another Task
+						</button>-->
+
+						<button type="submit" class="btn btn-success">
+							<i class="fas fa-save me-1"></i> Save Employee
+						</button>
+						<a th:href="@{/employees}" class="btn btn-secondary ms-2">Cancel</a>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script>
+    function addTask() {
+        const container = document.getElementById('task-container');
+        const taskRow = document.createElement('div');
+        taskRow.classList.add('task-row', 'mb-3');
+        taskRow.innerHTML = `
+            <input type="text" name="taskTitles[]" placeholder="Task Title" class="form-control mb-2" required />
+            <input type="text" name="taskDescriptions[]" placeholder="Task Description" class="form-control" />
+        `;
+        container.appendChild(taskRow);
+    }
+</script>
+
+</body>
+</html>

@@ -26,44 +26,82 @@ public class HomeController {
 		this.studentService = studentService;
 	}
 
-	@GetMapping({"","/"})
+//	@GetMapping({"","/"})
+//	public String getAllStudents(Model model) {
+//		List<Student> students =  studentService.getAllStudents();
+//		model.addAttribute("students",students);
+//		return "students";
+//		
+//	}
+	@GetMapping({" "," /"})
 	public String getAllStudents(Model model) {
-		List<Student> students =  studentService.getAllStudents();
-		model.addAttribute("students",students);
+		List<Student> students=studentService.getAllStudents();
+		model.addAttribute("students", students);
 		return "students";
 	}
 	
+//	@GetMapping("/add-student")
+//	public String addStudent(Model model) {
+//		StudentDTO studentDTO = new StudentDTO();
+//		model.addAttribute("studentDTO",studentDTO);
+//		return "add_student";
+//	}
 	@GetMapping("/add-student")
 	public String addStudent(Model model) {
-		StudentDTO studentDTO = new StudentDTO();
-		model.addAttribute("studentDTO",studentDTO);
+		StudentDTO studentDTO=new StudentDTO();
+		model.addAttribute("studentDTO", studentDTO);
 		return "add_student";
 	}
+//	@PostMapping("/add-student")
+//	public String saveStudent(@ModelAttribute StudentDTO studentDTO) {
+//		studentService.saveStudent(studentDTO);
+//		return "redirect:/";
+//	}
+	
 	@PostMapping("/add-student")
 	public String saveStudent(@ModelAttribute StudentDTO studentDTO) {
 		studentService.saveStudent(studentDTO);
 		return "redirect:/";
 	}
 	
+//	@GetMapping("/edit-student")
+//	public String getMethodName(@RequestParam Long id,Model model) {
+//		Student student=studentService.getStudent(id);
+//		StudentDTO studentDTO=new StudentDTO();
+//		
+//		    studentDTO.setFirstName(student.getfName());
+//		    studentDTO.setLastName(student.getlName());
+//		    studentDTO.setEmail(student.getEmail());
+//		    studentDTO.setPhone(student.getPhone());
+//		    studentDTO.setAddress(student.getAddress());
+//
+//		model.addAttribute("studentDTO",studentDTO);
+//		model.addAttribute("student",student);
+//		return "edit-student";
+//	}
+//	@PostMapping("/edit-student")
+//	public String updateStudent(@ModelAttribute StudentDTO studentDTO,@RequestParam Long id) {
+//	    studentService.updateStudent(studentDTO,id);  // Now StudentDTO should contain ID
+//	    return "redirect:/";
+//	}
 	@GetMapping("/edit-student")
-	public String getMethodName(@RequestParam Long id,Model model) {
+	public String editStudent(Model model,@RequestParam Long id) {
 		Student student=studentService.getStudent(id);
 		StudentDTO studentDTO=new StudentDTO();
-		
-		    studentDTO.setFirstName(student.getfName());
-		    studentDTO.setLastName(student.getlName());
-		    studentDTO.setEmail(student.getEmail());
-		    studentDTO.setPhone(student.getPhone());
-		    studentDTO.setAddress(student.getAddress());
-
-		model.addAttribute("studentDTO",studentDTO);
-		model.addAttribute("student",student);
+		studentDTO.setFirstName(student.getfName());
+	    studentDTO.setLastName(student.getlName());
+	    studentDTO.setEmail(student.getEmail());
+	    studentDTO.setPhone(student.getPhone());
+	    studentDTO.setAddress(student.getAddress());
+	    model.addAttribute("studentDTO",studentDTO);
+	    model.addAttribute("student", student);
 		return "edit-student";
+		
 	}
 	@PostMapping("/edit-student")
-	public String updateStudent(@ModelAttribute StudentDTO studentDTO,@RequestParam Long id) {
-	    studentService.updateStudent(studentDTO,id);  // Now StudentDTO should contain ID
-	    return "redirect:/";
+	public String updateStudent(@ModelAttribute StudentDTO studentDTO,Long id) {
+		studentService.updateStudent(studentDTO, id);
+		return "redirect:/";
 	}
 	@GetMapping("/delete-student")
 	public String deleteStudent(@RequestParam Long id) {

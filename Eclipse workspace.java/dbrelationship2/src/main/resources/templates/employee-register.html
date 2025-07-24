@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	th:replace="~{layout :: layout(~{::title}, ~{::section})}">
+<head>
+<title>Register - EMS Dashboard</title>
+</head>
+
+<section>
+	<div
+		class="container d-flex align-items-center justify-content-center min-vh-100 mt-5">
+		<div class="card shadow-lg p-4" style="max-width: 450px; width: 100%;">
+			<h3 class="text-center mb-4">Register</h3>
+
+			<!-- Show success or error messages if passed -->
+			<div th:if="${success}" class="alert alert-success"
+				th:text="${success}"></div>
+			<div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
+
+			<form th:action="@{/register}" method="POST"
+				th:object="${employeeDTO}" novalidate>
+				<!-- Full Name -->
+				<div class="mb-3">
+					<label class="form-label">Full Name</label> <input type="text"
+						class="form-control" th:field="*{name}" placeholder="Full name"
+						required>
+					<div class="text-danger" th:if="${#fields.hasErrors('name')}"
+						th:errors="*{name}"></div>
+				</div>
+
+				<!-- Email -->
+				<div class="mb-3">
+					<label class="form-label">Email</label> <input type="email"
+						class="form-control" th:field="*{email}" placeholder="Email"
+						required>
+					<div class="text-danger" th:if="${#fields.hasErrors('email')}"
+						th:errors="*{email}"></div>
+				</div>
+
+				<!-- Password -->
+				<div class="mb-3">
+					<label class="form-label">Password</label> <input type="password"
+						class="form-control" th:field="*{password}" placeholder="Password"
+						required>
+					<div class="text-danger" th:if="${#fields.hasErrors('password')}"
+						th:errors="*{password}"></div>
+				</div>
+
+				<!-- Address: Street -->
+				<div class="mb-3">
+					<label class="form-label">Street</label> <input type="text"
+						class="form-control" th:field="*{address.street}"
+						placeholder="Street">
+					<div class="text-danger"
+						th:if="${#fields.hasErrors('address.street')}"
+						th:errors="*{address.street}"></div>
+				</div>
+
+				<!-- Address: City -->
+				<div class="mb-3">
+					<label class="form-label">City</label> <input type="text"
+						class="form-control" th:field="*{address.city}" placeholder="City">
+					<div class="text-danger"
+						th:if="${#fields.hasErrors('address.city')}"
+						th:errors="*{address.city}"></div>
+				</div>
+
+				<!-- Address: State -->
+				<div class="mb-3">
+					<label class="form-label">State</label> <input type="text"
+						class="form-control" th:field="*{address.state}"
+						placeholder="State">
+					<div class="text-danger"
+						th:if="${#fields.hasErrors('address.state')}"
+						th:errors="*{address.state}"></div>
+				</div>
+				<!-- Department -->
+				<div class="mb-3">
+					<label class="form-label">Department</label> <select
+						class="form-select" th:field="*{departmentId}" required>
+						<option value="">-- Select Department --</option>
+						<option th:each="dept : ${departments}" th:value="${dept.id}"
+							th:text="${dept.name}"></option>
+					</select>
+					<div class="text-danger"
+						th:if="${#fields.hasErrors('departmentId')}"
+						th:errors="*{departmentId}"></div>
+				</div>
+
+
+				<!-- Submit Button -->
+				<button type="submit" class="btn btn-primary w-100">
+					<i class="fas fa-user-plus me-1"></i> Register
+				</button>
+			</form>
+
+			<!-- Link to Login -->
+			<div class="text-center mt-3">
+				<p>
+					Already have an account? <a th:href="@{/login}">Login Here</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+</html>
