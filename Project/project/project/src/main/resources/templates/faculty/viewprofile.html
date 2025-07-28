@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Profile</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+    <!-- Use the common faculty layout -->
+    <div th:replace="layout/faculty_layout :: facultyLayout('View Profile', ~{::section})">
+        <section>
+            <div class="container mt-4">
+                <h2 class="mb-4">Faculty Profile</h2>
+
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Name</th>
+                        <td th:text="${faculty.name}">John Doe</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td th:text="${faculty.email}">john@example.com</td>
+                    </tr>
+                    <tr>
+                        <th>Department</th>
+                        <td th:text="${faculty.department}">Computer Science</td>
+                    </tr>
+                    <tr>
+                        <th>Subject</th>
+                        <td th:text="${faculty.subject}">Mathematics</td>
+                    </tr>
+                    <tr>
+                        <th>Username</th>
+                        <td th:text="${faculty.username}">john_doe</td>
+                    </tr>
+                    <tr>
+                        <th>Role</th>
+                        <td th:text="${faculty.role}">FACULTY</td>
+                    </tr>
+                </table>
+
+                <a th:href="@{/faculty/manageProfile}" class="btn btn-primary mt-3">Edit Profile</a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

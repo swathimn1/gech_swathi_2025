@@ -1,31 +1,43 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Add Result</title>
+<meta charset="UTF-8">
+<title>Add Result</title>
 </head>
 <body>
-  <div th:replace="layout/faculty_layout :: facultyLayout('Add Result', ~{::section})">
-    <section>
-      <div class="container">
-        <h2 class="mb-4">Add Result</h2>
-        <form th:action="@{/faculty/uploadResults/add}" th:object="${uploadResults}" method="post">
-          <div class="mb-3">
-            <label class="form-label">Student Name</label>
-            <input type="text" class="form-control" th:field="*{name}" placeholder="Enter name" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Marks</label>
-            <input type="number" class="form-control" th:field="*{marks}" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Grade</label>
-            <input type="number" class="form-control" step="0.1" th:field="*{grade}" required>
-          </div>
-          <button type="submit" class="btn btn-success">Save</button>
-          <a th:href="@{/faculty/viewResults}" class="btn btn-secondary">Cancel</a>
-        </form>
-      </div>
-    </section>
-  </div>
+	<!-- Reusing the faculty layout -->
+	<div
+		th:replace="layout/faculty_layout :: facultyLayout('Add Result', ~{::section})">
+		<section>
+			<div class="container mt-4">
+				<h2 class="mb-4">Add Result</h2>
+
+				<form th:action="@{/faculty/uploadresults/add}"
+					th:object="${uploadResult}" method="post">
+
+					<div class="mb-3">
+						<label class="form-label">Student Name</label> <input type="text"
+							class="form-control" th:field="*{name}" placeholder="Enter name"
+							required>
+					</div>
+
+					<div class="mb-3">
+						<label class="form-label">Marks</label> <input type="number"
+							class="form-control" th:field="*{marks}"
+							placeholder="Enter marks" required>
+					</div>
+
+					<div class="mb-3">
+						<label class="form-label">Grade</label> <input type="text"
+							class="form-control" th:field="*{grade}"
+							placeholder="Enter grade" required>
+					</div>
+
+					<button type="submit" class="btn btn-success">Save</button>
+					<a th:href="@{/faculty/uploadresults}" class="btn btn-secondary">Cancel</a>
+				</form>
+			</div>
+		</section>
+	</div>
 </body>
 </html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Attendance</title>
+</head>
+<body>
+  <div th:replace="layout/faculty_layout :: facultyLayout('Add Attendance', ~{::section})">
+    <section>
+      <div class="container mt-4">
+        <h2 class="mb-4">Add Attendance Record</h2>
+
+        <form th:action="@{/faculty/attendance/add}" method="post" th:object="${attendance}" class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label for="studentName" class="form-label">Student Name</label>
+            <input type="text" class="form-control" id="studentName" th:field="*{studentName}" required>
+            <div class="invalid-feedback">Please enter student name.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="status" class="form-label">Attendance Status</label>
+            <select class="form-select" id="status" th:field="*{status}" required>
+              <option value="" disabled selected>Select status</option>
+              <option value="Present">Present</option>
+              <option value="Absent">Absent</option>
+              <option value="Leave">Leave</option>
+            </select>
+            <div class="invalid-feedback">Please select a status.</div>
+          </div>
+
+          <button type="submit" class="btn btn-success">Save Attendance</button>
+          <a th:href="@{/faculty/attendance}" class="btn btn-secondary ms-2">Cancel</a>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Bootstrap form validation
+    (() => {
+      'use strict';
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+  </script>
+</body>
+</html>

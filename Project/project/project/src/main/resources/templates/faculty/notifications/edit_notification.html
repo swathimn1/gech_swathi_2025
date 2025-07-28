@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout/faculty_layout :: facultyLayout('Edit Notification', ~{::section})">
+<section>
+    <div class="container mt-4">
+        <h2 class="mb-4">Edit Notification</h2>
+
+        <form th:action="@{/faculty/notifications/edit/{id}(id=${notificationDTO.id})}" 
+              method="post" th:object="${notificationDTO}">
+            
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" th:field="*{title}" class="form-control" id="title" required>
+                <div class="text-danger" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea th:field="*{message}" class="form-control" id="message" rows="4" required></textarea>
+                <div class="text-danger" th:if="${#fields.hasErrors('message')}" th:errors="*{message}"></div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a th:href="@{/faculty/notifications}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</section>
+</html>

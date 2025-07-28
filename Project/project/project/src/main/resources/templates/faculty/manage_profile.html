@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      th:replace="layout/faculty_layout :: content">
-
-<body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout/faculty_layout :: facultyLayout('Manage Profile', ~{::section})">
+<section>
   <h2>Manage Profile</h2>
 
-  <form th:action="@{/faculty/updateProfile}" method="post">
+  <form th:action="@{/faculty/updateProfile}" method="post" th:object="${faculty}">
     <div class="mb-3">
       <label>Name</label>
-      <input type="text" class="form-control" name="name" th:value="${faculty.name}" required>
+      <input type="text" class="form-control" th:field="*{name}" required>
     </div>
     <div class="mb-3">
       <label>Email</label>
-      <input type="email" class="form-control" name="email" th:value="${faculty.email}" required>
+      <input type="email" class="form-control" th:field="*{email}" required>
     </div>
     <button type="submit" class="btn btn-primary">Update</button>
   </form>
-</body>
+</section>
 </html>

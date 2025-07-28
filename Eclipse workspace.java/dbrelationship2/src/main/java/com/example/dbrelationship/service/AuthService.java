@@ -1,6 +1,8 @@
 package com.example.dbrelationship.service;
 
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -66,31 +68,29 @@ public class AuthService {
 		return employeeRepository.save(employee);
 	}
 
-	public void registerUser(EmployeeDTO dto) {
-	    // ❗ Check if email already exists
-		if (employeeRepository.findByEmail(dto.getEmail()).isPresent()) {
-		    throw new RuntimeException("Email already registered");
-		}
-
+	public Employee registerUser(EmployeeDTO dto) {
+	    if (employeeRepository.findByEmail(dto.getEmail()).isPresent()) {
+	        throw new RuntimeException("Email already registered");
+	    }
 
 	    Employee employee = new Employee();
 	    employee.setName(dto.getName());
 	    employee.setEmail(dto.getEmail());
 	    employee.setPassword(passwordEncoder.encode(dto.getPassword()));
 
-	    // Assign default role
+	    // Default role
 	    Roles defaultRole = rolesRepository.findByName("USER")
 	        .orElseThrow(() -> new RuntimeException("Default role USER not found"));
 	    employee.setRoles(Set.of(defaultRole));
 
-	    // Assign department
+	    // Department
 	    if (dto.getDepartmentId() != null) {
 	        Department dept = departmentsRepository.findById(dto.getDepartmentId())
 	            .orElseThrow(() -> new RuntimeException("Department not found"));
 	        employee.setDepartment(dept);
 	    }
 
-	    // Set address
+	    // Address
 	    Address address = new Address();
 	    address.setStreet(dto.getAddress().getStreet());
 	    address.setCity(dto.getAddress().getCity());
@@ -98,9 +98,37 @@ public class AuthService {
 	    address.setEmployee(employee);
 	    employee.setAddress(address);
 
-	    // Save employee
-	    employeeRepository.save(employee);
+	    // Tasks
+	    List<Task> tasks = new ArrayList<>();
+
+	    // Existing taskIds
+	    if (dto.getTaskIds() != null) {
+	        for (Long taskId : dto.getTaskIds()) {
+	            taskRepository.findById(taskId).ifPresent(tasks::add);
+	        }
+	    }
+
+	    // New tasks
+	    if (dto.getTaskTitles() != null && dto.getTaskDescriptions() != null) {
+	        for (int i = 0; i < dto.getTaskTitles().size(); i++) {
+	            String title = dto.getTaskTitles().get(i);
+	            String desc = i < dto.getTaskDescriptions().size() ? dto.getTaskDescriptions().get(i) : "";
+	            if (title != null && !title.trim().isEmpty()) {
+	                Task task = new Task();
+	                task.setTitle(title);
+	                task.setDescription(desc);
+	                task.setEmployee(employee);
+	                tasks.add(task);
+	            }
+	        }
+	    }
+
+	    employee.setTasks(tasks);
+
+	    return employeeRepository.save(employee); // ✅ Return saved employee
 	}
+
+
 
 
 

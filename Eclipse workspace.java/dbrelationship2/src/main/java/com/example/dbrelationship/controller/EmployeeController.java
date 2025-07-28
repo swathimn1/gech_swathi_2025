@@ -268,27 +268,39 @@ public class EmployeeController {
     }
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
-        model.addAttribute("employeeDTO", new EmployeeDTO());
-        model.addAttribute("departments", departmentRepository.findAll()); // 💡 This line is important!
-        return "employee-register";
+        EmployeeDTO dto = new EmployeeDTO();
+        dto.setAddress(new EmployeeDTO.AddressDTO()); // 💡 Important for form binding!
+        model.addAttribute("employeeDTO", dto);
+        model.addAttribute("departments", departmentRepository.findAll());
+        return "registration";
     }
+
 
 
     @PostMapping("/register")
-    public String processRegister(@ModelAttribute("employeeDTO") EmployeeDTO dto, BindingResult result, Model model) {
+    public String processRegister(@Valid @ModelAttribute("employee") EmployeeDTO dto,
+                                  BindingResult result,
+                                  Model model) {
+        if (dto.getDepartmentId() == null) {
+            result.rejectValue("departmentId", "NotNull", "Department is required.");
+        }
+
         if (result.hasErrors()) {
-            model.addAttribute("error", "Invalid input.");
-            return "employee-register";
+            model.addAttribute("departments", departmentRepository.findAll());
+            return "registration";
         }
 
         try {
-            authService.registerUser(dto);
-            return "redirect:/login?registered=true"; // ✅ Redirect to login after success
+            authService.registerUser(dto); // now includes tasks + returns Employee
+            return "redirect:/login?registered=true";
         } catch (Exception e) {
+            model.addAttribute("departments", departmentRepository.findAll());
             model.addAttribute("error", "Registration failed: " + e.getMessage());
-            return "employee-register";
+            return "registration";
         }
     }
+
+
 
 
 

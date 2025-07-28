@@ -12,7 +12,6 @@
 <body class="light-mode">
 
   <!-- Navbar -->
-  <div th:fragment="facultyLayout(title, content)">
   <header class="navbar navbar-expand-lg navbar-dark bg-success shadow sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Faculty Panel</a>
@@ -27,7 +26,7 @@
               <i class="bi bi-person-circle me-1"></i> Profile
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" th:href="@{/viewProfile}">View Profile</a></li>
+              <li><a class="dropdown-item" th:href="@{/faculty/viewProfile}">View Profile</a></li>
               <form th:action="@{/logout}" method="post">
                 <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"></i> Logout</button>
               </form>
@@ -45,10 +44,10 @@
         <div class="position-sticky">
           <ul class="nav flex-column">
             <li class="nav-item"><a class="nav-link" th:href="@{/viewAssignments}"><i class="bi bi-journal-check me-2"></i>Assignments</a></li>
-            <li class="nav-item"><a class="nav-link" th:href="@{/uploadResults}"><i class="bi bi-upload me-2"></i>Upload Results</a></li>
-            <li class="nav-item"><a class="nav-link" th:href="@{/viewAttendance}"><i class="bi bi-calendar-check me-2"></i>Attendance</a></li>
-            <li class="nav-item"><a class="nav-link" th:href="@{/sendNotifications}"><i class="bi bi-bell-fill me-2"></i>Notifications</a></li>
-            <li class="nav-item"><a class="nav-link" th:href="@{/manageProfile}"><i class="bi bi-gear-fill me-2"></i>Manage Profile</a></li>
+            <li class="nav-item"><a class="nav-link" th:href="@{/faculty/uploadresults}"><i class="bi bi-upload me-2"></i>Upload Results</a></li>
+            <li class="nav-item"><a class="nav-link" th:href="@{/faculty/attendance}"><i class="bi bi-calendar-check me-2"></i>Attendance</a></li>
+            <li class="nav-item"><a class="nav-link" th:href="@{/faculty/notifications}"><i class="bi bi-bell-fill me-2"></i>Notifications</a></li>
+            <li class="nav-item"><a class="nav-link" th:href="@{/faculty/manageProfile}"><i class="bi bi-gear-fill me-2"></i>Manage Profile</a></li>
             <li class="nav-item"><a class="nav-link" th:href="@{/changePassword}"><i class="bi bi-key-fill me-2"></i>Change Password</a></li>
           </ul>
         </div>

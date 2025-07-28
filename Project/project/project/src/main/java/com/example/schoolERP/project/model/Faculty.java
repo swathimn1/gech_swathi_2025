@@ -1,8 +1,12 @@
 package com.example.schoolERP.project.model;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Faculty {
@@ -16,7 +20,9 @@ public class Faculty {
 
     private String username;
     private String password;
-    private String role; // e.g., "ROLE_TEACHER"
+    private String role; 
+    @OneToMany(mappedBy="faculty" ,cascade=CascadeType.ALL)
+    private List<Attendance> attendances;// e.g., "ROLE_TEACHER"
 
     // Getters and Setters for all fields
     // (including username, password, role)

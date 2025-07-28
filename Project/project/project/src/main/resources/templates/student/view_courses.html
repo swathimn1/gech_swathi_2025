@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="layout/student_layout :: studentLayout('View Courses', ~{::section})">
+
+<section>
+  <div class="container mt-4">
+    <h4 class="mb-4">Course List</h4>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover align-middle">
+        <thead class="table-warning">
+          <tr>
+            <th>Course ID</th>
+            <th>Name</th>
+            <th>Code</th>
+            <th>Department</th>
+            <th>Faculty Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="course : ${courseList}">
+            <td th:text="${course.id}">1</td>
+            <td th:text="${course.name}">Mathematics</td>
+            <td th:text="${course.code}">MATH101</td>
+            <td th:text="${course.department}">Science</td>
+            <td th:text="${course.facultyName}">Dr. John Smith</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+</html>

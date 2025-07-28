@@ -6,7 +6,6 @@ import java.util.List;
 public class Listinjava {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
         /*
           *List
          * ================
@@ -45,7 +44,7 @@ public class Listinjava {
 		list2.add(60.78);
 		System.out.println(list);
 		System.out.println(list.get(1));
-		int value3=list2.get(3);
+		Object value3=list2.get(3);
 		System.out.println(value3);
 	
 		

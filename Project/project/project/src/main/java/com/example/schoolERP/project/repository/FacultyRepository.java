@@ -11,7 +11,7 @@ import com.example.schoolERP.project.model.Faculty;
 @Repository
 public interface FacultyRepository extends JpaRepository<Faculty, Long> {
     Optional<Faculty> findByUsername(String username);
-    Optional<Faculty> findByEmail(String email);
+    Faculty findByEmail(String email); 
     boolean existsByUsername(String username);
     boolean existsByEmail(String email);
     List<Faculty> findByDepartment(String department);

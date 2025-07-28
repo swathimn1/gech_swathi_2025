@@ -13,14 +13,13 @@ import com.example.schoolERP.project.service.UserService;
 
 import org.springframework.ui.Model;
 
-
 @Controller
 public class HomeController {
 
 	@Autowired
 	private UserService userService;
-	
-	@GetMapping({"","/"})
+
+	@GetMapping({ "", "/" })
 	public String home() {
 		return "home";
 	}
@@ -29,33 +28,31 @@ public class HomeController {
 	public String Login() {
 		return "login";
 	}
-	
-	
-	
-	
+
 	@GetMapping("/student_dashboard")
 	public String studentDashboard() {
-		
+
 		return "student_dashboard";
 	}
-	
+
 	@GetMapping("/register")
 	public String showRegisterPage(Model model) {
 		UserDTO userDTO = new UserDTO();
-	    model.addAttribute("userDTO", new UserDTO());
-	    return "register";
+		model.addAttribute("userDTO", new UserDTO());
+		return "register";
 	}
 
 	@PostMapping("/register")
-	public String processRegistration(@ModelAttribute UserDTO userDTO, RedirectAttributes redirectAttributes, Model model) {
-	    try {
+	public String processRegistration(@ModelAttribute UserDTO userDTO, RedirectAttributes redirectAttributes,
+			Model model) {
+		try {
 			userService.StoreRegisteredUser(userDTO);
-			redirectAttributes.addFlashAttribute("success","Registered Successfully");
+			redirectAttributes.addFlashAttribute("success", "Registered Successfully");
 		} catch (Exception e) {
-			model.addAttribute("error","Failed to send email");
+			model.addAttribute("error", "Failed to send email");
 			return "register";
 		}
-	    return "redirect:/login";
+		return "redirect:/login";
 	}
 
 }

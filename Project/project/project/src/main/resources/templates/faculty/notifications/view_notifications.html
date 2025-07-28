@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="layout/faculty_layout :: facultyLayout('Notifications', ~{::section})">
+    <section>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>Notifications</h2>
+            <a th:href="@{/faculty/notifications/add}" class="btn btn-success">
+                <i class="bi bi-plus-circle"></i> Add Notification
+            </a>
+        </div>
+
+        <table class="table table-bordered table-hover">
+            <thead class="table-light">
+                <tr>
+                    <th>Title</th>
+                    <th>Message</th>
+                    <th>Created At</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="notification : ${notifications}">
+                    <td th:text="${notification.title}">Sample Title</td>
+                    <td th:text="${notification.message}">Sample Message</td>
+                    <td th:text="${notification.createdAt}">2025-07-25</td>
+                    <td>
+                        <a th:href="@{/faculty/notifications/edit/{id}(id=${notification.id})}" class="btn btn-primary btn-sm">
+                            <i class="bi bi-pencil-square"></i> Edit
+                        </a>
+                        <a th:href="@{/faculty/notifications/delete/{id}(id=${notification.id})}"
+                           class="btn btn-danger btn-sm"
+                           onclick="return confirm('Are you sure you want to delete this notification?');">
+                            <i class="bi bi-trash"></i> Delete
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
+</html>
