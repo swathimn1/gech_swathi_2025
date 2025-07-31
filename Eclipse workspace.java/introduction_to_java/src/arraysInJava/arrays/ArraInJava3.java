@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class ArraInJava3 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		System.out.println("enter the number of rows and columns:");
 		int row = sc.nextInt();
