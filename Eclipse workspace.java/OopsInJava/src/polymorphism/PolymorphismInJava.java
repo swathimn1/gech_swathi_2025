@@ -75,7 +75,7 @@ public class PolymorphismInJava {
 			 * 1. method-overloading(one class) 
 			 * 2. method-overriding(two class) / dynamic- polymorhism/ runtime polymorphism
 			 * 
-			 * => 1. overloading/Compiletime polymorphism/static polymorphism/static binding - same method with different inputs within the same class.
+			 * => 1. overloading/Compile-time polymorphism/static polymorphism/static binding - same method with different inputs within the same class.
 			 * -Called as Complile time polymorhism beacuse the compiler decides which input method to be called during compile time.
 			 * 
 			 * => 2. overriding for two classes - Using the same method

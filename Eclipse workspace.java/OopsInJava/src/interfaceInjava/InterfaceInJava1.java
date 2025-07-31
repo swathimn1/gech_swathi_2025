@@ -23,7 +23,6 @@ interface B{
 //
 //	@Override
 //	public void methodA() {
-//		// TODO Auto-generated method stub
 //		System.out.println("this is method A");
 //	}
 //	
@@ -32,7 +31,6 @@ class Child implements A,B{
 
 	@Override
 	public void method() {
-		// TODO Auto-generated method stub
 		System.out.println("This is method  for  both interfaces A and B");
 	}
 	
