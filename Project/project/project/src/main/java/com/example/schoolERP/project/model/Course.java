@@ -14,6 +14,17 @@ public class Course {
 	private String code;
 	private String department;
 	private String facultyName;
+	 @ManyToOne
+	    @JoinColumn(name = "faculty_id")
+	    private Faculty faculty;
+
+	public Faculty getFaculty() {
+		return faculty;
+	}
+
+	public void setFaculty(Faculty faculty) {
+		this.faculty = faculty;
+	}
 
 	// Getters and Setters
 	public Long getId() {

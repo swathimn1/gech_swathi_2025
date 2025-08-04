@@ -1,9 +1,12 @@
 package com.example.schoolERP.project.controller;
 
 import java.security.Principal;
+import java.util.List;
 
 import com.example.schoolERP.project.dto.ChangePasswordDTO;
+import com.example.schoolERP.project.dto.CourseDTO;
 import com.example.schoolERP.project.dto.FacultyDTO;
+import com.example.schoolERP.project.service.CourseService;
 import com.example.schoolERP.project.service.FacultyService;
 
 import jakarta.validation.Valid;
@@ -19,12 +22,17 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class FacultyController {
 
     private final FacultyService facultyService;
+    private final CourseService courseService;
 
-    public FacultyController(FacultyService facultyService) {
-        this.facultyService = facultyService;
-    }
+    
 
-    @GetMapping("/faculty_dashboard")
+    public FacultyController(FacultyService facultyService, CourseService courseService) {
+		super();
+		this.facultyService = facultyService;
+		this.courseService = courseService;
+	}
+
+	@GetMapping("/faculty_dashboard")
     public String facultyDashboard(Model model) {
         model.addAttribute("facultyName", "Dr. Swathi");
         return "faculty/faculty_dashboard";
@@ -154,5 +162,46 @@ public class FacultyController {
 
         model.addAttribute("faculty", faculty);
         return "faculty/viewprofile";
-    }
+    } 
+        @GetMapping("/faculty/courses")
+        public String listCourses(Model model, Principal principal) {
+            if (principal == null) {
+                return "redirect:/login";
+            }
+
+            FacultyDTO faculty = facultyService.findByEmail(principal.getName());
+            if (faculty == null) {
+                return "redirect:/faculty/not-found";
+            }
+
+            List<CourseDTO> courses = courseService.getCoursesByFacultyName(faculty.getName());
+            model.addAttribute("courses", courses);
+            return "faculty/courses/view_courses";
+        }
+
+        @GetMapping("/faculty/course/add")
+        public String showAddCourseForm(Model model) {
+            model.addAttribute("course", new CourseDTO());
+            return "faculty/courses/add_courses";
+        }
+
+        @PostMapping("/faculty/course/save")
+        public String saveCourse(@ModelAttribute("course") CourseDTO courseDto,
+                                 Principal principal) {
+            if (principal == null) {
+                return "redirect:/login";
+            }
+
+            FacultyDTO faculty = facultyService.findByEmail(principal.getName());
+            if (faculty == null) {
+                return "redirect:/faculty/not-found";
+            }
+
+            // Set faculty name from logged-in user
+            courseDto.setFacultyName(faculty.getName());
+
+            courseService.saveCourseFromDTO(courseDto);
+            return "redirect:/faculty/courses";
+        }
+    
 }

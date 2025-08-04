@@ -52,7 +52,6 @@ public class Abstraction1 {
 //			
 //			@Override
 //			public void isWalking() {
-//				// TODO Auto-generated method stub
 //				
 //			}
 //		};
