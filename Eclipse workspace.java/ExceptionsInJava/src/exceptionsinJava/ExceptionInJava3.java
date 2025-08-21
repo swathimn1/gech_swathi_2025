@@ -1,13 +1,21 @@
 package exceptionsinJava;
 
 public class ExceptionInJava3 {
-	public static  void validate(int age) {
-		if(age<18) {
+//	public static  void validate(int age) {
+//		if(age<18) {
+//			throw new ArithmeticException("Invalid age");
+//		}
+//		else {
+//			
+//			System.out.println(" your age is:"+age);
+//		}
+//	}
+	public static void validate(int age) {
+		if(age>18) {
 			throw new ArithmeticException("Invalid age");
 		}
 		else {
-			
-			System.out.println(" your age is:"+age);
+			System.out.println("your age is:"+age);
 		}
 	}
 
@@ -34,6 +42,19 @@ public class ExceptionInJava3 {
 //	} finally {
 //		System.out.println("This is finally block 2");
 //	}
+		try {
+			System.out.println(10/0);
+		}finally {
+			System.out.println("this is  a finally block");
+		}
+		try {
+			System.out.println(10/0);
+		}catch(Exception e) {
+			System.out.println(e);
+		}finally {
+			System.out.println("this is a finally block");
+		}
+		
 //	
 		
 		/*
@@ -45,6 +66,11 @@ public class ExceptionInJava3 {
 		}catch(Exception e) {
 			System.out.println(e);
 		}
+//		try {
+//			validate(20);
+//		}catch(Exception e) {
+//			System.out.println(e);
+//		}
 		
 	}
 

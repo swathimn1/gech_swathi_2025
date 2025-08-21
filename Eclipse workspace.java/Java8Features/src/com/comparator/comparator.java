@@ -1,5 +1,6 @@
 package com.comparator;
 
-public interface comparator<T> {
+import java.util.ArrayList;
 
+public interface comparator<T> {
 }

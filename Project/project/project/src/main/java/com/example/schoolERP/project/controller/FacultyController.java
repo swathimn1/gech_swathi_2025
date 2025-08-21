@@ -163,45 +163,56 @@ public class FacultyController {
         model.addAttribute("faculty", faculty);
         return "faculty/viewprofile";
     } 
-        @GetMapping("/faculty/courses")
-        public String listCourses(Model model, Principal principal) {
-            if (principal == null) {
-                return "redirect:/login";
-            }
+//        @GetMapping("/faculty/courses")
+//        public String listCourses(Model model, Principal principal) {
+//            if (principal == null) {
+//                return "redirect:/login";
+//            }
+//
+//            FacultyDTO faculty = facultyService.findByEmail(principal.getName());
+//            if (faculty == null) {
+//                return "redirect:/faculty/not-found";
+//            }
+//
+//            List<CourseDTO> courses = courseService.getCoursesByFacultyName(faculty.getName());
+//            model.addAttribute("courses", courses);
+//            return "faculty/courses/view_courses";
+//        }
+//
+//        @GetMapping("/faculty/courses/add")
+//        public String showAddCourseForm(Model model) {
+//            model.addAttribute("course", new CourseDTO());
+//            return "faculty/courses/add_courses";
+//        }
+//
+//        @PostMapping("/faculty/courses/save")
+//        public String saveCourse(@ModelAttribute("course") CourseDTO courseDto,
+//                                 Principal principal) {
+//            if (principal == null) {
+//                return "redirect:/login";
+//            }
+//
+//            FacultyDTO faculty = facultyService.findByEmail(principal.getName());
+//            if (faculty == null) {
+//                return "redirect:/faculty/not-found";
+//            }
+//
+//            // Set faculty name from logged-in user
+//            courseDto.setFacultyName(faculty.getName());
+//
+//            courseService.saveCourseFromDTO(courseDto);
+//            return "redirect:/faculty/courses";
+//        }
+//        @GetMapping("/faculty/courses/edit/{id}")
+//        public String showEditCourseForm(@PathVariable Long id, Model model, Principal principal) {
+//            CourseDTO courseDto = courseService.getCourseDTOById(id);
+//            if (courseDto == null) {
+//                return "redirect:/faculty/courses";
+//            }
+//
+//            model.addAttribute("course", courseDto);
+//            return "faculty/courses/edit_courses";
+//        }
 
-            FacultyDTO faculty = facultyService.findByEmail(principal.getName());
-            if (faculty == null) {
-                return "redirect:/faculty/not-found";
-            }
-
-            List<CourseDTO> courses = courseService.getCoursesByFacultyName(faculty.getName());
-            model.addAttribute("courses", courses);
-            return "faculty/courses/view_courses";
-        }
-
-        @GetMapping("/faculty/course/add")
-        public String showAddCourseForm(Model model) {
-            model.addAttribute("course", new CourseDTO());
-            return "faculty/courses/add_courses";
-        }
-
-        @PostMapping("/faculty/course/save")
-        public String saveCourse(@ModelAttribute("course") CourseDTO courseDto,
-                                 Principal principal) {
-            if (principal == null) {
-                return "redirect:/login";
-            }
-
-            FacultyDTO faculty = facultyService.findByEmail(principal.getName());
-            if (faculty == null) {
-                return "redirect:/faculty/not-found";
-            }
-
-            // Set faculty name from logged-in user
-            courseDto.setFacultyName(faculty.getName());
-
-            courseService.saveCourseFromDTO(courseDto);
-            return "redirect:/faculty/courses";
-        }
     
 }

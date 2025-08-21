@@ -22,71 +22,70 @@ public class CourseService {
         this.facultyRepository = facultyRepository;
     }
 
-    // Fetch all Course entities
-    public List<Course> getAllCourses() {
-        return courseRepository.findAll();
-    }
-
-    // Fetch all CourseDTOs
+    // ✅ Fetch all courses (DTO)
     public List<CourseDTO> getAllCourseDTOs() {
         return courseRepository.findAll().stream()
                 .map(this::convertToDTO)
                 .collect(Collectors.toList());
     }
 
-    // Save course using entity
-    public Course saveCourse(Course course) {
-        return courseRepository.save(course);
+    // ✅ Fetch all courses (Entity)
+    public List<Course> getAllCourses() {
+        return courseRepository.findAll();
     }
 
-    // Save course using DTO
+    // ✅ Fetch course by ID (DTO)
+    public CourseDTO getCourseDTOById(Long id) {
+        Course course = courseRepository.findById(id).orElse(null);
+        return course != null ? convertToDTO(course) : null;
+    }
+
+    // ✅ Fetch course by ID (Entity)
+    public Course getCourseById(Long id) {
+        return courseRepository.findById(id).orElse(null);
+    }
+
+    // ✅ Save new course from DTO
     public Course saveCourseFromDTO(CourseDTO courseDTO) {
         Course course = new Course();
         course.setName(courseDTO.getName());
         course.setCode(courseDTO.getCode());
 
-        // Map faculty by name (or use ID if available)
         if (courseDTO.getFacultyName() != null) {
             Faculty faculty = facultyRepository.findByName(courseDTO.getFacultyName());
             if (faculty != null) {
                 course.setFaculty(faculty);
             }
         }
-        
 
         return courseRepository.save(course);
     }
 
-    // Get course by ID
-    public Course getCourseById(Long id) {
-        return courseRepository.findById(id).orElse(null);
-    }
-
-    // Update course
+    // ✅ Update course by ID using DTO
     public Course updateCourse(Long id, CourseDTO courseDTO) {
-        Course existingCourse = getCourseById(id);
-        if (existingCourse != null) {
-            existingCourse.setName(courseDTO.getName());
-            existingCourse.setCode(courseDTO.getCode());
+        Course existing = getCourseById(id);
+        if (existing != null) {
+            existing.setName(courseDTO.getName());
+            existing.setCode(courseDTO.getCode());
 
             if (courseDTO.getFacultyName() != null) {
                 Faculty faculty = facultyRepository.findByName(courseDTO.getFacultyName());
                 if (faculty != null) {
-                    existingCourse.setFaculty(faculty);
+                    existing.setFaculty(faculty);
                 }
             }
 
-            return courseRepository.save(existingCourse);
+            return courseRepository.save(existing);
         }
         return null;
     }
 
-    // Delete course
+    // ✅ Delete course by ID
     public void deleteCourse(Long id) {
         courseRepository.deleteById(id);
     }
 
-    // Convert Course entity to CourseDTO
+    // ✅ Convert Course to CourseDTO
     private CourseDTO convertToDTO(Course course) {
         CourseDTO dto = new CourseDTO();
         dto.setId(course.getId());
@@ -100,7 +99,8 @@ public class CourseService {
 
         return dto;
     }
- // Fetch courses by faculty name
+
+    // ✅ Get all courses for a specific faculty by name
     public List<CourseDTO> getCoursesByFacultyName(String facultyName) {
         Faculty faculty = facultyRepository.findByName(facultyName);
         if (faculty == null) return List.of();
@@ -110,5 +110,4 @@ public class CourseService {
                 .map(this::convertToDTO)
                 .collect(Collectors.toList());
     }
-
 }

@@ -31,7 +31,6 @@ public class FunctionInJava1 {
 	 }
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		FunctionInJava1 obj1=new FunctionInJava1();
 		obj1.publicFunction();
 		obj1.privateFunction();

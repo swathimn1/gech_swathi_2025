@@ -9,10 +9,15 @@ public class Operators {
 //          ++a;//pre increment
 //          
 		/*
-		 * Arithmetic Operators : +,-,*,/,% Unary Operators :++,-- Assignment
-		 * Operator:=,+=,-=,*=,/=,%= Relational Operators:<,>,<=,>=,!=,== -TRUE OR FALSE
-		 * Logical Operators &&,||,! - true or false Ternary Operator :-?: Bitwise
-		 * Operators:&,|,~ Shift Operators:>>,<< instance of operator :instance of
+		 *  Arithmetic Operators : +,-,*,/,%
+		 *  Unary Operators :++,-- 
+		 *  Assignment Operator:=,+=,-=,*=,/=,%=
+		 *  Relational Operators:<,>,<=,>=,!=,== -TRUE OR FALSE
+		 * Logical Operators &&,||,! - true or false 
+		 * Ternary Operator :-?: 
+		 * Bitwise Operators:&,|,~ 
+		 * Shift Operators:>>,<< 
+		 * instance of operator :instance of
 		 */
 
 		// Arithmetic operators
@@ -53,6 +58,7 @@ public class Operators {
 		System.out.println("x >= y: " + (x >= y)); // Checks if x is greater than or equal to y
 		System.out.println("x <= y: " + (x <= y));
 
+		
 		boolean f = true;
 		boolean g = false;
 
@@ -116,6 +122,7 @@ public class Operators {
 		System.out.println("&&:"+(t>0 && z<15));
 		
 		System.out.println();
+//		System.out.println(1*mohan);
 		
 		
 
