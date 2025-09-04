@@ -9,6 +9,20 @@ class MyThread5 extends Thread {
 
 	}
 
+	public void run(String s) {
+		for (int i = 0; i < 10; i++) {
+			System.out.println("this is a child thread");
+		}
+
+	}
+
+	public void run(int k) {
+		for (int i = 0; i < 10; i++) {
+			System.out.println("this is a child thread");
+		}
+
+	}
+
 	@Override
 	public void start() {
 		super.start();
