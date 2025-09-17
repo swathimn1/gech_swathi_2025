@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Home Page</title>
+	<!-- Bootstrap 5 CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		body {
+			background-color: #f8f9fa;
+		}
+
+		h1 {
+			text-align: center;
+			margin: 20px 0;
+			font-weight: bold;
+			color: #343a40;
+		}
+
+		.table-container {
+			max-width: 900px;
+			margin: auto;
+			background: #ffffff;
+			padding: 20px;
+			border-radius: 12px;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		}
+
+		table {
+			border-radius: 8px;
+			overflow: hidden;
+		}
+
+		thead {
+			background-color: #0d6efd;
+			color: white;
+		}
+
+		tbody tr:hover {
+			background-color: #e9f5ff;
+			transition: 0.3s;
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-fluid">
+			<!-- Brand -->
+			<a class="navbar-brand text-center" th:href="@{/}">MyApp</a>
+
+			<!-- Mobile toggle button -->
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<!-- Navbar links -->
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" th:href="@{/about}">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" th:href="@{/service}">Service</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" th:href="@{/contact}">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- Page content -->
+	<div class="container mt-4">
+		<h1>Welcome to Home Page</h1>
+		<!--<p class="text-center">This is your home page content.</p>-->
+	</div>
+	<table class="table table-bordered table-striped table-hover">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>name</th>
+				<th>email</th>
+				<th>phone</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each=user:${users}>
+				<td th:text="${user.id}"></td>
+				<td th:text="${user.name}"></td>
+				<td th:text="${user.email}"></td>
+				<td th:text="${user.phone}"></td>
+				<td>
+					<a th:href="@{/users/edit/{id}(id=${user.id})}" class="btn btn-primary btn-sm">Edit</a>
+					<a th:href="@{/users/delete/{id}(id=${user.id})}" class="btn btn-danger btn-sm"
+						onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+
+	<!-- Bootstrap 5 JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

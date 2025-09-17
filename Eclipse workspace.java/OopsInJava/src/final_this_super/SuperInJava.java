@@ -38,9 +38,11 @@ public class SuperInJava {
 
 	public static void main(String[] args) {
 		/*
-		 * super: ===== 1.This is used to call super class instance variables. 2. It is
-		 * used to call super class constructor 3.It is used to call super class
-		 * methods.
+		 * super: 
+		 * ===== 
+		 * 1.This is used to call super class instance variables. 
+		 * 2. It is used to call super class constructor 
+		 * 3.It is used to call super class methods.
 		 */
 		NewDog newdog = new NewDog("husky", 10, "rice");
 		newdog.display();

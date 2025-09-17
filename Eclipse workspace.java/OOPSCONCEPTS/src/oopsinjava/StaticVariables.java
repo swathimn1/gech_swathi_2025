@@ -17,8 +17,8 @@ class Employe {
 public class StaticVariables {
 
 	public static void main(String[] args) {
-  
-  System.out.println(Employe.age);
+
+		System.out.println(Employe.age);
 	}
 
 }

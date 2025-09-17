@@ -77,7 +77,7 @@ public class InheritanceInJava {
 
 	public static void main(String[] args) {
 		/*
-		 * Inheritance ===== extending the properties of parent class to child class.
+		 * Inheritance ===== extending the properties and methods of parent class to child class.
 		 * properties(state and actions).
 		 * 
 		 * types:- ====== 1.single level-parent to child(extends)

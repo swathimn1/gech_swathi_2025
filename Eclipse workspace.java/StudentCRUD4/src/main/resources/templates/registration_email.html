@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout_email :: layout(~{::title}, ~{::section})}">
+
+<head>
+    <title>Account Registration</title>
+</head>
+
+<body>
+<section>
+    <h2 class="card-title text-primary">Welcome to Our Application!</h2>
+    <p class="card-text">
+        Dear <strong th:text="${name}">Name</strong>,
+    </p>
+    <p class="card-text">Your account has been successfully created.</p>
+
+    <h5 class="mt-4">Login Details</h5>
+    <ul class="list-group mb-3">
+        <li class="list-group-item">
+            <strong>Email:</strong> <span th:text="${username}">user@example.com</span>
+        </li>
+        <li class="list-group-item">
+            <strong>Password:</strong> <span th:text="${password}">password123</span>
+        </li>
+    </ul>
+
+    <p class="card-text">
+        You can now log in at:
+        <a th:href="${loginUrl}" class="btn btn-success btn-sm mt-2">Login Page</a>
+    </p>
+
+    <p class="mt-4">Best Regards,<br><strong>The Team</strong></p>
+</section>
+</body>
+</html>

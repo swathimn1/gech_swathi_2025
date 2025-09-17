@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: layout(~{::title}, ~{::section})}">
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+<section>
+    <h2 class="mb-4">Admin Dashboard</h2>
+
+    <div class="row">
+        <!-- Users Card -->
+        <div class="col-md-3 mb-3">
+            <div class="card border-primary shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Users</h5>
+                    <p class="card-text">Total: 120</p>
+                    <a href="#" class="btn btn-primary btn-sm">View</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Properties Card -->
+        <div class="col-md-3 mb-3">
+            <div class="card border-success shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Properties</h5>
+                    <p class="card-text">Listed: 85</p>
+                    <a href="#" class="btn btn-success btn-sm">Manage</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Applications Card -->
+        <div class="col-md-3 mb-3">
+            <div class="card border-warning shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Applications</h5>
+                    <p class="card-text">Pending: 12</p>
+                    <a href="#" class="btn btn-warning btn-sm">Review</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Property Types Card -->
+        <div class="col-md-3 mb-3">
+            <div class="card border-info shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Property Types</h5>
+                    <p class="card-text">Types: 5</p>
+                    <a href="#" class="btn btn-info btn-sm">Edit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Activities -->
+    <div class="card mt-4 shadow-sm">
+        <div class="card-header bg-dark text-white">
+            Recent Admin Activities
+        </div>
+        <div class="card-body">
+            <ul class="mb-0">
+                <li>Approved 3 new property listings</li>
+                <li>Added new property type: "Farmhouse"</li>
+                <li>Deleted inactive user accounts</li>
+            </ul>
+        </div>
+    </div>
+</section>
+</body>
+</html>

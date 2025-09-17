@@ -21,5 +21,8 @@ public class MaximumElementsInAnArray {
 		   
 	   }
 	   System.out.println("Maximum element in an array is:"+max);
+//	   if(arr[i]>max) {
+//		   max=arr[i];
+//	   }
    }
 } 
