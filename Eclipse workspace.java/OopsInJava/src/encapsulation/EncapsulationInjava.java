@@ -75,7 +75,7 @@ public class EncapsulationInjava {
 				 * provide public getter and setter methods to control access. - This helps in
 				 * data hiding and protects the integrity of the data. 
 				 * (or) 
-				 * -Every feilds must be private when we wnat to protect data ,so we use encapsulation and create
+				 * -Every fields must be private when we want to protect data ,so we use encapsulation and create
 				 * getters and setters to make it public so that we can set and get the data
 				 * ourselves when we create object
 				 *

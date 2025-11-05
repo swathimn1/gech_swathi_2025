@@ -18,7 +18,11 @@ public class SecurityConfig {
 		super();
 		this.studentRepository = studentRepository;
 	}
-@Bean
+//@Bean
+// public PasswordEncoder passwordEncoder() {
+//	 return new BCryptPasswordEncoder();
+// }
+ @Bean
  public PasswordEncoder passwordEncoder() {
 	 return new BCryptPasswordEncoder();
  }

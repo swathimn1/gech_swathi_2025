@@ -13,13 +13,11 @@ public class MaximumElementsInAnArray {
 		   arr[i]=sc.nextInt();
 	   }
 	   int max=arr[0];
-	   for( int num:arr) {
-		   if(num>max) {
-			   max=num;
-		   }
-		   
-		   
-	   }
+        for(int i=0;i<size;i++) {
+        	if(arr[i]>max) {
+        		max=arr[i];
+        	}
+        }
 	   System.out.println("Maximum element in an array is:"+max);
 //	   if(arr[i]>max) {
 //		   max=arr[i];

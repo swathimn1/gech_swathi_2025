@@ -11,4 +11,3 @@ import com.springSecurityDemo.springSecurityDemo.models.StudentModels;
 public interface StudentRepository extends  JpaRepository<StudentModels, Long> {
 	 Optional<StudentModels> findByEmail(String email);
 }
-;
