@@ -27,8 +27,6 @@ public class FunctionsInJava {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 		/*
 		 * Functions/methods in java =============== <access modifier>return type
 		 * function_name(parameters){ code } example: public void add(int a,int b){

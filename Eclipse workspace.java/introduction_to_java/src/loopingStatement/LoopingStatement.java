@@ -3,7 +3,6 @@ package loopingStatement;
 public class LoopingStatement {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
     /*
      * for loop -for(ini;i<=5;inc/dec)
      * for(int i=0;i<=5;i++)

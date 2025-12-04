@@ -10,7 +10,7 @@ public class Varkeyword {
 
 		}
 //		List<Student>=[1,2,3,4,5];
-		//var keyword is used for declare the variables of any data type.
+		// var keyword is used for declare the variables of any data type.
 
 	}
 

@@ -3,10 +3,9 @@ package arraysInJava.arrays;
 public class StringsInJava {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		/*
 		 * Strings ===== it is group of characters ex:table need to enclose the
-		 * within"".
+		 * within "".
 		 * 
 		 * how to declare the string ====== 1.using string literal String var_name =
 		 * "String_name";

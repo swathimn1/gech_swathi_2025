@@ -21,7 +21,6 @@ class ChildClass extends ParentClass {
 public class multilevel {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		ChildClass child = new ChildClass();
 		child.grandParentMethod();
 		child.ParentMethod();

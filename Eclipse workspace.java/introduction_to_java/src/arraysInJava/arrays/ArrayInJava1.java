@@ -19,7 +19,7 @@ public class ArrayInJava1 {
 			 System.out.println("enter "+i+"th element");
 			 arr[i]=sc.nextInt();
 			 }
-		 System.out.println("th array elements are");
+		 System.out.println("the array elements are");
 		 for(int j=0;j<size;j++) {
 			 System.out.println(arr[j]+" ");
 		 }

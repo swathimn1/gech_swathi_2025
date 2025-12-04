@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Visitor Query</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ff6a00 0%, #ee0979 50%, #fcb045 100%);
+      color: #fff;
+    }
+
+    .email-container {
+      max-width: 600px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 25px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #17a2b8, #138496);
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .info {
+      text-align: left;
+      margin: 1rem 0;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+    }
+
+    .info p {
+      margin: 0.3rem 0;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <h2>New Visitor Query Received</h2>
+
+    <div class="info">
+     <!--   <p><strong>Visitor:</strong> <span th:text="${visitorName}">John Doe</span></p>
+      <p><strong>Stall:</strong> <span th:text="${stallName}">Tech Stall</span></p>
+      <p><strong>Query:</strong> <span th:text="${queryText}">What are the timings?</span></p>-->
+      <p><strong>Visitor:</strong> {{visitorName}}</p>
+      <p><strong>Stall:</strong>{{stallName}} </p>
+      <p><strong>Query:</strong>{{queryText}} </p>
+    </div>
+
+   <!--   <a th:href="@{/login}" class="btn-primary">Log In to Respond</a>-->
+  </div>
+</body>
+</html>

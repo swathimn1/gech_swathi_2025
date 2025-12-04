@@ -60,7 +60,7 @@ public class PojoClass {
        * rules:
        * ======
        * 1.The class should not extends or implements any class or interface
-       * 2.Every field(sates/properties)should be private 
+       * 2.Every field(sates/properties) should be private 
        * 3.All-args Constructor
        * No-args Constructor
        * toString()

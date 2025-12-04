@@ -25,7 +25,6 @@ class Student {
 public class ClassObjectsInJava {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		/*
 		 * class: ====== class will represents the state and behaviour of an object
 		 * state->property behaviour->action
