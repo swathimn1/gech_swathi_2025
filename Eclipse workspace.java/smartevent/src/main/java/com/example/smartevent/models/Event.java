@@ -33,9 +33,18 @@ public class Event {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate endDate;
 
-    @Column(name = "category", nullable = false)
-    @NotBlank
-    private String category = "Workshop";   // ✅ New field
+    @Column(name = "category", nullable = true)
+    @NotBlank(message = "Category is required")
+    private String category = "Workshop";
+
+    // Add a @PrePersist method to ensure category is never blank
+    @PrePersist
+    @PreUpdate
+    public void ensureCategory() {
+        if (this.category == null || this.category.trim().isEmpty()) {
+            this.category = "Workshop";
+        }
+    }  // ✅ New field
 
     @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference(value = "event-stalls")

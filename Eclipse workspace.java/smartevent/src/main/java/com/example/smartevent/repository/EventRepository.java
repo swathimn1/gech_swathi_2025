@@ -27,6 +27,16 @@ List<Event> findByStartDateAfter(LocalDate date);
     	    ORDER BY COUNT(q) DESC
     	""")
     	List<EventVisitorsDTO> findVisitorCountsPerEvent();
+List<Event> findByCategory(String category);
+    
+    // Find events by location
+    List<Event> findByLocationContainingIgnoreCase(String location);
+    
+    // Find events by title containing keyword
+    List<Event> findByTitleContainingIgnoreCase(String keyword);
+    
+    // Count events by category
+    Long countByCategory(String category);
 
 
 

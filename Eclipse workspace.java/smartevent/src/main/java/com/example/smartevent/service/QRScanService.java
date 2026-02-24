@@ -5,7 +5,6 @@ import com.example.smartevent.dto.PointsResponse;
 import com.example.smartevent.models.QRScan;
 import com.example.smartevent.repository.QRScanRepository;
 import com.example.smartevent.repository.UserRepository;
-import com.example.smartevent.models.User;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -17,7 +16,6 @@ public class QRScanService {
 
     private final QRScanRepository qrScanRepository;
     private final UserRepository userRepository;
-
     private static final int POINTS_PER_SCAN = 10;
 
     public QRScanService(QRScanRepository qrScanRepository,
@@ -53,14 +51,17 @@ public class QRScanService {
         scan.setContent(content);
         scan.setTimestamp(LocalDateTime.now());
         scan.setPoints(POINTS_PER_SCAN);
-
+        
         QRScan saved = qrScanRepository.save(scan);
+        
+        System.out.println("✅ QR Scan recorded: User " + userId + " earned " + POINTS_PER_SCAN + " points");
+        
         return mapToResponse(saved);
     }
 
     public PointsResponse getTotalPoints(Long userId) {
         List<QRScan> scans = qrScanRepository.findByUserId(userId);
-
+        
         int totalPoints = scans.stream()
                 .mapToInt(QRScan::getPoints)
                 .sum();
@@ -68,18 +69,21 @@ public class QRScanService {
         PointsResponse response = new PointsResponse();
         response.setTotalPoints(totalPoints);
         response.setUserId(userId);
-
+        response.setScanCount(scans.size()); // ✅ Add scan count
+        
+        System.out.println("📊 Points for User " + userId + ": " + totalPoints + " points from " + scans.size() + " scans");
+        
         return response;
     }
 
     public void deleteScan(Long id, Long userId) {
         QRScan scan = qrScanRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Scan not found"));
-
+        
         if (!scan.getUserId().equals(userId)) {
             throw new RuntimeException("Unauthorized to delete this scan");
         }
-
+        
         qrScanRepository.deleteById(id);
     }
 

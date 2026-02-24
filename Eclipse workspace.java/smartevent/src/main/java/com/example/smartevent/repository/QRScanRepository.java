@@ -25,6 +25,7 @@ public interface QRScanRepository extends JpaRepository<QRScan, Long> {
 	Long countDistinctVisitorsByStallId(Long id);
 	Long countByStallIdIn(List<Long> stallIds);
 	Long countDistinctVisitorsByStallIdIn(List<Long> stallIds);
+	long countByUserId(Long userId);
 	
 
    
